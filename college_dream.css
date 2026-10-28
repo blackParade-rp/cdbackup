@@ -3017,3 +3017,30 @@ body#modernbb .forumbg .topiclist.topics.bg_none > li.row1 strong {
     display: none !important;
   }
 }
+
+body#modernbb .campus-topic-empty dt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+body#modernbb .campus-topic-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--campus-border);
+  border-radius: 50%;
+  background: var(--campus-surface);
+  color: var(--season-primary);
+  font-size: 19px;
+}
+
+body#modernbb .campus-topic-empty-subtitle {
+  color: var(--campus-muted);
+  font-size: 11px;
+  text-align: center;
+}
