@@ -2180,3 +2180,162 @@ html[data-campus-theme="dark"]
     border-top:1px solid var(--campus-border);
   }
 }
+
+
+/* =====================================================
+   COLLEGE DREAMS · COMUNIDAD
+   Acabados visuales
+   ===================================================== */
+
+/* 01 · CONECTADOS AHORA */
+
+/* Mantener altura y permitir scroll interno */
+.campus-community-card--online {
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+.campus-community-card--online .campus-community-card-body {
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-width:thin;
+  scrollbar-color:var(--season-primary) transparent;
+}
+
+/* Cuatro indicadores en dos filas */
+.campus-online-counts {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  margin-bottom:12px;
+}
+
+.campus-online-count {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-width:0;
+  padding:10px 6px;
+  background:rgba(75,135,65,.10);
+  border:1px solid var(--campus-border);
+  border-radius:7px;
+}
+
+.campus-online-count span {
+  color:var(--campus-muted);
+  font:700 9px var(--campus-mono-font);
+}
+
+.campus-online-count strong {
+  color:var(--season-primary);
+  font-size:16px;
+}
+
+/* Nombres en monospace y mayúsculas */
+.campus-community-users {
+  margin-top:8px;
+  font:700 11px/1.8 var(--campus-mono-font);
+  text-transform:uppercase;
+}
+
+.campus-community-users a,
+.campus-community-users strong,
+.campus-community-users span {
+  font:inherit;
+  text-transform:uppercase;
+}
+
+/* Sin récord ni líneas divisorias */
+.campus-community-record {
+  display:none;
+}
+
+.campus-community-card--online
+.campus-community-users {
+  border:0;
+  padding-top:0;
+}
+
+/* 02 · ÚLTIMOS CONECTADOS */
+
+/* El scroll existente se conserva */
+.campus-community-card--recent
+.campus-community-recent {
+  font:400 16px/1.6 var(--campus-title-font);
+  color:var(--campus-text);
+}
+
+.campus-community-card--recent
+.campus-community-recent a {
+  font:inherit;
+}
+
+/* Quitar línea inferior */
+.campus-community-card--recent
+.campus-community-activity {
+  border:0;
+  margin:0;
+  padding:0;
+}
+
+/* 03 · GRUPOS DEL CAMPUS */
+
+/* Fuente monospace uppercase */
+.campus-community-group {
+  gap:7px;
+  font:700 10px/1.3 var(--campus-mono-font);
+  text-transform:uppercase;
+}
+
+/* Iconos Font Awesome / Game Icons */
+.campus-community-group i,
+.campus-community-group .game-icon {
+  font-size:15px;
+  line-height:1;
+  color:inherit;
+}
+
+/* 04 · BIENVENIDA Y CRÉDITOS */
+
+/* Mantener las dos mitades */
+.campus-community-welcome-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:stretch;
+  gap:12px;
+}
+
+/* Créditos con fondo verde translúcido */
+.campus-community-credits {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  height:100%;
+  max-height:110px;
+  padding:12px 18px;
+  background:rgba(75,135,65,.12);
+  border:1px solid var(--campus-border);
+  border-radius:8px;
+  text-align:left;
+}
+
+.campus-community-credits .campus-community-eyebrow {
+  margin-bottom:7px;
+}
+
+/* Texto justificado con overflow */
+.campus-community-credits-text {
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  text-align:justify;
+  line-height:1.6;
+  scrollbar-width:thin;
+  scrollbar-color:var(--season-primary) transparent;
+}
+
