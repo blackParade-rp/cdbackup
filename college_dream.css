@@ -3144,3 +3144,305 @@ body#modernbb .campus-viewforum-info > .block > p {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ====================================================
+   COLLEGE DREAMS · VIEWFORUM · RETOQUES FINALES
+   ==================================================== */
+
+/* COLORES SEGÚN EL MODO */
+
+html[data-campus-theme="light"] {
+  --campus-viewforum-green: #315e29;
+  --campus-viewforum-green-soft: #dce7da;
+}
+
+html[data-campus-theme="dark"] {
+  --campus-viewforum-green: #91dc7a;
+  --campus-viewforum-green-soft: #243326;
+}
+
+/* CABECERA */
+
+body#modernbb .campus-viewforum-header {
+  display: grid !important;
+  grid-template-columns:
+    minmax(200px, 1fr)
+    minmax(280px, auto)
+    minmax(200px, 1fr);
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px 26px;
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border);
+  border-right: 4px solid var(--campus-viewforum-green);
+  border-radius: 14px;
+}
+
+/* Título */
+
+body#modernbb
+.campus-viewforum-header .page-title a {
+  color: var(--campus-viewforum-green) !important;
+}
+
+/* Acciones centradas */
+
+body#modernbb .campus-viewforum-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  min-width: 0;
+}
+
+body#modernbb
+.campus-viewforum-header-actions a,
+body#modernbb
+.campus-viewforum-more-label {
+  color: var(--campus-text) !important;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body#modernbb
+.campus-viewforum-header-actions a:hover {
+  color: var(--campus-viewforum-green) !important;
+}
+
+/* Publicar a la derecha */
+
+body#modernbb
+.campus-viewforum-header .sub-header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+  margin: 0;
+}
+
+body#modernbb
+.campus-viewforum-header .button1 {
+  background: var(--campus-viewforum-green) !important;
+  border: 0;
+  border-radius: 7px;
+  color: var(--campus-surface) !important;
+  padding: 11px 17px;
+}
+
+/* Eliminar buscador solo en esta cabecera */
+
+body#modernbb
+.campus-viewforum-header .search-box {
+  display: none !important;
+}
+
+/* ====================================================
+   CABECERAS DE LAS LISTAS DE TEMAS
+   ==================================================== */
+
+/* Misma distribución en cabecera y filas */
+
+body#modernbb .forumbg .topiclist.topics
+li.header dl.icon,
+body#modernbb .forumbg .topiclist.topics
+li.campus-topic-row dl.icon {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr)
+    90px
+    90px
+    minmax(220px, 25%);
+  align-items: center;
+  column-gap: 12px;
+}
+
+/* Evitar anchos y floats heredados */
+
+body#modernbb .forumbg .topiclist.topics
+li.header dl.icon > dt,
+body#modernbb .forumbg .topiclist.topics
+li.header dl.icon > dd,
+body#modernbb .forumbg .topiclist.topics
+li.campus-topic-row dl.icon > dd {
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+/* Encabezado: título */
+
+body#modernbb .forumbg .topiclist.topics
+li.header dl.icon > dt,
+body#modernbb .forumbg .topiclist.topics
+li.header dl.icon > dd.dterm {
+  grid-column: 1;
+}
+
+/* Iconos y etiquetas */
+
+body#modernbb .campus-topic-header-count,
+body#modernbb .campus-topic-header-lastpost {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+}
+
+body#modernbb .campus-topic-header-count i,
+body#modernbb .campus-topic-header-lastpost i {
+  display: block;
+  font-size: 16px;
+  line-height: 1;
+}
+
+body#modernbb .campus-topic-header-count small,
+body#modernbb .campus-topic-header-lastpost small {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Valores de respuestas y visitas */
+
+body#modernbb .campus-topic-row
+.campus-topic-count {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+}
+
+body#modernbb .campus-topic-row
+.campus-topic-count strong {
+  color: var(--campus-viewforum-green);
+  font-size: 15px;
+}
+
+body#modernbb .campus-topic-row
+.campus-topic-count small {
+  color: var(--campus-muted);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+/* ====================================================
+   ÚLTIMO MENSAJE
+   ==================================================== */
+
+body#modernbb .campus-topic-row
+.campus-topic-lastpost {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  min-height: 66px;
+  padding: 9px 12px;
+
+  background: var(--campus-viewforum-green-soft);
+  border-radius: 9px;
+  text-align: left;
+}
+
+/* Avatar más grande y centrado */
+
+body#modernbb .campus-topic-lastpost
+.lastpost-avatar {
+  display: flex !important;
+  flex: 0 0 52px;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px !important;
+  height: 52px !important;
+  margin: 0 !important;
+
+  border: 1px solid var(--campus-viewforum-green);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+body#modernbb .campus-topic-lastpost
+.lastpost-avatar img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Nombre y fecha, uno debajo del otro */
+
+body#modernbb .campus-topic-lastpost-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+body#modernbb .campus-topic-lastpost-author {
+  color: var(--campus-text);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+body#modernbb .campus-topic-lastpost-date {
+  color: var(--campus-muted);
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+/* ====================================================
+   RESPONSIVE
+   ==================================================== */
+
+@media (max-width: 950px) {
+  body#modernbb .campus-viewforum-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  body#modernbb .campus-viewforum-header-actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  body#modernbb .campus-viewforum-header
+  .sub-header-buttons {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  body#modernbb .forumbg .topiclist.topics
+  li.header dl.icon,
+  body#modernbb .forumbg .topiclist.topics
+  li.campus-topic-row dl.icon {
+    grid-template-columns:
+      minmax(0, 1fr)
+      55px
+      55px;
+  }
+
+  body#modernbb .campus-topic-header-lastpost,
+  body#modernbb .campus-topic-row
+  .campus-topic-lastpost {
+    grid-column: 1 / -1;
+  }
+}
+
