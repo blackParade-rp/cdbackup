@@ -2441,3 +2441,114 @@ html[data-campus-theme="dark"]
   font-size:15px;
   line-height:1;
 }
+/* ==================================================
+   COLLEGE DREAMS · INICIO DE SESIÓN PARA INVITADOS
+   ================================================== */
+
+body#modernbb .campus-guest-login {
+  margin:18px 0;
+  padding:22px;
+  background:var(--campus-surface);
+  border:1px solid var(--campus-border);
+  border-right:4px solid var(--season-primary);
+  border-radius:14px;
+  color:var(--campus-text);
+  box-shadow:none;
+}
+
+/* Distribución compacta */
+body#modernbb .campus-guest-login .user_login_form {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:0;
+  text-align:center;
+}
+
+/* Eliminar el salto de línea original */
+body#modernbb .campus-guest-login .user_login_form > br {
+  display:none;
+}
+
+/* Usuario y contraseña */
+body#modernbb .campus-guest-login input.fl_username,
+body#modernbb .campus-guest-login input.fl_password {
+  width:220px;
+  max-width:100%;
+  height:38px;
+  box-sizing:border-box;
+  margin:0;
+  padding:0 13px;
+
+  background:var(--campus-bg);
+  border:1px solid var(--campus-border);
+  border-radius:7px;
+
+  color:var(--campus-text);
+  font:11px var(--campus-body-font);
+
+  outline:none;
+}
+
+body#modernbb .campus-guest-login input:focus {
+  border-color:var(--season-primary);
+}
+
+/* Mantener sesión iniciada */
+body#modernbb .campus-guest-login label {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  margin:0;
+
+  color:var(--campus-muted);
+  font:10px var(--campus-mono-font);
+}
+
+body#modernbb .campus-guest-login input[type="checkbox"] {
+  accent-color:var(--season-primary);
+}
+
+/* Botón de acceso */
+body#modernbb .campus-guest-login input[type="submit"] {
+  height:38px;
+  margin:0;
+  padding:0 20px;
+
+  background:var(--season-primary);
+  border:1px solid var(--season-primary);
+  border-radius:7px;
+
+  color:var(--campus-surface);
+  font:700 11px var(--campus-body-font);
+  cursor:pointer;
+  transition:opacity .2s ease;
+}
+
+body#modernbb .campus-guest-login input[type="submit"]:hover {
+  opacity:.8;
+}
+
+/* Inicio de sesión social */
+body#modernbb .campus-guest-login .social_btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:0;
+}
+
+/* Adaptación a móvil */
+@media(max-width:650px) {
+  body#modernbb .campus-guest-login .user_login_form {
+    flex-direction:column;
+  }
+
+  body#modernbb .campus-guest-login input.fl_username,
+  body#modernbb .campus-guest-login input.fl_password {
+    width:100%;
+  }
+}
