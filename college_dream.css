@@ -79,15 +79,15 @@ body#modernbb .campus-accent-bg {
    ========================================== */
 
 /* MODO CLARO */
+
 ::selection {
-  background: var(--season-primary);
-  color: #ffffff;
+  background:var(--campus-user-accent);
+  color:#fff;
 }
 
-/* MODO OSCURO */
 html[data-campus-theme="dark"] ::selection {
-  background: var(--season-primary);
-  color: #142713;
+  background:var(--campus-user-accent);
+  color:#142713;
 }
 
 /* Compatibilidad con Firefox */
@@ -100,6 +100,14 @@ html[data-campus-theme="dark"] ::-moz-selection {
   background: var(--season-primary);
   color: #142713;
 }
+
+/* Negritas en los mensajes de rol */
+
+.postbody .content strong,
+.postbody .content b {
+  color:var(--campus-user-accent);
+}
+
 /* ====================================================================
    02 · CABECERA Y HERO
    ==================================================================== */
