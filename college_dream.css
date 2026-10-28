@@ -73,6 +73,33 @@ body#modernbb .campus-accent-bg {
   background-color:var(--campus-accent);
 }
 
+/* ==========================================
+   COLLEGE DREAMS · SELECCIÓN DE TEXTO
+   Aplicable a todo el foro
+   ========================================== */
+
+/* MODO CLARO */
+::selection {
+  background: var(--season-primary);
+  color: #ffffff;
+}
+
+/* MODO OSCURO */
+html[data-campus-theme="dark"] ::selection {
+  background: var(--season-primary);
+  color: #142713;
+}
+
+/* Compatibilidad con Firefox */
+::-moz-selection {
+  background: var(--season-primary);
+  color: #ffffff;
+}
+
+html[data-campus-theme="dark"] ::-moz-selection {
+  background: var(--season-primary);
+  color: #142713;
+}
 /* ====================================================================
    02 · CABECERA Y HERO
    ==================================================================== */
