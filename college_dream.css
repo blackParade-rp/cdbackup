@@ -4217,4 +4217,153 @@ body#modernbb .campus-role-post .signature_div {
   }
 }
 
+/* ==========================================
+   COLLEGE DREAMS · CABECERA INTERIOR DEL TEMA
+========================================== */
+
+body#modernbb .campus-topic-main-header {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 25px;
+
+  width: 100%;
+  min-height: 145px;
+  box-sizing: border-box;
+
+  margin: 18px 0 16px !important;
+  padding: 25px 30px !important;
+
+  background: #ffffff !important;
+  border: 1px solid #dce2e8;
+  border-right: 4px solid #315f2b;
+  border-radius: 15px;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
+/* Título y navegación */
+
+body#modernbb .campus-topic-main-header .sub-header-info {
+  float: none !important;
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body#modernbb .campus-topic-main-header .page-title {
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+
+  font-family: "Bright Holiday", cursive !important;
+  font-size: clamp(38px, 4vw, 58px) !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  text-transform: none !important;
+}
+
+body#modernbb .campus-topic-main-header .page-title a {
+  color: #315f2b !important;
+  font: inherit !important;
+  text-decoration: none !important;
+}
+
+body#modernbb .campus-topic-main-header .sub-header-path {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  color: #738095;
+}
+
+body#modernbb .campus-topic-main-header .sub-header-path a {
+  color: #738095;
+  text-decoration: none;
+}
+
+/* Botones a la derecha */
+
+body#modernbb .campus-topic-main-header .sub-header-buttons {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body#modernbb .campus-topic-main-header .sub-header-buttons .button1,
+body#modernbb .campus-topic-main-header .sub-header-buttons .login-for {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 0 17px !important;
+
+  background: #315f2b !important;
+  border: 1px solid #315f2b !important;
+  border-radius: 8px !important;
+
+  color: #ffffff !important;
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none !important;
+
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,.12);
+  transition: background .2s ease, transform .2s ease;
+}
+
+body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
+  background: #254b21 !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   CABECERA DEL TEMA · MODO OSCURO
+========================================== */
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header {
+  background: #1b1b1b !important;
+  border-color: #353b35;
+  border-right-color: #8bdd78;
+  box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .page-title a {
+  color: #8bdd78 !important;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .sub-header-path,
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .sub-header-path a {
+  color: #a5afa5;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .sub-header-buttons .button1,
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .sub-header-buttons .login-for {
+  background: #8bdd78 !important;
+  border-color: #8bdd78 !important;
+  color: #142014 !important;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
+  background: #a3eb94 !important;
+}
 
