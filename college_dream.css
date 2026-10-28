@@ -2552,3 +2552,29 @@ body#modernbb .campus-guest-login .social_btn {
     width:100%;
   }
 }
+/* ==========================================
+   COLLEGE DREAMS · LOGIN DE INVITADOS
+   Centrado vertical y horizontal
+   ========================================== */
+
+body#modernbb .campus-guest-login {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100px;
+  box-sizing:border-box;
+}
+
+body#modernbb .campus-guest-login form {
+  width:100%;
+  margin:0;
+}
+
+body#modernbb .campus-guest-login .user_login_form {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:0;
+  padding:0;
+}
