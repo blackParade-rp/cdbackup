@@ -3133,3 +3133,81 @@ body#modernbb .campus-topic-status.campus-topic-custom-icon {
   color: var(--season-primary);
   font-size: 17px;
 }
+
+/* ==========================================
+   COLLEGE DREAMS · ALINEACIÓN DE TEMAS
+   ========================================== */
+
+/* Misma distribución en todas las filas */
+body#modernbb .campus-topic-row .campus-topic-layout {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr)
+    82px
+    82px
+    minmax(0, 25%) !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Evitar que el contenido modifique las columnas */
+body#modernbb .campus-topic-row .campus-topic-layout > dd {
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Último mensaje: caja uniforme */
+body#modernbb .campus-topic-row .campus-topic-lastpost {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+
+  padding: 12px !important;
+  border-radius: 9px !important;
+}
+
+/* Avatar siempre circular y sin deformaciones */
+body#modernbb .campus-topic-lastpost .lastpost-avatar {
+  flex: 0 0 54px !important;
+  width: 54px !important;
+  height: 54px !important;
+}
+
+body#modernbb .campus-topic-lastpost .lastpost-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+/* Nombre, fecha y enlace dentro de su columna */
+body#modernbb .campus-topic-lastpost-details {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow-wrap: anywhere;
+}
+
+body#modernbb .campus-topic-lastpost-author,
+body#modernbb .campus-topic-lastpost-date {
+  display: block;
+  width: 100%;
+}
+
+/* Móviles */
+@media (max-width: 650px) {
+  body#modernbb .campus-topic-row .campus-topic-layout {
+    grid-template-columns: minmax(0, 1fr) 55px 55px !important;
+    gap: 8px !important;
+  }
+
+  body#modernbb .campus-topic-row .campus-topic-lastpost {
+    grid-column: 1 / -1;
+  }
+}
