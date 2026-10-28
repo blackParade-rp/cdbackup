@@ -2595,3 +2595,279 @@ body#modernbb .campus-guest-login .social_btn a[href*="topicit"] {
 body#modernbb .campus-guest-login .social_btn:empty {
   display:none !important;
 }
+
+/* =====================================================
+   COLLEGE DREAMS · INTERIOR DE SUBFOROS
+   01. CONTENEDORES DE LISTAS DE TEMAS
+   ===================================================== */
+
+body#modernbb .forumbg:has(.campus-topic-row) {
+  margin: 16px 0;
+  padding: 12px;
+  background: var(--campus-surface);
+  border: 1px solid var(--campus-border);
+  border-right: 4px solid var(--season-primary);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Cabecera de la lista */
+
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header {
+  margin-bottom: 10px;
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 14%,
+    var(--campus-surface)
+  );
+  border: 1px solid var(--campus-border);
+  border-radius: 8px;
+}
+
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header dl {
+  color: var(--campus-text);
+  font-family: var(--campus-mono-font);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   02. FILAS DE TEMAS
+   ===================================================== */
+
+body#modernbb .campus-topic-row {
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  background: var(--campus-bg) !important;
+  border: 1px solid var(--campus-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+body#modernbb .campus-topic-row:hover {
+  border-color: var(--season-primary);
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 5%,
+    var(--campus-bg)
+  ) !important;
+}
+
+/* Sustituimos la distribución tradicional de Foroactivo */
+
+body#modernbb .campus-topic-row .campus-topic-layout {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr)
+    65px
+    65px
+    minmax(190px, 24%);
+  align-items: center;
+  gap: 12px;
+  min-height: 90px;
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  background: none !important;
+}
+
+body#modernbb .campus-topic-row .campus-topic-layout > dd {
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+
+/* =====================================================
+   03. TÍTULO, ICONO Y AUTOR
+   ===================================================== */
+
+body#modernbb .campus-topic-row .dterm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 0 0 56px !important;
+}
+
+/* Icono del estado del tema */
+
+body#modernbb .campus-topic-status {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  background: var(--campus-surface);
+  border: 1px solid var(--campus-border);
+  border-radius: 50%;
+}
+
+body#modernbb .campus-topic-status img {
+  max-width: 26px;
+  max-height: 26px;
+  object-fit: contain;
+}
+
+body#modernbb .campus-topic-row .topic-title-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+body#modernbb .campus-topic-row .topic-title {
+  display: inline;
+  margin: 0;
+  font-family: var(--campus-body-font);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+body#modernbb .campus-topic-row .topictitle {
+  color: var(--campus-text) !important;
+  text-decoration: none;
+}
+
+body#modernbb .campus-topic-row .topictitle:hover {
+  color: var(--season-primary) !important;
+}
+
+body#modernbb .campus-topic-row .topic-author {
+  display: block;
+  margin-top: 5px;
+  color: var(--campus-muted);
+  font-size: 10px;
+}
+
+body#modernbb .campus-topic-row .topic-description {
+  display: block;
+  margin-top: 5px;
+  color: var(--campus-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   04. RESPUESTAS Y VISITAS
+   ===================================================== */
+
+body#modernbb .campus-topic-row .campus-topic-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+}
+
+body#modernbb .campus-topic-count strong {
+  color: var(--season-primary);
+  font-family: var(--campus-mono-font);
+  font-size: 16px;
+}
+
+body#modernbb .campus-topic-count small {
+  color: var(--campus-muted);
+  font-family: var(--campus-mono-font);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   05. ÚLTIMO MENSAJE
+   ===================================================== */
+
+body#modernbb .campus-topic-row .campus-topic-lastpost {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 8px 10px !important;
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 9%,
+    var(--campus-bg)
+  );
+  border-radius: 8px;
+}
+
+body#modernbb .campus-topic-lastpost .lastpost-avatar {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border: 1px solid var(--season-primary);
+  border-radius: 50%;
+}
+
+body#modernbb .campus-topic-lastpost .lastpost-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body#modernbb .campus-topic-lastpost .lastpost-infos {
+  min-width: 0;
+  color: var(--campus-muted);
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+body#modernbb .campus-topic-lastpost .lastpost-infos a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   06. ADAPTACIÓN RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 850px) {
+  body#modernbb .campus-topic-row .campus-topic-layout {
+    grid-template-columns: minmax(0, 1fr) 55px 55px;
+  }
+
+  body#modernbb .campus-topic-row .campus-topic-lastpost {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  body#modernbb .campus-topic-row .campus-topic-layout {
+    grid-template-columns: minmax(0, 1fr) 55px 55px;
+    gap: 8px;
+    padding: 10px !important;
+  }
+
+  body#modernbb .campus-topic-row .dterm {
+    padding-left: 0 !important;
+  }
+
+  body#modernbb .campus-topic-status {
+    display: none;
+  }
+
+  body#modernbb .campus-topic-row .topic-title {
+    font-size: 12px;
+  }
+}
