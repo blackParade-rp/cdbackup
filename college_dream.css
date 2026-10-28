@@ -2339,3 +2339,26 @@ html[data-campus-theme="dark"]
   scrollbar-color:var(--season-primary) transparent;
 }
 
+/* ==========================================
+   COLLEGE DREAMS · ÚLTIMO USUARIO REGISTRADO
+   ========================================== */
+
+/* Frase: El último usuario registrado es */
+.campus-community-newest {
+  font-family:var(--campus-body-font);
+  font-size:12px;
+  font-weight:600;
+  line-height:1.6;
+  color:var(--campus-text);
+}
+
+/* Nombre del último usuario */
+.campus-community-newest a,
+.campus-community-newest a span,
+.campus-community-newest a strong {
+  font-family:var(--campus-accent-font) !important;
+  font-size:25px;
+  font-weight:400;
+  line-height:1.2;
+  text-decoration:none;
+}
