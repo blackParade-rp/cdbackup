@@ -3192,40 +3192,73 @@ body#modernbb .forumbg .topiclist.topics:not(.bg_none) {
 }
 
 
-/* ==========================================================
-   COLLEGE DREAMS · ÚLTIMO MENSAJE
-   Alineación y dimensiones uniformes
-   ========================================================== */
+/* =====================================================
+   COLLEGE DREAMS · FILAS DE TEMAS UNIFORMES
+   ===================================================== */
 
-/* La misma cuadrícula para TODAS las filas de temas */
-body#modernbb .forumbg .topiclist.topics.bg_none
-li.campus-topic-row > dl.campus-topic-layout {
+/* Evitar diferencias entre filas alternas */
+body#modernbb .forumbg li.campus-topic-row,
+body#modernbb .forumbg li.campus-topic-row.row1,
+body#modernbb .forumbg li.campus-topic-row.row2 {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+  border: 1px solid var(--campus-border) !important;
+}
+
+/* Misma distribución para todas las filas */
+body#modernbb .forumbg li.campus-topic-row
+> dl.campus-topic-layout {
   display: grid !important;
   grid-template-columns:
     minmax(0, 1fr)
     82px
     82px
     minmax(0, 25%) !important;
-  column-gap: 12px !important;
+  gap: 12px !important;
   align-items: center !important;
+
   width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Neutralizar los tamaños heredados de ModernBB */
-body#modernbb .forumbg .topiclist.topics.bg_none
-li.campus-topic-row > dl.campus-topic-layout > dd {
-  float: none !important;
   min-width: 0 !important;
-  max-width: none !important;
   margin: 0 !important;
+  padding: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* La tarjeta de último mensaje ocupa toda su columna */
-body#modernbb .forumbg .topiclist.topics.bg_none
-li.campus-topic-row > dl.campus-topic-layout > dd.campus-topic-lastpost {
+/* Anular desplazamientos heredados */
+body#modernbb .forumbg li.campus-topic-row
+> dl.campus-topic-layout > dd {
+  float: none !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+
+  margin: 0 !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Posiciones fijas dentro de la cuadrícula */
+body#modernbb .campus-topic-row
+> dl.campus-topic-layout > dd.dterm {
+  grid-column: 1 !important;
+}
+
+body#modernbb .campus-topic-row
+> dl.campus-topic-layout > dd.posts {
+  grid-column: 2 !important;
+}
+
+body#modernbb .campus-topic-row
+> dl.campus-topic-layout > dd.views {
+  grid-column: 3 !important;
+}
+
+body#modernbb .campus-topic-row
+> dl.campus-topic-layout > dd.campus-topic-lastpost {
   grid-column: 4 !important;
+
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
@@ -3233,60 +3266,64 @@ li.campus-topic-row > dl.campus-topic-layout > dd.campus-topic-lastpost {
 
   width: 100% !important;
   min-width: 0 !important;
-  max-width: 100% !important;
+  max-width: none !important;
   min-height: 82px !important;
-  height: auto !important;
-
+  margin: 0 !important;
   padding: 12px !important;
+
   box-sizing: border-box !important;
   border-radius: 9px !important;
 }
 
-/* Avatar: siempre idéntico y centrado */
+/* Avatar idéntico en todas las filas */
 body#modernbb .campus-topic-row
 .campus-topic-lastpost .lastpost-avatar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
   flex: 0 0 54px !important;
   width: 54px !important;
   height: 54px !important;
-  min-width: 54px !important;
-  min-height: 54px !important;
   margin: 0 !important;
 }
 
-/* Información: mismo espacio disponible */
+body#modernbb .campus-topic-row
+.campus-topic-lastpost .lastpost-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+/* Nombre, fecha y enlace con idéntica alineación */
 body#modernbb .campus-topic-row
 .campus-topic-lastpost-details {
+  display: flex !important;
   flex: 1 1 0 !important;
-  width: 0 !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  width: auto !important;
   min-width: 0 !important;
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Evitar que nombres largos ensanchen la caja */
-body#modernbb .campus-topic-row
-.campus-topic-lastpost-author,
-body#modernbb .campus-topic-row
-.campus-topic-lastpost-date {
-  display: block !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  overflow-wrap: anywhere !important;
-}
-
-/* Adaptación a pantallas pequeñas */
+/* Adaptación móvil */
 @media (max-width: 850px) {
-  body#modernbb .forumbg .topiclist.topics.bg_none
-  li.campus-topic-row > dl.campus-topic-layout {
+  body#modernbb .forumbg li.campus-topic-row
+  > dl.campus-topic-layout {
     grid-template-columns:
       minmax(0, 1fr) 55px 55px !important;
   }
 
-  body#modernbb .forumbg .topiclist.topics.bg_none
-  li.campus-topic-row > dl.campus-topic-layout
+  body#modernbb .campus-topic-row
+  > dl.campus-topic-layout
   > dd.campus-topic-lastpost {
     grid-column: 1 / -1 !important;
   }
 }
-
