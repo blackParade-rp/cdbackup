@@ -4367,3 +4367,23 @@ body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
   background: #a3eb94 !important;
 }
 
+/* ==========================================
+   CABECERA DEL TEMA · RESPONSIVE
+========================================== */
+
+@media (max-width: 750px) {
+  body#modernbb .campus-topic-main-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    min-height: 0;
+    padding: 22px 18px !important;
+  }
+
+  body#modernbb .campus-topic-main-header .page-title {
+    font-size: clamp(32px, 8vw, 44px) !important;
+  }
+
+  body#modernbb .campus-topic-main-header .sub-header-buttons {
+    justify-content: flex-start;
+  }
+}
