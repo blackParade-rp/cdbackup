@@ -2265,7 +2265,7 @@ html[data-campus-theme="dark"]
 /* El scroll existente se conserva */
 .campus-community-card--recent
 .campus-community-recent {
-  font:400 16px/1.6 var(--campus-title-font);
+  font:400 20px/1.6 var(--campus-title-font);
   color:var(--campus-text);
 }
 
