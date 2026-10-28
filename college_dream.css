@@ -1,3 +1,10 @@
+/* ======================================================================
+   COLLEGE DREAMS · HOJA DE ESTILOS PRINCIPAL (GitHub)
+   ====================================================================== */
+
+/* ====================================================================
+   01 · BASE DEL FORO Y CONTENEDORES
+   ==================================================================== */
 body#modernbb #outer-wrapper, body#modernbb #wrapper, body#modernbb #container, body#modernbb #content-main, body#modernbb #wrap, body#modernbb #page-body {
   background-color:transparent; background-image:none;
 }
@@ -65,6 +72,10 @@ body#modernbb .campus-accent {
 body#modernbb .campus-accent-bg {
   background-color:var(--campus-accent);
 }
+
+/* ====================================================================
+   02 · CABECERA Y HERO
+   ==================================================================== */
 body#modernbb .campus-header .headerbar {
   height:auto; min-height:0; padding:0; background:transparent;
 }
@@ -94,6 +105,10 @@ body#modernbb .campus-hero #site-desc p {
   margin:12px 0 0; color:#e5edf5; font-family:var(--campus-mono-font); font-size:clamp(12px, 1.2vw, 18px);
   font-weight:400; line-height:1.5; letter-spacing:3px; text-align:center;
 }
+
+/* ====================================================================
+   03 · NAVEGACIÓN FIJA, USUARIO Y NOTIFICACIONES
+   ==================================================================== */
 body#modernbb .campus-nav {
   position:fixed !important; top:0 !important; right:0 !important; left:0 !important; z-index:999;
   width:100% !important; height:var(--campus-nav-height); margin:0 !important; transform:none !important;
@@ -342,7 +357,11 @@ body#modernbb .campus-nav #modernbb-nav-menu a.campus-new-message .campus-fa-ico
     display:flex !important; position:static !important; flex:0 0 auto !important; align-items:center !important;
     margin-left:auto !important; gap:3px !important;
   }
-  body#modernbb .campus-theme-toggle, body#modernbb .campus-icon-button, body#modernbb #campus-accounts-toggle {
+  body#modernbb .campus-theme-toggle, body#modernbb .campus-icon-button, 
+/* ====================================================================
+   04 · GESTOR DE MULTICUENTAS
+   ==================================================================== */
+body#modernbb #campus-accounts-toggle {
     width:28px !important; height:28px !important; flex:0 0 28px !important; padding:0 !important;
   }
   body#modernbb .campus-nav .campus-icon-button i, body#modernbb .campus-nav .campus-theme-toggle i {
@@ -449,6 +468,10 @@ body#modernbb .campus-accounts-note, body#modernbb .campus-accounts-empty {
 body#modernbb .campus-accounts-note {
   margin:14px 0 0;
 }
+
+/* ====================================================================
+   05 · TABLÓN DE ANUNCIOS Y SUS MÓDULOS
+   ==================================================================== */
 body#modernbb #campus-board {
   width:100%; margin:28px auto 32px; padding:18px; box-sizing:border-box; color:var(--campus-text);
   background:var(--campus-surface); border:1px solid var(--campus-border);
@@ -809,6 +832,10 @@ body#modernbb #campus-board :is(.campus-board-featured,.campus-board-grid) {
     grid-template-columns:54px minmax(0,1fr);
   }
 }
+
+/* ====================================================================
+   06 · MIGAS DE PAN Y ENLACES DE NAVEGACIÓN
+   ==================================================================== */
 #page-body .linklist {
   background:var(--campus-surface); border:1px solid var(--campus-border);
   border-left:4px solid var(--season-primary); border-radius:12px; padding:12px 16px; margin-bottom:20px;
@@ -829,6 +856,10 @@ body#modernbb #campus-board :is(.campus-board-featured,.campus-board-grid) {
     float:none; margin:0;
   }
 }
+
+/* ====================================================================
+   07 · CATEGORÍAS Y TARJETAS: ESTILOS GENERALES
+   ==================================================================== */
 .campus-forum-category {
   --campus-forum-gap:14px; --campus-card-hover:#e9efe7; --campus-card-hover-border:var(--season-primary);
   width:100%; box-sizing:border-box; margin:0 0 22px; background:var(--campus-surface); color:var(--campus-text);
@@ -967,6 +998,10 @@ html[data-campus-theme="dark"] .campus-forum-category .campus-forum-item-title:h
 .campus-forum-category--grid .campus-forum-item-lastpost {
   grid-column:1/-1; padding:8px 0 0; border-left:0; border-top:1px solid var(--campus-border);
 }
+
+/* ====================================================================
+   08 · INFORMACIÓN: CUATRO TARJETAS ESPECIALES
+   ==================================================================== */
 .campus-forum-category--information .campus-forum-items {
   display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; align-items:stretch;
 }
@@ -1379,6 +1414,10 @@ body#modernbb .campus-forum-category
   }
 }
 
+
+/* ====================================================================
+   09 · AJUSTES FINALES DE TARJETAS NORMALES
+   ==================================================================== */
 /* COLLEGE DREAMS · Imagen del subforo impar */
 @media (min-width: 651px) {
   .campus-forum-category:not(.campus-forum-category--information)
@@ -1392,6 +1431,10 @@ body#modernbb .campus-forum-category
   }
 }
 
+
+/* ====================================================================
+   10 · ÚLTIMO MENSAJE DE TARJETAS NORMALES
+   ==================================================================== */
 /* COLLEGE DREAMS · Último mensaje compacto */
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-forum-item-lastpost {
@@ -1473,6 +1516,10 @@ body#modernbb .campus-forum-category
 }
 
 
+
+/* ====================================================================
+   11 · FRANJAS DE TÍTULOS Y MODOS DE COLOR
+   ==================================================================== */
 /* COLLEGE DREAMS · Cabeceras de subforos */
 
 .campus-forum-category .campus-forum-item-inner {
@@ -1548,6 +1595,10 @@ html[data-campus-theme="dark"]
 }
 
 
+
+/* ====================================================================
+   12 · AJUSTES DE AVATAR Y ESTADÍSTICAS
+   ==================================================================== */
 /* COLLEGE DREAMS · Ajustes finales del último mensaje */
 
 /* Eliminar la línea superior del último mensaje */
@@ -1629,17 +1680,7 @@ html[data-campus-theme="dark"]
   color:var(--campus-muted);
 }
 
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-lastpost-meta .campus-lastpost-author-name {
-  display:inline-block;
-  font-family:var(--campus-display-font, Georgia, serif);
-  font-size:15px;
-  font-weight:700;
-  line-height:1.4;
-  text-transform:none;
-  letter-spacing:0;
-  color:var(--season-primary) !important;
-}
+
 
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-lastpost-meta .campus-lastpost-author-name:hover {
@@ -1659,6 +1700,10 @@ html[data-campus-theme="dark"]
 }
 
 
+
+/* ====================================================================
+   13 · TIPOGRAFÍA DEFINITIVA DEL AUTOR
+   ==================================================================== */
 /* COLLEGE DREAMS · Nombre del autor del último mensaje */
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-lastpost-meta .campus-lastpost-author-name {
