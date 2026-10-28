@@ -2864,3 +2864,99 @@ body#modernbb .campus-viewforum-info > .block > p {
   body#modernbb .campus-topic-status {display:none;}
   body#modernbb .campus-topic-row .topic-title {font-size:12px;}
 }
+
+
+/* ============================================
+   COLLEGE DREAMS · VIEWFORUM · CORRECCIONES
+   ============================================ */
+
+/* Verde oscuro en modo claro */
+html[data-campus-theme="light"] body#modernbb {
+  --campus-viewforum-green: #315e29;
+  --campus-viewforum-green-soft: #dfe9dc;
+}
+
+/* Verde claro en modo oscuro */
+html[data-campus-theme="dark"] body#modernbb {
+  --campus-viewforum-green: #91dc7a;
+  --campus-viewforum-green-soft: #243326;
+}
+
+/* Acentos y bordes */
+body#modernbb .campus-viewforum-header,
+body#modernbb .forumbg:has(.campus-topic-row),
+body#modernbb .campus-viewforum-footer {
+  border-right-color: var(--campus-viewforum-green) !important;
+}
+
+body#modernbb .campus-viewforum-header .page-title a,
+body#modernbb .campus-topic-count strong {
+  color: var(--campus-viewforum-green) !important;
+}
+
+/* Cabeceras adaptadas a cada modo */
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header {
+  background: var(--campus-viewforum-green-soft) !important;
+}
+
+/* Fondo del último mensaje */
+body#modernbb .campus-topic-row .campus-topic-lastpost {
+  background: var(--campus-viewforum-green-soft) !important;
+}
+
+/* Avatar circular, sin deformación */
+body#modernbb .campus-topic-row
+.campus-topic-lastpost .lastpost-avatar {
+  display: flex !important;
+  flex: 0 0 56px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 56px !important;
+  min-width: 56px !important;
+  max-width: 56px !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid var(--campus-viewforum-green);
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+body#modernbb .campus-topic-row
+.campus-topic-lastpost .lastpost-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+}
+
+/* Evitar que la información empuje al avatar */
+body#modernbb .campus-topic-row
+.campus-topic-lastpost .lastpost-infos,
+body#modernbb .campus-topic-row
+.campus-topic-lastpost-details {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Botón publicar */
+body#modernbb .campus-viewforum-header .button1 {
+  background: var(--campus-viewforum-green) !important;
+  color: #fff !important;
+}
+
+html[data-campus-theme="dark"] body#modernbb
+.campus-viewforum-header .button1 {
+  color: #152015 !important;
+}
