@@ -3045,100 +3045,81 @@ body#modernbb .campus-topic-empty-subtitle {
   text-align: center;
 }
 
-/* ================================================
-   COLLEGE DREAMS · DETALLES DE LA LISTA DE TEMAS
-   ================================================ */
+/* COLLEGE DREAMS · DETALLES DE TEMAS */
 
-/* Ocultar la flechita azul junto al título */
-body#modernbb .campus-topic-row .topic-title-container
-  > a:has(img),
-body#modernbb .campus-topic-row .topic-title-container
-  > img {
-  display: none !important;
-}
-
-/* Título con la tipografía principal del foro */
+/* Título del tema */
 body#modernbb .campus-topic-row .topictitle {
-  font-family: var(--campus-body-font), Verdana, sans-serif !important;
-  font-size: 14px !important;
+  font-family: var(--campus-title-font), Verdana, sans-serif !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
-  line-height: 1.5 !important;
   text-transform: none !important;
-  letter-spacing: 0 !important;
 }
 
-/* Autor en monospace y mayúsculas */
+/* Autor del tema */
 body#modernbb .campus-topic-row .topic-author,
 body#modernbb .campus-topic-row .topic-author a {
-  font-family: var(--campus-mono-font), monospace !important;
+  font-family: monospace !important;
   font-size: 10px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: .4px;
+  letter-spacing: .5px;
 }
 
-/* Último mensaje: avatar + información */
-body#modernbb .campus-topic-row .campus-topic-lastpost {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-}
-
-/* Información en columna */
-body#modernbb .campus-topic-row .lastpost-infos {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  justify-content: center !important;
-  gap: 4px !important;
+/* Información del último mensaje */
+body#modernbb .campus-topic-lastpost-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
   min-width: 0;
-  line-height: 1.4 !important;
 }
 
-/* Nombre del usuario */
-body#modernbb .campus-topic-row .campus-lastpost-author,
-body#modernbb .campus-topic-row .campus-lastpost-author a {
-  font-family: var(--campus-mono-font), monospace !important;
+/* Nombre del último usuario */
+body#modernbb .campus-topic-lastpost-author,
+body#modernbb .campus-topic-lastpost-author a {
+  font-family: monospace !important;
   font-size: 10px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
 
 /* Fecha */
-body#modernbb .campus-topic-row .campus-lastpost-date {
-  display: block;
+body#modernbb .campus-topic-lastpost-date {
   font-size: 10px;
+  line-height: 1.5;
   color: var(--campus-muted);
 }
 
-/* Enlace de último mensaje */
-body#modernbb .campus-topic-row .campus-lastpost-link {
+/* Enlace inferior */
+body#modernbb .campus-topic-lastpost-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  color: var(--season-primary) !important;
-  font-family: var(--campus-mono-font), monospace;
+  gap: 6px;
+  font-family: monospace;
   font-size: 9px;
   font-weight: 700;
-  text-decoration: none !important;
   text-transform: uppercase;
+  color: var(--season-primary);
 }
 
-body#modernbb .campus-topic-row .campus-lastpost-link:hover {
-  text-decoration: underline !important;
+body#modernbb .campus-topic-lastpost-link a {
+  display: inline-flex;
+  align-items: center;
+  color: inherit !important;
 }
 
-/* Iconos Font Awesome de los temas */
-body#modernbb .campus-topic-row .campus-topic-custom-icon {
+/* Icono personalizado */
+body#modernbb .campus-topic-status.campus-topic-custom-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 42px;
   height: 42px;
+  flex: 0 0 42px;
   border: 1px solid var(--campus-border);
   border-radius: 50%;
   background: var(--campus-surface);
   color: var(--season-primary);
   font-size: 17px;
-  flex-shrink: 0;
 }
