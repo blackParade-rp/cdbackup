@@ -1505,3 +1505,66 @@ body#modernbb .campus-forum-category
   color:var(--campus-muted);
   font-size:10px;
 }
+
+
+/* COLLEGE DREAMS · Cabeceras de subforos */
+
+.campus-forum-category .campus-forum-item-inner {
+  padding-top: 0;
+}
+
+.campus-forum-category .campus-forum-item-heading {
+  width: calc(100% + 36px);
+  margin: 0 -18px 0 !important;
+  padding: 15px 12px 13px !important;
+  text-align: center;
+  background: rgba(75, 135, 65, .18);
+  border-bottom: 1px solid rgba(75, 135, 65, .28);
+}
+
+.campus-forum-category .campus-forum-item-title {
+  color: #171d17 !important;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  padding-bottom: 8px;
+}
+
+.campus-forum-category .campus-forum-item-title::after {
+  background: var(--season-primary) !important;
+  height: 3px;
+}
+
+/* Modo noche */
+html[data-campus-theme="dark"]
+.campus-forum-category .campus-forum-item-heading {
+  background: rgba(100, 175, 90, .22);
+  border-bottom-color: rgba(145, 215, 125, .24);
+}
+
+html[data-campus-theme="dark"]
+.campus-forum-category .campus-forum-item-title {
+  color: #fff !important;
+}
+
+/* Información tiene un padding distinto */
+.campus-forum-category--information
+.campus-forum-item-heading {
+  width: calc(100% + 30px);
+  margin: 0 -15px 0 !important;
+}
+
+/* Ajuste para móvil */
+@media (max-width: 650px) {
+  .campus-forum-category:not(.campus-forum-category--information)
+  .campus-forum-item-heading {
+    width: calc(100% + 26px);
+    margin: 0 -13px 0 !important;
+  }
+
+  .campus-forum-category--information
+  .campus-forum-item-heading {
+    width: calc(100% + 24px);
+    margin: 0 -12px 0 !important;
+  }
+}
