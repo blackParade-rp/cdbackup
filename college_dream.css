@@ -1692,3 +1692,15 @@ html[data-campus-theme="dark"]
 .campus-lastpost-meta .campus-lastpost-author-name:hover {
   text-decoration:underline;
 }
+
+
+/* COLLEGE DREAMS · Esquinas uniformes en todas las tarjetas */
+.campus-forum-category .campus-forum-items > .campus-forum-item {
+  border-radius:12px !important;
+  overflow:hidden !important;
+}
+
+/* Mantener la franja verde dentro de las esquinas */
+.campus-forum-category .campus-forum-item-heading {
+  border-radius:0 !important;
+}
