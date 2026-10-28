@@ -2871,3 +2871,53 @@ body#modernbb .campus-topic-lastpost .lastpost-infos a {
     font-size: 12px;
   }
 }
+/* =====================================================
+   COLLEGE DREAMS · INTERIOR DE SUBFOROS
+   Corrección de colores y cabeceras
+   ===================================================== */
+
+/* Contenedores de anuncios y temas */
+body#modernbb .forumbg:has(.campus-topic-row) {
+  background: var(--campus-surface) !important;
+  border-color: var(--campus-border) !important;
+  color: var(--campus-text);
+}
+
+/* Cabeceras verdes, adaptadas al tema activo */
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header {
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 18%,
+    var(--campus-surface)
+  ) !important;
+  color: var(--campus-text) !important;
+}
+
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header dt,
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header dd,
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist > .header i {
+  color: var(--campus-text) !important;
+}
+
+/* Filas de temas */
+body#modernbb .campus-topic-row {
+  background: var(--campus-bg) !important;
+  color: var(--campus-text) !important;
+}
+
+body#modernbb .campus-topic-row .campus-topic-lastpost {
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 10%,
+    var(--campus-bg)
+  ) !important;
+}
+
+/* El icono de estado no debe interferir con la cabecera */
+body#modernbb .topiclist > .header .campus-topic-status {
+  display: none !important;
+}
