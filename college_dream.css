@@ -4577,3 +4577,43 @@ body#modernbb .post .postprofile .postprofile-avatar + * {
   }
 
 }
+
+/* ==========================================
+   COLLEGE DREAMS · LEGIBILIDAD DE LOS MENSAJES
+   MODO OSCURO
+========================================== */
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post > .postbody {
+    color: #e2e7e2 !important;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content,
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content p,
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content span,
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content li {
+    color: #e2e7e2;
+}
+
+/* Enlaces dentro de los mensajes */
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content a {
+    color: var(--season-primary, #8bdd78);
+}
+
+/* Texto secundario de los mensajes */
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content blockquote {
+    color: #c2ccc2;
+}
+
+/* Selección de texto */
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody .content::selection {
+    background: #8bdd78;
+    color: #142014;
+}
