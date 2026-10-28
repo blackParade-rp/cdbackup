@@ -2390,37 +2390,55 @@ html[data-campus-theme="dark"]
   text-decoration:none;
 }
 /* ==========================================
-   COLLEGE DREAMS · CONTADORES COMPACTOS
-   Conectados ahora
+   COLLEGE DREAMS · CONECTADOS AHORA
+   Contadores compactos
    ========================================== */
 
-.campus-community-card--online
-.campus-community-statline {
-  min-height:24px !important;
-  height:24px !important;
-  padding:3px 8px !important;
-  box-sizing:border-box;
-  border-radius:6px;
+/* Cuadrícula de los cuatro contadores */
+.campus-community-card--online .campus-community-online {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:26px !important;
+  gap:5px !important;
+  margin-bottom:10px !important;
+  align-content:start;
 }
 
-/* Reducir el espacio entre las cuatro cajas */
-.campus-community-card--online
-.campus-community-numbers {
-  gap:6px !important;
+/* Cada una de las cuatro cajas */
+.campus-community-card--online .campus-community-online > * {
+  box-sizing:border-box !important;
+  height:26px !important;
+  min-height:0 !important;
+  max-height:26px !important;
+  margin:0 !important;
+  padding:3px 7px !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+
+  line-height:1 !important;
 }
 
-/* Mantener etiquetas y números alineados */
-.campus-community-card--online
-.campus-community-statline {
+/* Números */
+.campus-community-card--online .campus-community-online strong {
+  font-size:15px !important;
+  line-height:1 !important;
+}
+
+/* Dar el espacio restante a la lista de usuarios */
+.campus-community-card--online .campus-community-card-body {
   display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+  flex-direction:column;
+  height:calc(100% - 37px);
+  min-height:0;
 }
 
-/* Ajustar el tamaño de los números */
-.campus-community-card--online
-.campus-community-statline strong {
-  font-size:16px;
-  line-height:1;
+.campus-community-card--online .campus-community-users {
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:var(--season-primary) transparent;
 }
