@@ -2578,3 +2578,20 @@ body#modernbb .campus-guest-login .user_login_form {
   margin:0;
   padding:0;
 }
+
+/* ==========================================
+   COLLEGE DREAMS · OCULTAR TOPIC'IT
+   Formulario de invitados
+   ========================================== */
+
+body#modernbb .campus-guest-login .ti-connect,
+body#modernbb .campus-guest-login .social_btn .ti-connect,
+body#modernbb .campus-guest-login .social_btn a[href*="topicit"] {
+  display:none !important;
+}
+
+/* Si ya no quedan otros accesos sociales,
+   ocultar también su contenedor vacío */
+body#modernbb .campus-guest-login .social_btn:empty {
+  display:none !important;
+}
