@@ -3047,12 +3047,22 @@ body#modernbb .campus-topic-empty-subtitle {
 
 /* COLLEGE DREAMS · DETALLES DE TEMAS */
 
-/* Título del tema */
+/* COLLEGE DREAMS · TÍTULOS DE LOS TEMAS */
+
 body#modernbb .campus-topic-row .topictitle {
-  font-family: var(--campus-title-font), Verdana, sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
+  font-family: var(--campus-title-font), cursive !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
   text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 650px) {
+  body#modernbb .campus-topic-row .topictitle {
+    font-size: 20px !important;
+  }
 }
 
 /* Autor del tema */
