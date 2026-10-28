@@ -2932,3 +2932,88 @@ body#modernbb .campus-topic-row .campus-topic-lastpost .lastpost-avatar img {
   object-position: center !important;
   border-radius: 50% !important;
 }
+/* ==================================================
+   COLLEGE DREAMS · SUBFOROS SIN TEMAS
+   Mismo diseño que los subforos con mensajes
+   ================================================== */
+
+/* Contenedor de la lista, aunque esté vacía */
+body#modernbb .forumbg:has(.topiclist.topics .row1 dl dt) {
+  margin: 16px 0 !important;
+  padding: 12px !important;
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-right: 4px solid var(--season-primary) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+
+/* Cabecera: TEMAS / RESPUESTAS / VISITAS / ÚLTIMO MENSAJE */
+body#modernbb .forumbg:has(.topiclist.topics .row1 dl dt)
+.topiclist.topics > .header {
+  margin-bottom: 10px !important;
+  background: var(--vf-header-bg) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 8px !important;
+}
+
+body#modernbb .forumbg:has(.topiclist.topics .row1 dl dt)
+.topiclist.topics > .header dl {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) 70px 70px minmax(220px,25%);
+  align-items: center;
+  column-gap: 12px;
+  padding: 12px 14px !important;
+  color: var(--vf-header-text) !important;
+}
+
+body#modernbb .forumbg:has(.topiclist.topics .row1 dl dt)
+.topiclist.topics > .header :is(dt,dd,i) {
+  color: var(--vf-header-text) !important;
+}
+
+/* Tarjeta con el aviso de que no hay temas */
+body#modernbb .forumbg .topiclist.topics.bg_none > li.row1 {
+  display: flex !important;
+  align-items: center;
+  min-height: 90px;
+  margin: 0 !important;
+  padding: 20px !important;
+  background: var(--campus-bg) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 10px !important;
+  color: var(--campus-muted) !important;
+}
+
+body#modernbb .forumbg .topiclist.topics.bg_none > li.row1 dl {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+body#modernbb .forumbg .topiclist.topics.bg_none > li.row1 dt {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+body#modernbb .forumbg .topiclist.topics.bg_none > li.row1 strong {
+  color: var(--campus-muted) !important;
+  font: 700 11px var(--campus-mono-font);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 850px) {
+  body#modernbb .forumbg:has(.topiclist.topics .row1 dl dt)
+  .topiclist.topics > .header dl {
+    grid-template-columns: minmax(0,1fr) 55px 55px;
+  }
+
+  body#modernbb .forumbg:has(.topiclist.topics .row1 dl dt)
+  .topiclist.topics > .header dd.lastpost {
+    display: none !important;
+  }
+}
