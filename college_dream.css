@@ -1657,3 +1657,17 @@ html[data-campus-theme="dark"]
 .campus-forum-category .campus-forum-item-heading {
   border-radius:0 !important;
 }
+
+
+/* COLLEGE DREAMS · Nombre del autor del último mensaje */
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-lastpost-meta .campus-lastpost-author-name {
+  display: inline-block;
+  font-family: var(--campus-accent-font) !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  line-height: 1.2;
+  text-transform: none !important;
+  letter-spacing: 0;
+  color: var(--season-primary) !important;
+}
