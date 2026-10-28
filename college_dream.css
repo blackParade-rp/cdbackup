@@ -1628,19 +1628,21 @@ html[data-campus-theme="dark"]
   line-height:1.5;
 }
 
+/* COLLEGE DREAMS · Estadísticas destacadas */
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-forum-item-stats {
   grid-area:stats !important;
   display:flex !important;
-  flex-direction:column;
-  justify-content:center;
+  flex-direction:column !important;
   align-items:center;
-  gap:12px !important;
-  width:92px !important;
-  min-width:92px !important;
-  padding:12px 0 12px 12px !important;
+  justify-content:center;
+  gap:14px !important;
+  width:125px !important;
+  min-width:125px !important;
+  padding:16px 12px !important;
   border:0 !important;
-  border-left:1px solid var(--campus-border) !important;
+  border-radius:10px !important;
+  background:rgba(75,135,65,.12);
 }
 
 .campus-forum-category:not(.campus-forum-category--information)
@@ -1648,19 +1650,17 @@ html[data-campus-theme="dark"]
   display:flex;
   align-items:baseline;
   justify-content:center;
-  gap:5px;
+  gap:6px;
   white-space:nowrap;
 }
 
-@media(max-width:650px) {
-  .campus-forum-category:not(.campus-forum-category--information)
-  .campus-forum-item-inner {
-    grid-template-columns:minmax(0,1fr) 75px;
-  }
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-forum-item-stats strong {
+  font-size:15px;
+  font-weight:800;
+}
 
-  .campus-forum-category:not(.campus-forum-category--information)
-  .campus-forum-item-stats {
-    width:75px !important;
-    min-width:75px !important;
-  }
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-forum-item-inner {
+  grid-template-columns:minmax(0,1fr) 125px;
 }
