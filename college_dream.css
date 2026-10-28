@@ -1,37 +1,3 @@
-@font-face {
-    font-family: "Back to Black";
-    src: url("https://blackparade-rp.github.io/cdbackup/back-to-black.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Bright Holiday";
-    src: url("https://blackparade-rp.github.io/cdbackup/bright-holiday.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-:root {
-  --campus-body-font:Verdana, Geneva, sans-serif; --campus-mono-font:Consolas, "Lucida Console", monospace;
-  --campus-title-font:"Back to Black", cursive; --campus-accent-font:"Bright Holiday", cursive;
-  --campus-wallpaper:url("https://2img.net/i.imgur.com/0WtMJRX.jpeg");
-  --campus-wallpaper-overlay:rgba(239, 246, 232, .48); --campus-hero-overlay:rgba(21, 49, 24, .36);
-  --season-primary:#336624; --season-secondary:#527D46; --season-accent:var(--season-primary);
-  --campus-accent:var(--season-primary); --group-color:var(--season-primary);
-  --campus-nav-gradient-start:var(--season-primary); --campus-nav-gradient-end:#496341; --campus-nav-fg:#fff;
-  --campus-nav-border:#000; --campus-message-highlight:#8FDB79; --campus-message-text:#142713;
-  --campus-notif-text:#344054; --campus-notif-muted:#687587; --campus-bg:#f4f5f7; --campus-surface:#fff;
-  --campus-text:#202833; --campus-muted:#738092; --campus-border:#dee3e9; --campus-width:90%; --campus-max:1600px;
-  --campus-nav-height:94px; --campus-nav-small:58px; --campus-hero-height:100svh;
-}
-html[data-campus-theme="dark"] {
-  color-scheme:dark; --season-primary:#8FDB79; --season-secondary:#B1E9A1; --campus-nav-gradient-end:#C4F5B8;
-  --campus-nav-fg:#142713; --campus-nav-border:#fff; --campus-bg:#111111; --campus-surface:#1b1b1b;
-  --campus-text:#eeeeee; --campus-muted:#aaaaaa; --campus-border:#383838; --campus-message-highlight:#336624;
-  --campus-message-text:#FFFFFF; --campus-notif-text:#E8EDF5; --campus-notif-muted:#B7C4D4;
-  --campus-wallpaper-overlay:rgba(8, 18, 14, .68); --campus-hero-overlay:rgba(5, 15, 10, .56);
-}
 body#modernbb #outer-wrapper, body#modernbb #wrapper, body#modernbb #container, body#modernbb #content-main, body#modernbb #wrap, body#modernbb #page-body {
   background-color:transparent; background-image:none;
 }
