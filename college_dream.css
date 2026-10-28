@@ -4536,4 +4536,51 @@ body#modernbb .post .postprofile .postprofile-avatar + * {
 
 }
 
+/* ==========================================
+   COLLEGE DREAMS · CORRECCIÓN DE ESPACIOS
+   EN EL INTERIOR DE LOS TEMAS
+========================================== */
 
+/* Columna principal del mensaje */
+body#modernbb .post .postbody {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* Cabecera del mensaje */
+body#modernbb .post .postbody .post-head {
+    flex: 0 0 auto !important;
+    margin-bottom: 0 !important;
+}
+
+/* Cuerpo del mensaje */
+body#modernbb .post .postbody .content {
+    flex: 0 0 auto !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 20px 22px !important;
+
+    align-self: stretch !important;
+    justify-content: flex-start !important;
+
+    box-sizing: border-box;
+}
+
+/* Evitar espacios en el primer párrafo */
+body#modernbb .post .postbody .content > :first-child {
+    margin-top: 0 !important;
+}
+
+/* Zona de reacciones */
+body#modernbb .post .postbody .vote,
+body#modernbb .post .postbody .fa_like_div {
+    margin-top: 16px !important;
+}
