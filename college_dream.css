@@ -2921,3 +2921,226 @@ body#modernbb .campus-topic-row .campus-topic-lastpost {
 body#modernbb .topiclist > .header .campus-topic-status {
   display: none !important;
 }
+
+/* =====================================================
+   COLLEGE DREAMS · VIEWFORUM
+   Encabezado, controles y paneles inferiores
+   ===================================================== */
+
+/* Encabezado del subforo */
+body#modernbb .campus-viewforum-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin: 18px 0 12px;
+  padding: 22px 26px;
+
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border);
+  border-right: 4px solid var(--season-primary);
+  border-radius: 14px;
+  color: var(--campus-text);
+}
+
+/* Título */
+body#modernbb .campus-viewforum-header .page-title {
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+
+body#modernbb .campus-viewforum-header .page-title a {
+  font-family: var(--campus-accent-font);
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 400;
+  color: var(--season-primary) !important;
+  text-decoration: none;
+}
+
+/* Migas de pan */
+body#modernbb .campus-viewforum-header .sub-header-path {
+  color: var(--campus-muted);
+  font-size: 11px;
+}
+
+body#modernbb .campus-viewforum-header .sub-header-path a {
+  color: var(--campus-muted);
+  text-decoration: none;
+}
+
+body#modernbb .campus-viewforum-header .sub-header-path a:hover {
+  color: var(--season-primary);
+}
+
+/* Buscador y botón de publicar */
+body#modernbb .campus-viewforum-header .sub-header-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+body#modernbb .campus-viewforum-header .search-box {
+  margin: 0;
+}
+
+body#modernbb .campus-viewforum-header .search-box input {
+  background: var(--campus-bg);
+  border: 1px solid var(--campus-border);
+  border-radius: 7px;
+  color: var(--campus-text);
+}
+
+body#modernbb .campus-viewforum-header .button1,
+body#modernbb .topic-actions.bottom .button1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+
+  background: var(--season-primary);
+  border: 0;
+  border-radius: 7px;
+
+  color: var(--campus-bg);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Barra de acciones superior e inferior */
+body#modernbb .campus-viewforum-actions,
+body#modernbb .topic-actions.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin: 12px 0;
+  padding: 13px 18px;
+
+  background: var(--campus-surface);
+  border: 1px solid var(--campus-border);
+  border-radius: 10px;
+  color: var(--campus-text);
+}
+
+body#modernbb .campus-viewforum-actions a,
+body#modernbb .topic-actions.bottom a,
+body#modernbb .topic-actions.bottom #sort-btn {
+  color: var(--campus-text);
+  font-size: 11px;
+}
+
+/* Selector de foro */
+body#modernbb .campus-viewforum-jumpbox {
+  margin: 10px 0;
+  padding: 13px 18px;
+
+  background: var(--campus-surface);
+  border: 1px solid var(--campus-border);
+  border-radius: 10px;
+}
+
+body#modernbb .campus-viewforum-jumpbox .vf_jumpbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  border: 0;
+}
+
+body#modernbb .campus-viewforum-jumpbox label {
+  color: var(--campus-muted);
+  font-size: 11px;
+}
+
+/* Panel de información inferior */
+body#modernbb .campus-viewforum-footer {
+  margin: 12px 0 20px;
+  padding: 18px;
+
+  background: var(--campus-surface);
+  border: 1px solid var(--campus-border);
+  border-right: 4px solid var(--season-primary);
+  border-radius: 14px;
+}
+
+/* Usuarios conectados */
+body#modernbb .campus-viewforum-online {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+
+  background: var(--campus-bg);
+  border: 1px solid var(--campus-border);
+  border-radius: 8px;
+
+  color: var(--campus-text);
+  font-size: 11px;
+}
+
+/* Moderadores y permisos */
+body#modernbb .campus-viewforum-info {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body#modernbb .campus-viewforum-info > .block {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+
+  background: var(--campus-bg);
+  border: 1px solid var(--campus-border);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+body#modernbb .campus-viewforum-info > .block > .h3 {
+  margin: 0;
+  padding: 12px 14px;
+
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 15%,
+    var(--campus-surface)
+  );
+
+  border-bottom: 1px solid var(--campus-border);
+  color: var(--campus-text);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body#modernbb .campus-viewforum-info > .block > p {
+  margin: 0;
+  padding: 14px;
+  color: var(--campus-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  body#modernbb .campus-viewforum-header {
+    padding: 18px;
+  }
+
+  body#modernbb .campus-viewforum-header .sub-header-buttons {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  body#modernbb .campus-viewforum-info {
+    grid-template-columns: 1fr;
+  }
+}
