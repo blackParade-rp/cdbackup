@@ -2362,3 +2362,38 @@ html[data-campus-theme="dark"]
   line-height:1.2;
   text-decoration:none;
 }
+/* ==========================================
+   COLLEGE DREAMS · CONTADORES COMPACTOS
+   Conectados ahora
+   ========================================== */
+
+.campus-community-card--online
+.campus-community-statline {
+  min-height:24px !important;
+  height:24px !important;
+  padding:3px 8px !important;
+  box-sizing:border-box;
+  border-radius:6px;
+}
+
+/* Reducir el espacio entre las cuatro cajas */
+.campus-community-card--online
+.campus-community-numbers {
+  gap:6px !important;
+}
+
+/* Mantener etiquetas y números alineados */
+.campus-community-card--online
+.campus-community-statline {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+/* Ajustar el tamaño de los números */
+.campus-community-card--online
+.campus-community-statline strong {
+  font-size:16px;
+  line-height:1;
+}
