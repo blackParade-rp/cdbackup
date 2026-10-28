@@ -3211,3 +3211,21 @@ body#modernbb .campus-topic-lastpost-date {
     grid-column: 1 / -1;
   }
 }
+/* ==========================================
+   COLLEGE DREAMS · CABECERAS REDONDEADAS
+   ========================================== */
+
+body#modernbb .forumbg .topiclist.topics > li.header {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+/* Conservar el redondeado del fondo verde */
+body#modernbb .forumbg .topiclist.topics > li.header > dl {
+  border-radius: inherit !important;
+}
+
+/* Separación entre cabecera y temas */
+body#modernbb .forumbg .topiclist.topics:not(.bg_none) {
+  margin-bottom: 10px !important;
+}
