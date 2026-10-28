@@ -4387,3 +4387,153 @@ body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
     justify-content: flex-start;
   }
 }
+
+/* ==========================================
+   COLLEGE DREAMS · BARRA DE ACCIONES DEL TEMA
+========================================== */
+
+/* Barra situada entre la cabecera y los mensajes */
+body#modernbb .campus-topic-main-header + .topic-actions {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  min-height: 54px;
+  margin: 0 0 16px !important;
+  padding: 12px 22px !important;
+
+  background: #ffffff !important;
+  border: 1px solid #dce2e8;
+  border-right: 4px solid #315f2b;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+/* Controles de la barra */
+body#modernbb .campus-topic-main-header + .topic-actions a,
+body#modernbb .campus-topic-main-header + .topic-actions .topic-actions-buttons {
+  color: #315f2b;
+}
+
+/* Modo oscuro */
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header + .topic-actions {
+  background: #1b1b1b !important;
+  border-color: #353b35;
+  border-right-color: #8bdd78;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header + .topic-actions a {
+  color: #8bdd78;
+}
+
+/* ==========================================
+   COLLEGE DREAMS · ALTURA NATURAL DEL MENSAJE
+========================================== */
+
+body#modernbb .post .postbody {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+body#modernbb .post .content {
+  min-height: 0 !important;
+  height: auto !important;
+
+  margin-top: 0 !important;
+  padding-top: 18px !important;
+
+  display: block !important;
+  align-content: normal !important;
+}
+
+/* Evita márgenes excesivos al inicio del mensaje */
+body#modernbb .post .content > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Mantiene una separación normal entre párrafos */
+body#modernbb .post .content p {
+  margin: 0 0 12px;
+  line-height: 1.75;
+}
+
+/* ==========================================
+   COLLEGE DREAMS · AVATAR DEL PERFIL
+   PROPORCIÓN ORIGINAL 300 × 450
+========================================== */
+
+/* Contenedor de la imagen */
+body#modernbb .post .postprofile .postprofile-avatar {
+  display: block !important;
+  width: 100% !important;
+  max-width: 300px !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+
+  margin: 0 auto 12px !important;
+  padding: 0 !important;
+
+  line-height: 0 !important;
+  overflow: hidden;
+
+  border-radius: 10px;
+}
+
+/* Imagen sin recortes */
+body#modernbb .post .postprofile .postprofile-avatar img {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 300px !important;
+
+  height: auto !important;
+  max-height: none !important;
+
+  aspect-ratio: 2 / 3;
+  object-fit: contain !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border-radius: 10px;
+}
+
+/* Perfil lateral */
+body#modernbb .post .postprofile {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Evita separación artificial debajo del avatar */
+body#modernbb .post .postprofile .postprofile-avatar + * {
+  margin-top: 0 !important;
+}
+
+/* ==========================================
+   RESPONSIVE · MENSAJES
+========================================== */
+
+@media (max-width: 750px) {
+
+  body#modernbb .campus-topic-main-header + .topic-actions {
+    justify-content: center;
+    padding: 12px 15px !important;
+  }
+
+  body#modernbb .post .postprofile .postprofile-avatar {
+    max-width: 220px !important;
+  }
+
+  body#modernbb .post .postprofile .postprofile-avatar img {
+    max-width: 220px !important;
+  }
+
+}
+
+
