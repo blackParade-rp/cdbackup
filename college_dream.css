@@ -1664,3 +1664,31 @@ html[data-campus-theme="dark"]
 .campus-forum-item-inner {
   grid-template-columns:minmax(0,1fr) 125px;
 }
+
+/* COLLEGE DREAMS · Fecha y autor del último post */
+
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-lastpost-meta {
+  font-size:10px;
+  line-height:1.6;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--campus-muted);
+}
+
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-lastpost-meta .campus-lastpost-author-name {
+  display:inline-block;
+  font-family:var(--campus-display-font, Georgia, serif);
+  font-size:15px;
+  font-weight:700;
+  line-height:1.4;
+  text-transform:none;
+  letter-spacing:0;
+  color:var(--season-primary) !important;
+}
+
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-lastpost-meta .campus-lastpost-author-name:hover {
+  text-decoration:underline;
+}
