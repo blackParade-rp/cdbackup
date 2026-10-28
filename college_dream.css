@@ -1842,9 +1842,12 @@ html[data-campus-theme="dark"]
 }
 
 
-/* ==================================================
-   COLLEGE DREAMS · PANEL DE COMUNIDAD COMPACTO
-   ================================================== */
+/* =====================================================
+   COLLEGE DREAMS · COMUNIDAD
+   Panel inferior de la página principal
+   ===================================================== */
+
+/* CONTENEDOR PRINCIPAL */
 
 .campus-community {
   margin:18px 0;
@@ -1880,18 +1883,59 @@ html[data-campus-theme="dark"]
   font-size:11px;
 }
 
-/* Tres columnas: conectados, actividad y grupos */
+/* =====================================================
+   DISTRIBUCIÓN DE LAS TARJETAS
+   ===================================================== */
+
 .campus-community-grid {
   display:grid;
-  grid-template-columns:1.1fr 1fr 1fr;
-  grid-template-rows:minmax(120px,auto) auto;
+  grid-template-columns:1fr 1.35fr 1fr;
+  grid-template-rows:260px 58px auto;
   gap:10px;
   align-items:stretch;
 }
 
+/* Conectados: izquierda, parte superior */
+.campus-community-card--online {
+  grid-column:1;
+  grid-row:1;
+}
+
+/* Estadísticas: izquierda, parte inferior */
+.campus-community-card--stats {
+  grid-column:1;
+  grid-row:2;
+}
+
+/* Últimos conectados: centro, altura completa */
+.campus-community-card--recent {
+  grid-column:2;
+  grid-row:1 / 3;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+/* Grupos: derecha, altura completa */
+.campus-community-groups {
+  grid-column:3;
+  grid-row:1 / 3;
+}
+
+/* Bienvenida: franja inferior completa */
+.campus-community-card--welcome {
+  grid-column:1 / -1;
+  grid-row:3;
+}
+
+/* =====================================================
+   ESTILO GENERAL DE LAS TARJETAS
+   ===================================================== */
+
 .campus-community-card,
 .campus-community-groups {
   min-width:0;
+  min-height:0;
   overflow:hidden;
   background:var(--campus-bg);
   border:1px solid var(--campus-border);
@@ -1911,42 +1955,16 @@ html[data-campus-theme="dark"]
   text-transform:uppercase;
 }
 
-/* Conectados ahora */
-.campus-community-card:nth-child(1) {
-  grid-column:1;
-  grid-row:1;
-}
-
-/* Últimos conectados */
-.campus-community-card:nth-child(2) {
-  grid-column:2;
-  grid-row:1;
-}
-
-/* Bienvenida: franja inferior */
-.campus-community-card:nth-child(3) {
-  grid-column:1 / 3;
-  grid-row:2;
-}
-
-/* Estadísticas: debajo de últimos conectados */
-.campus-community-card:nth-child(4) {
-  grid-column:2;
-  grid-row:1;
-  align-self:end;
-}
-
-/* Dejar sitio a las estadísticas en últimos conectados */
-.campus-community-card:nth-child(2) {
-  margin-bottom:82px;
-}
-
 .campus-community-card-body {
   padding:12px;
   font-size:11px;
   line-height:1.65;
   overflow-wrap:anywhere;
 }
+
+/* =====================================================
+   CONECTADOS AHORA
+   ===================================================== */
 
 .campus-community-online {
   margin-bottom:8px;
@@ -1962,11 +1980,119 @@ html[data-campus-theme="dark"]
   font-size:10px;
 }
 
-/* Bienvenida con avatar */
+/* =====================================================
+   ÚLTIMOS CONECTADOS
+   Altura fija con desplazamiento interno
+   ===================================================== */
+
+.campus-community-card--recent .campus-community-card-body {
+  flex:1;
+  min-height:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  scrollbar-width:thin;
+  scrollbar-color:var(--season-primary) transparent;
+}
+
+/* =====================================================
+   ESTADÍSTICAS
+   Mensajes y miembros bajo conectados
+   ===================================================== */
+
+.campus-community-card--stats {
+  background:rgba(75,135,65,.12);
+}
+
+.campus-community-numbers {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:center;
+  height:100%;
+  padding:8px;
+}
+
+.campus-community-statline {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:0;
+  font-size:10px;
+  text-align:center;
+}
+
+.campus-community-statline + .campus-community-statline {
+  border-left:1px solid var(--campus-border);
+}
+
+.campus-community-statline span {
+  color:var(--campus-muted);
+  font:700 9px var(--campus-mono-font);
+}
+
+.campus-community-statline strong {
+  color:var(--season-primary);
+  font-size:17px;
+}
+
+/* =====================================================
+   GRUPOS DEL CAMPUS
+   Diez grupos, cinco filas y dos columnas
+   ===================================================== */
+
+.campus-community-groups {
+  display:flex;
+  flex-direction:column;
+}
+
+.campus-community-group-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(5,minmax(0,1fr));
+  gap:7px;
+  padding:12px;
+  flex:1;
+  min-height:0;
+}
+
+.campus-community-group {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  min-height:0;
+  padding:6px;
+  border:1px solid var(--campus-border);
+  border-radius:6px;
+  background:var(--campus-surface);
+  font-size:10px;
+  font-weight:800;
+  text-align:center;
+  text-decoration:none!important;
+}
+
+.campus-community-group:hover {
+  border-color:var(--season-primary);
+  background:rgba(75,135,65,.12);
+}
+
+/* =====================================================
+   BIENVENIDA Y CRÉDITOS
+   Dos mitades dentro de la misma tarjeta
+   ===================================================== */
+
+.campus-community-welcome-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:center;
+  gap:20px;
+}
+
 .campus-community-welcome {
   display:flex;
   align-items:center;
   gap:12px;
+  min-width:0;
 }
 
 .campus-community-newest-avatar {
@@ -1992,65 +2118,25 @@ html[data-campus-theme="dark"]
   color:var(--campus-muted);
 }
 
-/* Estadísticas compactas */
-.campus-community-card:nth-child(4) {
-  border-radius:9px;
-  background:rgba(75,135,65,.12);
-}
-
-.campus-community-numbers {
-  display:flex;
-  align-items:center;
-  justify-content:space-around;
-  gap:10px;
-  min-height:58px;
-  padding:10px;
-}
-
-.campus-community-statline {
-  flex:1;
-  text-align:center;
-  font-size:10px;
-}
-
-.campus-community-statline + .campus-community-statline {
+.campus-community-credits {
+  min-width:0;
+  padding:12px 18px;
   border-left:1px solid var(--campus-border);
-}
-
-/* Grupos: tercera columna */
-.campus-community-groups {
-  grid-column:3;
-  grid-row:1 / 3;
-  margin:0;
-  padding:0;
-}
-
-.campus-community-group-list {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:7px;
-  padding:12px;
-}
-
-.campus-community-group {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:37px;
-  padding:6px;
-  border:1px solid var(--campus-border);
-  border-radius:6px;
-  background:var(--campus-surface);
-  font-size:10px;
-  font-weight:800;
   text-align:center;
-  text-decoration:none!important;
 }
 
-.campus-community-group:hover {
-  border-color:var(--season-primary);
-  background:rgba(75,135,65,.12);
+.campus-community-credits .campus-community-eyebrow {
+  margin-bottom:8px;
 }
+
+.campus-community-credits-text {
+  color:var(--campus-muted);
+  font:11px/1.6 var(--campus-body-font);
+}
+
+/* =====================================================
+   CUMPLEAÑOS
+   ===================================================== */
 
 .campus-community-birthdays {
   margin-top:12px;
@@ -2058,126 +2144,39 @@ html[data-campus-theme="dark"]
   color:var(--campus-muted);
 }
 
-/* Adaptación de pantallas estrechas */
+/* =====================================================
+   PANTALLAS ESTRECHAS
+   ===================================================== */
+
 @media(max-width:900px) {
   .campus-community-grid {
-    display:flex;
-    flex-direction:column;
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
   }
-  .campus-community-card:nth-child(2) {
-    margin-bottom:0;
+
+  .campus-community-card--online,
+  .campus-community-card--stats,
+  .campus-community-card--recent,
+  .campus-community-groups,
+  .campus-community-card--welcome {
+    grid-column:1;
+    grid-row:auto;
   }
-}
 
+  .campus-community-card--recent {
+    height:240px;
+  }
 
-/* ==========================================
-   COLLEGE DREAMS · COMUNIDAD
-   Distribución definitiva
-   ========================================== */
+  .campus-community-group-list {
+    grid-template-rows:repeat(5,auto);
+  }
 
-.campus-community-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  grid-template-rows: 160px 58px auto;
-  gap: 12px;
-  align-items: stretch;
-}
+  .campus-community-welcome-layout {
+    grid-template-columns:1fr;
+  }
 
-/* Columna izquierda: conectados */
-.campus-community-card--online {
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 0;
-  min-height: 0;
-}
-
-/* Estadísticas solo debajo de conectados */
-.campus-community-card--stats {
-  grid-column: 1;
-  grid-row: 2;
-  min-width: 0;
-  min-height: 0;
-}
-
-/* Columna central: últimos conectados */
-.campus-community-card--recent {
-  grid-column: 2;
-  grid-row: 1 / 3;
-  min-width: 0;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.campus-community-card--recent .campus-community-card-body {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: var(--season-primary) transparent;
-}
-
-/* Columna derecha: grupos */
-.campus-community-groups {
-  grid-column: 3;
-  grid-row: 1 / 3;
-  min-width: 0;
-  min-height: 0;
-}
-
-/* Bienvenida a todo el ancho */
-.campus-community-card--welcome {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  min-width: 0;
-}
-
-/* ==========================================
-   BIENVENIDA + CRÉDITOS
-   ========================================== */
-
-.campus-community-welcome-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 20px;
-}
-
-.campus-community-welcome-layout .campus-community-welcome {
-  min-width: 0;
-}
-
-.campus-community-credits {
-  min-width: 0;
-  padding: 12px 18px;
-  border-left: 1px solid var(--campus-border);
-  text-align: center;
-}
-
-.campus-community-credits .campus-community-eyebrow {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.campus-community-credits-text {
-  color: var(--campus-muted);
-  font: 11px/1.6 var(--campus-body-font);
-}
-
-/* Mantener compactas las estadísticas */
-.campus-community-card--stats .campus-community-numbers {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
-  height: 100%;
-}
-
-.campus-community-card--stats .campus-community-statline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7px;
-  min-width: 0;
+  .campus-community-credits {
+    border-left:0;
+    border-top:1px solid var(--campus-border);
+  }
 }
