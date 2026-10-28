@@ -1412,3 +1412,16 @@ body#modernbb .campus-forum-category
     font-size: clamp(42px, 9vw, 58px) !important;
   }
 }
+
+/* COLLEGE DREAMS · Imagen del subforo impar */
+@media (min-width: 651px) {
+  .campus-forum-category:not(.campus-forum-category--information)
+  .campus-forum-items > .campus-forum-item:last-child:nth-child(odd)
+  .campus-forum-item-image {
+    aspect-ratio: auto !important;
+    height: 175px !important;
+    min-height: 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
