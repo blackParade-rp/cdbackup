@@ -1547,86 +1547,39 @@ html[data-campus-theme="dark"]
   margin-top: 0 !important;
 }
 
-/* COLLEGE DREAMS · Pie de tarjetas normales */
 
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-forum-item-inner {
-  grid-template-columns:minmax(0,1fr) 92px;
-}
+/* COLLEGE DREAMS · Ajustes finales del último mensaje */
 
+/* Eliminar la línea superior del último mensaje */
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-forum-item-lastpost {
-  grid-area:lastpost !important;
-  display:flex !important;
-  align-items:center !important;
-  align-self:end !important;
-  gap:14px !important;
-  width:100%;
-  min-width:0;
-  padding:12px 0 0 !important;
-  border:0 !important;
-  border-top:1px solid var(--campus-border) !important;
+  border-top: 0 !important;
+  padding-top: 0 !important;
 }
 
+/* Estadísticas: misma altura que el avatar */
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-forum-item-stats {
+  box-sizing: border-box !important;
+  height: 100px !important;
+  min-height: 100px !important;
+  padding: 12px 14px !important;
+  justify-content: space-evenly !important;
+  align-self: center !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+}
+
+/* Mantener el avatar exactamente en 80 × 100 */
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-forum-item-lastpost .lastpost-avatar {
-  display:block;
-  flex:0 0 80px !important;
-  width:80px !important;
-  height:100px !important;
-  min-width:80px !important;
-  min-height:100px !important;
-  margin:0 !important;
-  overflow:hidden;
-  border:1px solid var(--season-primary);
-  border-radius:8px;
+  box-sizing: border-box !important;
+  width: 80px !important;
+  height: 100px !important;
+  min-height: 100px !important;
+  flex: 0 0 80px !important;
 }
 
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-forum-item-lastpost .lastpost-avatar :is(a,img) {
-  display:block;
-  width:100% !important;
-  height:100% !important;
-  object-fit:cover;
-  border-radius:0 !important;
-}
-
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-forum-item-lastpost :is(.lastpost-infos,.AD_LastInfos) {
-  display:flex;
-  flex:1;
-  flex-direction:row;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px 14px;
-  min-width:0;
-}
-
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-lastpost-topic {
-  flex:1 1 130px;
-  min-width:0;
-  color:var(--campus-text) !important;
-  font-size:13px;
-  font-weight:800;
-  line-height:1.4;
-  text-decoration:none;
-}
-
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-lastpost-topic:hover {
-  color:var(--season-primary) !important;
-}
-
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-lastpost-meta,
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-lastpost-date {
-  color:var(--campus-muted);
-  font-size:10px;
-  line-height:1.5;
-}
 
 /* COLLEGE DREAMS · Estadísticas destacadas */
 .campus-forum-category:not(.campus-forum-category--information)
