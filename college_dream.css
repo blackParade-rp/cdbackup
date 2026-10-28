@@ -3480,16 +3480,6 @@ body#modernbb
    CUADRÍCULA ÚNICA Y ESTABLE
    ============================================================ */
 
-/*
-   Las cabeceras y las tarjetas utilizan exactamente
-   las mismas cuatro columnas:
-
-   1. Título
-   2. Respuestas
-   3. Visitas
-   4. Último mensaje
-*/
-
 body#modernbb
 .forumbg .topiclist.topics > li.header > dl.icon,
 body#modernbb
@@ -3578,11 +3568,6 @@ body#modernbb
 /* ============================================================
    ICONO DE ESTADO
    ============================================================ */
-
-/*
-   La posición relativa pertenece únicamente a .dterm.
-   El icono se posiciona respecto a esa celda.
-*/
 
 body#modernbb
 .campus-topic-row
@@ -3710,7 +3695,6 @@ body#modernbb
 }
 /* ==================================================
    COLLEGE DREAMS · AVATAR DEL ÚLTIMO MENSAJE
-   Ajuste de proporciones y centrado
    ================================================== */
 
 body#modernbb
@@ -3802,35 +3786,93 @@ body#modernbb
 }
 
 /* ==========================================
-   COLLEGE DREAMS · INTERIOR DE LOS TEMAS
-   A. ESTRUCTURA GENERAL
+   COLLEGE DREAMS · ESTRUCTURA DE PUBLICACIONES
+   A ESTRUCTURA
 ========================================== */
 
 body#modernbb .campus-role-post {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  grid-template-areas:
-    "head profile"
-    "body profile"
-    "likes profile";
-  column-gap: 22px;
-  row-gap: 0;
+    display: grid !important;
 
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
+    grid-template-columns: minmax(0, 1fr) 300px !important;
 
-  padding: 22px !important;
-  margin: 0 0 22px;
+    grid-template-areas:
+        "head profile"
+        "body profile"
+        "likes profile" !important;
 
-  background: var(--campus-surface, #fff) !important;
-  border: 1px solid var(--campus-border, #dce2e8);
-  border-right: 4px solid var(--season-primary, #315f2b);
-  border-radius: 16px;
+    grid-template-rows: auto auto 1fr !important;
 
-  color: var(--campus-text, inherit);
+    column-gap: 22px !important;
+    row-gap: 0 !important;
+
+    align-items: start !important;
+    align-content: start !important;
+
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 22px !important;
+    margin: 0 0 22px;
+
+    background: var(--campus-surface, #fff) !important;
+    border: 1px solid var(--campus-border, #dce2e8);
+    border-right: 4px solid var(--season-primary, #315f2b);
+    border-radius: 16px;
+
+    color: var(--campus-text, inherit);
+}
+
+/* ==========================================
+   CABECERA, MENSAJE Y REACCIONES
+========================================== */
+
+body#modernbb .campus-role-post > .post-head {
+    grid-area: head !important;
+    align-self: start !important;
+
+    margin: 0 !important;
+    min-height: 0 !important;
+}
+
+body#modernbb .campus-role-post > .postbody {
+    grid-area: body !important;
+    align-self: start !important;
+
+    display: block !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 22px !important;
+}
+
+body#modernbb .campus-role-post > .postbody .content {
+    display: block !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body#modernbb .campus-role-post > .fa_like_div {
+    grid-area: likes !important;
+    align-self: start !important;
+
+    margin: 15px 0 0 !important;
+    padding: 0 !important;
+}
+
+/* El perfil permanece en la columna derecha */
+body#modernbb .campus-role-post > .postprofile {
+    grid-area: profile !important;
+    align-self: start !important;
 }
 
 /* Anular flotaciones y posiciones del diseño original */
@@ -4534,53 +4576,4 @@ body#modernbb .post .postprofile .postprofile-avatar + * {
     max-width: 220px !important;
   }
 
-}
-
-/* ==========================================
-   COLLEGE DREAMS · CORRECCIÓN DE ESPACIOS
-   EN EL INTERIOR DE LOS TEMAS
-========================================== */
-
-/* Columna principal del mensaje */
-body#modernbb .post .postbody {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: stretch !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-}
-
-/* Cabecera del mensaje */
-body#modernbb .post .postbody .post-head {
-    flex: 0 0 auto !important;
-    margin-bottom: 0 !important;
-}
-
-/* Cuerpo del mensaje */
-body#modernbb .post .postbody .content {
-    flex: 0 0 auto !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin: 0 !important;
-    padding: 20px 22px !important;
-
-    align-self: stretch !important;
-    justify-content: flex-start !important;
-
-    box-sizing: border-box;
-}
-
-/* Evitar espacios en el primer párrafo */
-body#modernbb .post .postbody .content > :first-child {
-    margin-top: 0 !important;
-}
-
-/* Zona de reacciones */
-body#modernbb .post .postbody .vote,
-body#modernbb .post .postbody .fa_like_div {
-    margin-top: 16px !important;
 }
