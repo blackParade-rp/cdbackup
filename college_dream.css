@@ -2866,97 +2866,68 @@ body#modernbb .campus-viewforum-info > .block > p {
 }
 
 
-/* ============================================
-   COLLEGE DREAMS · VIEWFORUM · CORRECCIONES
-   ============================================ */
+/* ==========================================
+   COLLEGE DREAMS · COLORES VIEWFORUM
+   Integración con el tema del foro
+   ========================================== */
 
-/* Verde oscuro en modo claro */
-html[data-campus-theme="light"] body#modernbb {
-  --campus-viewforum-green: #315e29;
-  --campus-viewforum-green-soft: #dfe9dc;
+/* MODO CLARO: verdes oscuros */
+html:not([data-campus-theme="dark"]) body#modernbb {
+  --vf-accent: #315f2b;
+  --vf-header-bg: #315f2b;
+  --vf-header-text: #ffffff;
+  --vf-lastpost-bg: #e3ebe0;
+  --vf-lastpost-text: #315f2b;
 }
 
-/* Verde claro en modo oscuro */
+/* MODO OSCURO: verdes claros */
 html[data-campus-theme="dark"] body#modernbb {
-  --campus-viewforum-green: #91dc7a;
-  --campus-viewforum-green-soft: #243326;
+  --vf-accent: #91dc7a;
+  --vf-header-bg: #263a27;
+  --vf-header-text: #91dc7a;
+  --vf-lastpost-bg: #202e22;
+  --vf-lastpost-text: #91dc7a;
 }
 
-/* Acentos y bordes */
-body#modernbb .campus-viewforum-header,
-body#modernbb .forumbg:has(.campus-topic-row),
-body#modernbb .campus-viewforum-footer {
-  border-right-color: var(--campus-viewforum-green) !important;
-}
-
-body#modernbb .campus-viewforum-header .page-title a,
-body#modernbb .campus-topic-count strong {
-  color: var(--campus-viewforum-green) !important;
-}
-
-/* Cabeceras adaptadas a cada modo */
+/* Cabeceras de anuncios y temas */
 body#modernbb .forumbg:has(.campus-topic-row)
-.topiclist > .header {
-  background: var(--campus-viewforum-green-soft) !important;
+.topiclist > .header,
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist .header {
+  background: var(--vf-header-bg) !important;
+  color: var(--vf-header-text) !important;
 }
 
-/* Fondo del último mensaje */
-body#modernbb .campus-topic-row .campus-topic-lastpost {
-  background: var(--campus-viewforum-green-soft) !important;
+/* Títulos e iconos de cabecera */
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist .header dt,
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist .header dd,
+body#modernbb .forumbg:has(.campus-topic-row)
+.topiclist .header i {
+  color: var(--vf-header-text) !important;
 }
 
-/* Avatar circular, sin deformación */
+/* Fondo de la información del último mensaje */
+body#modernbb .campus-topic-row
+.campus-topic-lastpost {
+  background: var(--vf-lastpost-bg) !important;
+}
+
+/* Nombre del último usuario */
+body#modernbb .campus-topic-row
+.campus-topic-lastpost .lastpost-infos a {
+  color: var(--vf-lastpost-text) !important;
+}
+
+/* Cifras de respuestas y visitas */
+body#modernbb .campus-topic-row
+.campus-topic-count strong {
+  color: var(--vf-accent) !important;
+}
+
+/* Borde circular del avatar */
 body#modernbb .campus-topic-row
 .campus-topic-lastpost .lastpost-avatar {
-  display: flex !important;
-  flex: 0 0 56px !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 56px !important;
-  min-width: 56px !important;
-  max-width: 56px !important;
-  height: 56px !important;
-  min-height: 56px !important;
-  max-height: 56px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 1px solid var(--campus-viewforum-green);
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-}
-
-body#modernbb .campus-topic-row
-.campus-topic-lastpost .lastpost-avatar img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  max-height: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 50% !important;
-}
-
-/* Evitar que la información empuje al avatar */
-body#modernbb .campus-topic-row
-.campus-topic-lastpost .lastpost-infos,
-body#modernbb .campus-topic-row
-.campus-topic-lastpost-details {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-/* Botón publicar */
-body#modernbb .campus-viewforum-header .button1 {
-  background: var(--campus-viewforum-green) !important;
-  color: #fff !important;
-}
-
-html[data-campus-theme="dark"] body#modernbb
-.campus-viewforum-header .button1 {
-  color: #152015 !important;
+  border-color: var(--vf-accent) !important;
 }
