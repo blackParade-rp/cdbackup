@@ -3708,3 +3708,79 @@ body#modernbb
     display: none !important;
   }
 }
+/* ==================================================
+   COLLEGE DREAMS · AVATAR DEL ÚLTIMO MENSAJE
+   Ajuste de proporciones y centrado
+   ================================================== */
+
+body#modernbb
+.campus-topic-row .campus-topic-lastpost .lastpost-avatar {
+  position: relative !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex: 0 0 54px !important;
+
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  min-height: 54px !important;
+
+  aspect-ratio: 1 / 1;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+  border: 1px solid var(--season-primary) !important;
+  border-radius: 50% !important;
+
+  overflow: hidden !important;
+}
+
+/* Enlace que envuelve el avatar */
+
+body#modernbb
+.campus-topic-row .lastpost-avatar > a {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 50% !important;
+
+  overflow: hidden !important;
+}
+
+/* Imagen real */
+
+body#modernbb
+.campus-topic-row .lastpost-avatar img {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  min-width: 100% !important;
+  min-height: 100% !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  border: 0 !important;
+  border-radius: 50% !important;
+
+  transform: none !important;
+}
