@@ -1840,3 +1840,190 @@ html[data-campus-theme="dark"]
 .campus-forum-category--information .campus-forum-item-stats {
   background:rgba(143,219,121,.14);
 }
+
+
+/* ==================================================
+   COLLEGE DREAMS · PANEL DE COMUNIDAD
+   Índice: conectados, estadísticas y grupos
+   ================================================== */
+
+.campus-community {
+  margin:24px 0;
+  padding:22px;
+  background:var(--campus-surface);
+  color:var(--campus-text);
+  border:1px solid var(--campus-border);
+  border-right:4px solid var(--season-primary);
+  border-radius:15px;
+}
+
+.campus-community-header {
+  margin-bottom:20px;
+}
+
+.campus-community-kicker,
+.campus-community-eyebrow {
+  display:block;
+  color:var(--campus-muted);
+  font:700 9px var(--campus-mono-font);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.campus-community-header h2 {
+  margin:9px 0 4px;
+  color:var(--season-primary);
+  font:400 54px/1.2 var(--campus-accent-font);
+}
+
+.campus-community-header p,
+.campus-community-groups > p {
+  margin:0;
+  color:var(--campus-muted);
+  font-size:12px;
+}
+
+.campus-community-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.campus-community-card {
+  min-width:0;
+  overflow:hidden;
+  background:var(--campus-bg);
+  border:1px solid var(--campus-border);
+  border-radius:11px;
+}
+
+.campus-community-card h3,
+.campus-community-groups h3 {
+  margin:0;
+  padding:14px;
+  background:rgba(75,135,65,.18);
+  border-bottom:1px solid var(--campus-border);
+  color:var(--campus-text);
+  font-size:12px;
+  font-weight:800;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.campus-community-card-body {
+  padding:18px;
+  font-size:12px;
+  line-height:1.8;
+  overflow-wrap:anywhere;
+}
+
+.campus-community-online {
+  margin-bottom:12px;
+  font-weight:700;
+}
+
+.campus-community-users,
+.campus-community-recent {
+  line-height:2;
+}
+
+.campus-community-record,
+.campus-community-activity {
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid var(--campus-border);
+  color:var(--campus-muted);
+  font-size:10px;
+}
+
+.campus-community-newest {
+  margin:12px 0;
+  font:400 29px/1.3 var(--campus-accent-font);
+}
+
+.campus-community-newest a {
+  color:var(--season-primary);
+  text-decoration:none;
+}
+
+.campus-community-card-body > p {
+  color:var(--campus-muted);
+  font-size:11px;
+}
+
+.campus-community-statline {
+  padding:12px 0;
+  border-bottom:1px solid var(--campus-border);
+}
+
+.campus-community-statline:last-child {
+  border-bottom:0;
+}
+
+.campus-community-groups {
+  margin-top:18px;
+  padding:0 0 18px;
+  border:1px solid var(--campus-border);
+  border-radius:11px;
+  overflow:hidden;
+}
+
+.campus-community-groups > p {
+  padding:14px 16px 0;
+  text-align:center;
+}
+
+.campus-community-group-list {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+  padding:18px;
+}
+
+.campus-community-group {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:9px;
+  border:1px solid var(--campus-border);
+  border-radius:8px;
+  background:var(--campus-bg);
+  font-size:10px;
+  font-weight:800;
+  text-align:center;
+  text-decoration:none!important;
+  transition:background .2s,border-color .2s;
+}
+
+.campus-community-group:hover {
+  background:rgba(75,135,65,.12);
+  border-color:var(--season-primary);
+}
+
+.campus-community-birthdays {
+  margin-top:15px;
+  color:var(--campus-muted);
+  font-size:10px;
+  line-height:1.8;
+}
+
+html[data-campus-theme="dark"]
+.campus-community-card h3,
+html[data-campus-theme="dark"]
+.campus-community-groups h3 {
+  background:rgba(143,219,121,.15);
+}
+
+@media(max-width:850px) {
+  .campus-community-grid {
+    grid-template-columns:minmax(0,1fr);
+  }
+  .campus-community-group-list {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .campus-community-header h2 {
+    font-size:42px;
+  }
+}
