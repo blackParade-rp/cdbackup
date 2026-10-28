@@ -3800,3 +3800,421 @@ body#modernbb
   object-fit: contain;
   object-position: center top;
 }
+
+/* ==========================================
+   COLLEGE DREAMS · INTERIOR DE LOS TEMAS
+   A. ESTRUCTURA GENERAL
+========================================== */
+
+body#modernbb .campus-role-post {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-areas:
+    "head profile"
+    "body profile"
+    "likes profile";
+  column-gap: 22px;
+  row-gap: 0;
+
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+
+  padding: 22px !important;
+  margin: 0 0 22px;
+
+  background: var(--campus-surface, #fff) !important;
+  border: 1px solid var(--campus-border, #dce2e8);
+  border-right: 4px solid var(--season-primary, #315f2b);
+  border-radius: 16px;
+
+  color: var(--campus-text, inherit);
+}
+
+/* Anular flotaciones y posiciones del diseño original */
+
+body#modernbb .campus-role-post > .postprofile {
+  grid-area: profile;
+  float: none !important;
+  position: relative !important;
+  inset: auto !important;
+
+  width: 300px !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+body#modernbb .campus-role-post > .post-head {
+  grid-area: head;
+  float: none !important;
+  position: relative !important;
+  inset: auto !important;
+
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+body#modernbb .campus-role-post > .postbody {
+  grid-area: body;
+  float: none !important;
+  position: relative !important;
+  inset: auto !important;
+
+  width: 100% !important;
+  min-width: 0;
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+body#modernbb .campus-role-post > .fa_like_div {
+  grid-area: likes;
+  min-width: 0;
+  margin-top: 15px;
+}
+
+/* ==========================================
+   B. AVATAR 300 × 450
+========================================== */
+
+body#modernbb .campus-role-post .postprofile-avatar {
+  display: block !important;
+  float: none !important;
+  position: relative !important;
+
+  width: 300px !important;
+  max-width: 100% !important;
+  height: 450px !important;
+  min-height: 0 !important;
+
+  margin: 0 auto 16px !important;
+  padding: 0 !important;
+
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--campus-border, #dce2e8);
+
+  background: var(--campus-bg, #f4f5f6);
+  box-sizing: border-box;
+}
+
+body#modernbb .campus-role-post .postprofile-avatar a {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body#modernbb .campus-role-post .postprofile-avatar img {
+  display: block !important;
+  float: none !important;
+  position: static !important;
+
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+  object-position: center top !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* ==========================================
+   C. FICHA DEL PERSONAJE
+========================================== */
+
+body#modernbb .campus-role-post .postprofile {
+  background: var(--campus-bg, #f4f5f6);
+  border: 1px solid var(--campus-border, #dce2e8);
+  border-radius: 12px;
+  padding: 14px !important;
+}
+
+body#modernbb .campus-role-post .postprofile > dl {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body#modernbb .campus-role-post .postprofile > dl > dt {
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+body#modernbb .campus-role-post .postprofile-name {
+  display: block;
+  width: 100%;
+  margin: 0 0 7px;
+  text-align: center;
+
+  font-family: "Bright Holiday", cursive;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+/* Conservar el color del grupo en el nombre */
+
+body#modernbb .campus-role-post .postprofile-name a,
+body#modernbb .campus-role-post .postprofile-name span {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body#modernbb .campus-role-post .postprofile-rank {
+  display: block;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0 0 14px;
+
+  border-bottom: 1px solid var(--campus-border, #dce2e8);
+
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--season-primary, #315f2b);
+}
+
+/* Datos de perfil */
+
+body#modernbb .campus-role-post .postprofile-info {
+  display: block !important;
+  float: none !important;
+
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 12px !important;
+
+  background: var(--campus-surface, #fff);
+  border: 1px solid var(--campus-border, #dce2e8);
+  border-radius: 9px;
+
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* Contactos */
+
+body#modernbb .campus-role-post .postprofile-contact {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  width: 100% !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+}
+
+body#modernbb .campus-role-post .postprofile-contact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   D. CABECERA Y CONTENIDO
+========================================== */
+
+body#modernbb .campus-role-post .post-head {
+  align-self: start;
+
+  padding: 17px 20px !important;
+
+  background: var(--campus-bg, #f4f5f6);
+  border: 1px solid var(--campus-border, #dce2e8);
+  border-radius: 10px 10px 0 0;
+}
+
+body#modernbb .campus-role-post .post-head .topic-title {
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+
+  font-family: "Bright Holiday", cursive;
+  font-size: clamp(23px, 2.4vw, 34px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+body#modernbb .campus-role-post .post-head .topic-title a {
+  color: var(--season-primary, #315f2b);
+  font: inherit;
+}
+
+body#modernbb .campus-role-post .topic-date {
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--campus-muted, #738095);
+}
+
+body#modernbb .campus-role-post .postbody {
+  padding: 22px !important;
+
+  background: var(--campus-surface, #fff);
+  border: 1px solid var(--campus-border, #dce2e8);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+body#modernbb .campus-role-post .postbody .content {
+  width: 100% !important;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+body#modernbb .campus-role-post .postbody .content img {
+  max-width: 100%;
+  height: auto;
+}
+
+body#modernbb .campus-role-post .signature_div {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--campus-border, #dce2e8);
+}
+
+/* ==========================================
+   E. MODO OSCURO
+========================================== */
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post {
+  background: #1b1b1b !important;
+  border-color: #353b35;
+  border-right-color: var(--season-primary, #8bdd78);
+  color: #e7e9e7;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postprofile {
+  background: #202a20;
+  border-color: #354335;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postprofile-avatar {
+  background: #151815;
+  border-color: #354335;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postprofile-info,
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postbody {
+  background: #121412;
+  border-color: #353b35;
+  color: #e7e9e7;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .post-head {
+  background: #243424;
+  border-color: #354335;
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .post-head .topic-title a,
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postprofile-rank {
+  color: var(--season-primary, #8bdd78);
+}
+
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .postprofile-rank,
+html[data-campus-theme="dark"]
+body#modernbb .campus-role-post .signature_div {
+  border-color: #354335;
+}
+
+/* ==========================================
+   F. RESPONSIVE
+========================================== */
+
+@media (max-width: 950px) {
+  body#modernbb .campus-role-post {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    column-gap: 14px;
+    padding: 14px !important;
+  }
+
+  body#modernbb .campus-role-post > .postprofile {
+    width: 240px !important;
+  }
+
+  body#modernbb .campus-role-post .postprofile-avatar {
+    width: 210px !important;
+    height: 315px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  body#modernbb .campus-role-post {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "profile"
+      "head"
+      "body"
+      "likes";
+    gap: 12px;
+  }
+
+  body#modernbb .campus-role-post > .postprofile {
+    width: 100% !important;
+  }
+
+  body#modernbb .campus-role-post .postprofile-avatar {
+    width: min(300px, 100%) !important;
+    height: auto !important;
+    aspect-ratio: 2 / 3;
+  }
+
+  body#modernbb .campus-role-post .post-head,
+  body#modernbb .campus-role-post .postbody {
+    border: 1px solid var(--campus-border, #dce2e8);
+    border-radius: 10px;
+  }
+}
+
+
