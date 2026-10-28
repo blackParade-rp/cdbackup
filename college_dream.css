@@ -1534,3 +1534,15 @@ html[data-campus-theme="dark"]
     margin: 0 -12px 0 !important;
   }
 }
+
+/* COLLEGE DREAMS · Eliminar hueco sobre títulos normales */
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-forum-item-inner {
+  padding-top: 0 !important;
+}
+
+.campus-forum-category:not(.campus-forum-category--information)
+.campus-forum-item-heading {
+  align-self: start;
+  margin-top: 0 !important;
+}
