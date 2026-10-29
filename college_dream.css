@@ -4973,3 +4973,209 @@ body#modernbb .campus-role-post
         transform: none;
     }
 }
+
+
+/* ==========================================
+   COLLEGE DREAMS · CABECERA COMPACTA
+   Solo mensajes individuales
+========================================== */
+
+body#modernbb .campus-role-post > .post-head {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  align-content: center !important;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 3px;
+
+  min-height: 0 !important;
+  height: auto !important;
+  padding:
+    var(--campus-post-head-padding-y)
+    var(--campus-post-head-padding-x) !important;
+}
+
+/* Título: columna izquierda */
+body#modernbb .campus-role-post .post-head > .topic-title {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  margin: 0 !important;
+  min-width: 0;
+}
+
+/* Fecha: debajo del título */
+body#modernbb .campus-role-post .post-head > .topic-date {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  margin: 0 !important;
+  font-family: var(--campus-mono-font);
+  color: var(--campus-muted);
+}
+
+/* Acciones: dos filas a la derecha */
+body#modernbb .campus-role-post .campus-post-actions {
+  grid-column: 2;
+  grid-row: 1 / 3;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  gap: 5px !important;
+
+  width: auto !important;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Primera fila */
+body#modernbb .campus-role-post
+.campus-post-actions .menu-wrap {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body#modernbb .campus-role-post
+.campus-post-actions .profile-icons {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--campus-post-action-gap);
+  position: static !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body#modernbb .campus-role-post
+.campus-post-actions .profile-icons > li {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+/* Segunda fila */
+body#modernbb .campus-role-post
+.campus-post-actions .campus-post-contact {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--campus-post-action-gap) !important;
+
+  width: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* Botones Font Awesome de ambas filas */
+body#modernbb .campus-role-post
+.campus-post-actions :is(.profile-icons, .campus-post-contact) a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--campus-post-action-size) !important;
+  height: var(--campus-post-action-size) !important;
+  min-width: var(--campus-post-action-size);
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: var(--campus-post-action-fg) !important;
+  background: var(--campus-post-action-bg) !important;
+  border: 1px solid var(--campus-border);
+  border-radius: 6px;
+  text-decoration: none !important;
+  line-height: 1;
+}
+
+body#modernbb .campus-role-post
+.campus-post-actions a:hover {
+  color: var(--campus-post-action-hover) !important;
+  border-color: var(--season-primary);
+}
+
+/* Iconos insertados mediante JS */
+body#modernbb .campus-role-post
+.campus-post-actions .campus-fa-action {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  color: inherit !important;
+}
+
+/* Ocultar solo imágenes sustituidas */
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > img {
+  display: none !important;
+}
+
+/* Ocultar el botón + cuando las acciones
+   están visibles en la primera fila */
+body#modernbb .campus-role-post
+.campus-post-actions .post-menu {
+  display: none !important;
+}
+
+/* ==========================================
+   FLECHAS DE NAVEGACIÓN
+========================================== */
+
+body#modernbb .topic-actions
+:is(.pagination, .pagination a) {
+  color: var(--campus-topic-arrow-fg);
+}
+
+body#modernbb .topic-actions .pagination a,
+body#modernbb .topic-actions a.campus-nav-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 5px 8px;
+  background: var(--campus-topic-arrow-bg) !important;
+  color: var(--campus-topic-arrow-fg) !important;
+  border: 1px solid var(--campus-topic-arrow-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  body#modernbb .campus-role-post > .post-head {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 7px;
+  }
+
+  body#modernbb .campus-role-post
+  .campus-post-actions {
+    grid-column: 1;
+    grid-row: 3;
+    align-items: flex-start !important;
+  }
+
+  body#modernbb .campus-role-post
+  .campus-post-actions :is(.profile-icons, .campus-post-contact) {
+    justify-content: flex-start;
+  }
+}
+
