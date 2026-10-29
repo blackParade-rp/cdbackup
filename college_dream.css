@@ -5563,7 +5563,7 @@ body#modernbb .campus-role-post > .postprofile {
 /* Avatar, nombre y rango siguen el scroll */
 body#modernbb .campus-role-post > .postprofile > dl {
   position: sticky !important;
-  top: 16px !important;
+  top: calc(var(--campus-nav-small) + 16px) !important;
   align-self: flex-start;
   height: max-content !important;
   overflow: visible !important;
@@ -5616,4 +5616,16 @@ body#modernbb .campus-role-post
 body#modernbb .campus-role-post
 .campus-avatar-overlay .campus-profile-data-item {
   color: var(--campus-profile-data-text) !important;
+}
+
+/* Navbar completa */
+body#modernbb:not(.campus-scrolled)
+.campus-role-post > .postprofile > dl {
+  top: calc(var(--campus-nav-height) + 16px) !important;
+}
+
+/* Navbar compacta al desplazarse */
+body#modernbb.campus-scrolled
+.campus-role-post > .postprofile > dl {
+  top: calc(var(--campus-nav-small) + 16px) !important;
 }
