@@ -5410,3 +5410,92 @@ body#modernbb .campus-role-post
 }
 
 
+/* ==========================================
+   COLLEGE DREAMS · DATOS DEL HOVER
+   ========================================== */
+
+/* Contenedor de datos */
+body#modernbb .campus-role-post
+.campus-avatar-overlay .postprofile-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--campus-profile-data-gap);
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Primera fila: Mensajes | USD */
+body#modernbb .campus-role-post
+.campus-profile-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--campus-profile-data-gap);
+  width: 100%;
+}
+
+/* Todas las tarjetas */
+body#modernbb .campus-role-post
+.campus-profile-data-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 30px;
+  padding: 7px 8px !important;
+
+  background: var(--campus-profile-data-bg) !important;
+  border: 1px solid var(--campus-profile-data-border) !important;
+  border-radius: var(--campus-profile-data-radius);
+
+  color: var(--campus-profile-data-text) !important;
+  font-family: var(--campus-mono-font);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* Los valores heredan el color de la tarjeta */
+body#modernbb .campus-role-post
+.campus-profile-data-item * {
+  color: inherit !important;
+}
+
+/* Eliminar etiquetas residuales */
+body#modernbb .campus-role-post
+.campus-profile-data-item .label {
+  display: none !important;
+}
+
+/* Evitar saltos de línea internos */
+body#modernbb .campus-role-post
+.campus-profile-data-item br {
+  display: none !important;
+}
+
+/* Ocultar el icono de perfil original en el hover.
+   El icono clonado de la cabecera no se ve afectado. */
+body#modernbb .campus-role-post
+.campus-avatar-overlay
+.postprofile-info img[alt="Icono de personaje"] {
+  display: none !important;
+}
+
+/* Quitar línea inferior del rango */
+body#modernbb .campus-role-post
+.campus-profile-identity,
+body#modernbb .campus-role-post
+.campus-profile-identity .postprofile-rank {
+  border-bottom: none !important;
+}
+
+body#modernbb .campus-role-post
+.campus-profile-identity::after,
+body#modernbb .campus-role-post
+.campus-profile-identity .postprofile-rank::after {
+  content: none !important;
+}
+
