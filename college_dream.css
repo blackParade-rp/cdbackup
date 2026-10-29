@@ -5178,4 +5178,50 @@ body#modernbb .topic-actions a.campus-nav-arrow {
     justify-content: flex-start;
   }
 }
+/* ==========================================
+   COLLEGE DREAMS · CORREGIR ICONOS DUPLICADOS
+   ========================================== */
 
+/* Ocultar iconos originales de Foroactivo
+   únicamente cuando Font Awesome ya está insertado */
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > img,
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > .ion,
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > .fa:not(.campus-fa-action),
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > .fas:not(.campus-fa-action),
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > .far:not(.campus-fa-action),
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > .fa-solid:not(.campus-fa-action) {
+  display: none !important;
+}
+
+/* Eliminar iconos originales generados con pseudoelementos */
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready::before,
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Mostrar únicamente el icono nuevo */
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready > .campus-fa-action {
+  display: inline-block !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  color: inherit !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+}
