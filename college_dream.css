@@ -5540,3 +5540,38 @@ body#modernbb .campus-role-post
     max-height: none !important;
   }
 }
+
+
+/* ==========================================
+   COLLEGE DREAMS · CORRECCIÓN PERFIL STICKY
+   ========================================== */
+
+/* El post no debe recortar el desplazamiento
+   del perfil lateral */
+body#modernbb .campus-role-post {
+  overflow: visible !important;
+}
+
+/* La columna del perfil ocupa toda la altura
+   disponible del mensaje */
+body#modernbb .campus-role-post > .postprofile {
+  align-self: stretch !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Avatar, nombre y rango siguen el scroll */
+body#modernbb .campus-role-post > .postprofile > dl {
+  position: sticky !important;
+  top: 16px !important;
+  align-self: flex-start;
+  height: max-content !important;
+  overflow: visible !important;
+}
+
+/* Mantener el comportamiento normal en móviles */
+@media (max-width: 700px) {
+  body#modernbb .campus-role-post > .postprofile > dl {
+    position: static !important;
+  }
+}
