@@ -5256,3 +5256,79 @@ body#modernbb .campus-role-post
 body#modernbb .campus-role-post .profile-icons li.btn-quote-multi {
   display: none !important;
 }
+
+
+/* ==========================================
+   COLLEGE DREAMS · ICONO DE PERFIL EN POSTS
+   ========================================== */
+
+body#modernbb .campus-role-post > .post-head:has(
+  .campus-post-profile-icon
+) {
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  column-gap: 14px;
+}
+
+/* Icono de 100 × 100 */
+body#modernbb .campus-role-post
+.campus-post-profile-icon {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--campus-border);
+  background: var(--campus-surface);
+  align-self: center;
+}
+
+body#modernbb .campus-role-post
+.campus-post-profile-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Título y fecha en la columna central */
+body#modernbb .campus-role-post
+.post-head:has(.campus-post-profile-icon)
+> .topic-title,
+body#modernbb .campus-role-post
+.post-head:has(.campus-post-profile-icon)
+> .topic-date {
+  grid-column: 2;
+}
+
+/* Acciones a la derecha */
+body#modernbb .campus-role-post
+.post-head:has(.campus-post-profile-icon)
+> .campus-post-actions {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 700px) {
+  body#modernbb .campus-role-post
+  > .post-head:has(.campus-post-profile-icon) {
+    grid-template-columns: 70px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 10px;
+  }
+
+  body#modernbb .campus-role-post
+  .campus-post-profile-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  body#modernbb .campus-role-post
+  .post-head:has(.campus-post-profile-icon)
+  > .campus-post-actions {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
