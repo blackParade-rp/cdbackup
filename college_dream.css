@@ -5178,50 +5178,77 @@ body#modernbb .topic-actions a.campus-nav-arrow {
     justify-content: flex-start;
   }
 }
+
 /* ==========================================
-   COLLEGE DREAMS · CORREGIR ICONOS DUPLICADOS
+   COLLEGE DREAMS · ICONOS SIN DUPLICADOS
    ========================================== */
 
-/* Ocultar iconos originales de Foroactivo
-   únicamente cuando Font Awesome ya está insertado */
-
+/* Ocultar cualquier contenido original del enlace,
+   sin eliminarlo del DOM ni alterar su funcionamiento */
 body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > img,
-
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > .ion,
-
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > .fa:not(.campus-fa-action),
-
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > .fas:not(.campus-fa-action),
-
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > .far:not(.campus-fa-action),
-
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > .fa-solid:not(.campus-fa-action) {
+.campus-post-actions a.campus-icon-ready
+> :not(.campus-fa-action) {
   display: none !important;
 }
 
-/* Eliminar iconos originales generados con pseudoelementos */
+/* Ocultar también texto original suelto del enlace */
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready {
+  font-size: 0 !important;
+}
+
+/* Ocultar pseudoelementos originales del enlace */
 body#modernbb .campus-role-post
 .campus-post-actions a.campus-icon-ready::before,
-
 body#modernbb .campus-role-post
 .campus-post-actions a.campus-icon-ready::after {
   content: none !important;
   display: none !important;
 }
 
-/* Mostrar únicamente el icono nuevo */
+/* Algunos iconos de Foroactivo se dibujan
+   sobre el LI, no sobre el enlace */
 body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > .campus-fa-action {
+.campus-post-actions
+.profile-icons li.campus-icon-item-ready::before,
+body#modernbb .campus-role-post
+.campus-post-actions
+.profile-icons li.campus-icon-item-ready::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Único icono visible */
+body#modernbb .campus-role-post
+.campus-post-actions
+a.campus-icon-ready > .campus-fa-action {
   display: inline-block !important;
+  position: static !important;
+
   font-family: "Font Awesome 6 Free" !important;
+  font-style: normal !important;
   font-weight: 900 !important;
-  color: inherit !important;
   font-size: 12px !important;
   line-height: 1 !important;
+
+  color: inherit !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Mantener la apariencia existente de los botones */
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready {
+  color: var(--campus-post-action-fg) !important;
+  background: var(--campus-post-action-bg) !important;
+  border-color: var(--campus-border) !important;
+}
+
+body#modernbb .campus-role-post
+.campus-post-actions a.campus-icon-ready:hover {
+  color: var(--campus-post-action-hover) !important;
+  border-color: var(--season-primary) !important;
 }
