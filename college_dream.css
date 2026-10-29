@@ -5252,3 +5252,7 @@ body#modernbb .campus-role-post
   color: var(--campus-post-action-hover) !important;
   border-color: var(--season-primary) !important;
 }
+/* COLLEGE DREAMS · Ocultar cita múltiple (Quote+) */
+body#modernbb .campus-role-post .profile-icons li.btn-quote-multi {
+  display: none !important;
+}
