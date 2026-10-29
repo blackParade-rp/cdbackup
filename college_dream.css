@@ -5332,3 +5332,81 @@ body#modernbb .campus-role-post
   }
 }
 
+
+/* ==========================================
+   COLLEGE DREAMS · DATOS DEL AVATAR
+   ========================================== */
+
+/* Quitar la línea debajo del rango */
+body#modernbb .campus-role-post
+.campus-profile-identity {
+  border-bottom: 0 !important;
+}
+
+body#modernbb .campus-role-post
+.campus-profile-identity .postprofile-rank {
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+body#modernbb .campus-role-post
+.campus-profile-identity::after,
+body#modernbb .campus-role-post
+.campus-profile-identity .postprofile-rank::after {
+  content: none !important;
+}
+
+/* Distribución de datos dentro del avatar */
+body#modernbb .campus-role-post
+.campus-avatar-overlay {
+  justify-content: center !important;
+  padding: 14px !important;
+}
+
+/* Contenedor de los campos */
+body#modernbb .campus-role-post
+.campus-avatar-overlay .postprofile-info {
+  display: flex !important;
+  flex-direction: column;
+  gap: var(--campus-profile-data-gap);
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Cada dato ocupa una tarjeta independiente */
+body#modernbb .campus-role-post
+.campus-avatar-overlay .campus-profile-data-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+  padding: 6px 9px;
+
+  color: var(--campus-profile-data-text) !important;
+  background: var(--campus-profile-data-bg);
+  border: 1px solid var(--campus-profile-data-border);
+  border-radius: var(--campus-profile-data-radius);
+
+  font-family: var(--campus-mono-font);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* Los valores heredan el color del dato */
+body#modernbb .campus-role-post
+.campus-profile-data-item * {
+  color: inherit !important;
+}
+
+/* Evitar separadores innecesarios */
+body#modernbb .campus-role-post
+.campus-profile-data-item br {
+  display: none !important;
+}
+
+
