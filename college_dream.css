@@ -4753,3 +4753,225 @@ body#modernbb .campus-role-post
         );
     }
 }
+
+/* =========================================
+   COLLEGE DREAMS · AVATAR Y PERFIL
+========================================= */
+
+/* Avatar vertical */
+body#modernbb .campus-role-post .campus-avatar-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    isolation: isolate;
+}
+
+/* Conservar proporción 300x450 */
+body#modernbb .campus-role-post
+.campus-avatar-wrap .postprofile-avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+body#modernbb .campus-role-post
+.campus-avatar-wrap .postprofile-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
+/* Datos ocultos dentro del avatar */
+body#modernbb .campus-role-post .campus-avatar-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        to top,
+        rgba(10, 22, 14, .97),
+        rgba(10, 22, 14, .85) 50%,
+        rgba(10, 22, 14, .2)
+    );
+
+    color: #f1f6ef;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease,
+        transform .25s ease;
+
+    overflow-y: auto;
+}
+
+/* Mostrar información al pasar el ratón */
+body#modernbb .campus-role-post
+.campus-avatar-wrap:hover .campus-avatar-overlay,
+body#modernbb .campus-role-post
+.campus-avatar-wrap:focus-within .campus-avatar-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Neutralizar el estilo antiguo de los datos */
+body#modernbb .campus-role-post
+.campus-avatar-overlay .postprofile-info {
+    display: block;
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #f1f6ef;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+body#modernbb .campus-role-post
+.campus-avatar-overlay .postprofile-info * {
+    color: inherit;
+}
+
+body#modernbb .campus-role-post
+.campus-avatar-overlay .postprofile-info strong,
+body#modernbb .campus-role-post
+.campus-avatar-overlay .postprofile-info b {
+    color: #a7e899;
+}
+
+/* Nombre y rango bajo el avatar */
+body#modernbb .campus-role-post
+.campus-profile-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    padding: 14px 0 4px;
+    text-align: center;
+}
+
+body#modernbb .campus-role-post
+.campus-profile-identity .postprofile-name {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body#modernbb .campus-role-post
+.campus-profile-identity .postprofile-rank {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* =========================================
+   CONTACTOS EN LA CABECERA DEL MENSAJE
+========================================= */
+
+body#modernbb .campus-role-post
+.campus-post-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+
+    margin-left: auto;
+    width: max-content;
+    max-width: 100%;
+}
+
+/* Conservar los botones originales */
+body#modernbb .campus-role-post
+.campus-post-actions .menu-wrap {
+    margin: 0;
+}
+
+/* Segunda fila: iconos de contacto */
+body#modernbb .campus-role-post
+.campus-post-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    width: auto;
+    min-height: 26px;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body#modernbb .campus-role-post
+.campus-post-contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 6px;
+    color: var(--season-primary);
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+}
+
+body#modernbb .campus-role-post
+.campus-post-contact a:hover {
+    background: rgba(125, 185, 110, .14);
+    transform: translateY(-2px);
+}
+
+/* Evitar que los iconos se desborden */
+body#modernbb .campus-role-post
+.campus-post-contact img {
+    max-width: 20px;
+    max-height: 20px;
+    object-fit: contain;
+}
+
+/* Acceso a datos en dispositivos táctiles */
+@media (hover: none) {
+    body#modernbb .campus-role-post
+    .campus-avatar-wrap:focus-within
+    .campus-avatar-overlay {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
