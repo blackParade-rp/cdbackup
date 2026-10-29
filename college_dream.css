@@ -1,7 +1,6 @@
 /* ======================================================================
-   COLLEGE DREAMS · HOJA DE ESTILOS PRINCIPAL (GitHub)
+   COLLEGE DREAMS · HOJA DE ESTILOS PRINCIPAL 
    ====================================================================== */
-
 /* ====================================================================
    01 · BASE DEL FORO Y CONTENEDORES
    ==================================================================== */
@@ -392,11 +391,9 @@ body#modernbb .campus-nav #modernbb-nav-menu a.campus-new-message .campus-fa-ico
     display:flex !important; position:static !important; flex:0 0 auto !important; align-items:center !important;
     margin-left:auto !important; gap:3px !important;
   }
-  body#modernbb .campus-theme-toggle, body#modernbb .campus-icon-button, 
-/* ====================================================================
-   04 · GESTOR DE MULTICUENTAS
-   ==================================================================== */
-body#modernbb #campus-accounts-toggle {
+  body#modernbb .campus-theme-toggle,
+  body#modernbb .campus-icon-button,
+  body#modernbb #campus-accounts-toggle {
     width:28px !important; height:28px !important; flex:0 0 28px !important; padding:0 !important;
   }
   body#modernbb .campus-nav .campus-icon-button i, body#modernbb .campus-nav .campus-theme-toggle i {
@@ -1444,8 +1441,6 @@ body#modernbb .campus-forum-category
     font-size: clamp(42px, 9vw, 58px) !important;
   }
 }
-
-
 /* ====================================================================
    09 · AJUSTES FINALES DE TARJETAS NORMALES
    ==================================================================== */
@@ -1461,7 +1456,6 @@ body#modernbb .campus-forum-category
     background-position: center !important;
   }
 }
-
 
 /* ====================================================================
    10 · ÚLTIMO MENSAJE DE TARJETAS NORMALES
@@ -1546,8 +1540,6 @@ body#modernbb .campus-forum-category
   font-size:10px;
 }
 
-
-
 /* ====================================================================
    11 · FRANJAS DE TÍTULOS Y MODOS DE COLOR
    ==================================================================== */
@@ -1624,8 +1616,6 @@ html[data-campus-theme="dark"]
   align-self: start;
   margin-top: 0 !important;
 }
-
-
 
 /* ====================================================================
    12 · AJUSTES DE AVATAR Y ESTADÍSTICAS
@@ -1711,13 +1701,10 @@ html[data-campus-theme="dark"]
   color:var(--campus-muted);
 }
 
-
-
 .campus-forum-category:not(.campus-forum-category--information)
 .campus-lastpost-meta .campus-lastpost-author-name:hover {
   text-decoration:underline;
 }
-
 
 /* COLLEGE DREAMS · Esquinas uniformes en todas las tarjetas */
 .campus-forum-category .campus-forum-items > .campus-forum-item {
@@ -1729,8 +1716,6 @@ html[data-campus-theme="dark"]
 .campus-forum-category .campus-forum-item-heading {
   border-radius:0 !important;
 }
-
-
 
 /* ====================================================================
    13 · TIPOGRAFÍA DEFINITIVA DEL AUTOR
@@ -4954,4 +4939,125 @@ body#modernbb .campus-role-post
         visibility: visible;
         transform: none;
     }
+}
+/* ====================================================================
+   REPARACIÓN · LISTADO DE TEMAS Y MENSAJES
+   Mantener al final del archivo; colores gobernados desde :root.
+   ==================================================================== */
+body#modernbb .campus-topic-row > dl.campus-topic-layout > dd.campus-topic-lastpost,
+body#modernbb .campus-topic-row > dl.campus-topic-layout > dd.lastpost {
+  background:var(--campus-lastpost-bg) !important;
+  border:1px solid var(--campus-lastpost-border) !important;
+  border-radius:10px !important;
+  color:var(--campus-text) !important;
+}
+body#modernbb .campus-topic-row .campus-topic-lastpost-details,
+body#modernbb .campus-topic-row .campus-topic-lastpost-details a {
+  color:var(--campus-text);
+}
+body#modernbb .campus-role-post {
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) 300px !important;
+  grid-template-areas:"head profile" "body profile" "likes profile" !important;
+  grid-template-rows:auto auto auto !important;
+  align-items:start !important;
+  align-content:start !important;
+  column-gap:22px !important;
+  row-gap:0 !important;
+  padding:22px !important;
+  margin:0 0 22px !important;
+  background:var(--campus-surface) !important;
+  border:1px solid var(--campus-border) !important;
+  border-right:4px solid var(--season-primary) !important;
+  border-radius:16px !important;
+  color:var(--campus-text) !important;
+}
+body#modernbb .campus-role-post > .post-head {
+  grid-area:head !important;
+  background:var(--campus-post-header-bg) !important;
+  border:1px solid var(--campus-border) !important;
+  border-radius:10px 10px 0 0 !important;
+  padding:18px 20px !important;
+  margin:0 !important;
+}
+body#modernbb .campus-role-post > .postbody {
+  grid-area:body !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:18px 20px !important;
+  background:var(--campus-post-content-bg) !important;
+  border:1px solid var(--campus-border) !important;
+  border-top:0 !important;
+  border-radius:0 0 10px 10px !important;
+  color:var(--campus-text) !important;
+}
+body#modernbb .campus-role-post > .postbody .content {
+  display:block !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  color:var(--campus-text) !important;
+}
+body#modernbb .campus-role-post > .fa_like_div {
+  grid-area:likes !important;
+  align-self:start !important;
+  margin:14px 0 0 !important;
+}
+body#modernbb .campus-role-post > .postprofile {
+  grid-area:profile !important;
+  width:300px !important;
+  max-width:100% !important;
+  margin:0 !important;
+  padding:15px !important;
+  background:var(--campus-profile-bg) !important;
+  border:1px solid var(--campus-border) !important;
+  border-radius:12px !important;
+  color:var(--campus-text) !important;
+}
+body#modernbb .campus-role-post .postprofile-avatar,
+body#modernbb .campus-role-post .campus-avatar-wrap {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:2 / 3 !important;
+  margin:0 auto !important;
+  overflow:hidden !important;
+  border-radius:10px !important;
+}
+body#modernbb .campus-role-post .postprofile-avatar img,
+body#modernbb .campus-role-post .campus-avatar-wrap img {
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+}
+body#modernbb .campus-topic-main-header {
+  background:var(--campus-surface) !important;
+  border-color:var(--campus-border) !important;
+  border-right-color:var(--season-primary) !important;
+}
+body#modernbb .campus-topic-main-header .page-title,
+body#modernbb .campus-topic-main-header .page-title a {
+  color:var(--season-primary) !important;
+  background:transparent !important;
+  font-family:var(--campus-accent-font) !important;
+}
+body#modernbb .campus-topic-main-header + .topic-actions {
+  background:var(--campus-surface) !important;
+  border-color:var(--campus-border) !important;
+  border-right-color:var(--season-primary) !important;
+}
+@media(max-width:800px) {
+  body#modernbb .campus-role-post {
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-template-areas:"head" "body" "likes" "profile" !important;
+    padding:14px !important;
+  }
+  body#modernbb .campus-role-post > .postprofile {
+    width:min(300px,100%) !important;
+    margin:18px auto 0 !important;
+  }
 }
