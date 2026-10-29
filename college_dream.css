@@ -5575,3 +5575,45 @@ body#modernbb .campus-role-post > .postprofile > dl {
     position: static !important;
   }
 }
+
+
+/* ==========================================
+   COLLEGE DREAMS · COLORES POR GRUPO
+   ========================================== */
+
+/* Color predeterminado para usuarios sin grupo */
+body#modernbb .campus-role-post {
+  --campus-post-group-color: var(--season-primary);
+}
+
+/* Título del mensaje */
+body#modernbb .campus-role-post
+.post-head .topic-title,
+body#modernbb .campus-role-post
+.post-head .topic-title a {
+  color: var(--campus-post-group-color) !important;
+}
+
+/* Tarjetas de datos del perfil */
+body#modernbb .campus-role-post
+.campus-avatar-overlay .campus-profile-data-item {
+  background:
+    color-mix(
+      in srgb,
+      var(--campus-post-group-color) 25%,
+      transparent
+    ) !important;
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--campus-post-group-color) 45%,
+      transparent
+    ) !important;
+}
+
+/* Valor de los datos: claro y legible */
+body#modernbb .campus-role-post
+.campus-avatar-overlay .campus-profile-data-item {
+  color: var(--campus-profile-data-text) !important;
+}
