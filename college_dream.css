@@ -5540,4 +5540,92 @@ body#modernbb .campus-role-post
     max-height: none !important;
   }
 }
+/* College Dreams · complemento visual de recuperación de publicaciones */
+body#modernbb .campus-role-post {
+  --campus-post-group-color: var(--season-primary);
+}
+body#modernbb .campus-role-post .post-head {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  min-height: 116px;
+}
+body#modernbb .campus-role-post .campus-post-profile-icon {
+  display: block; flex: 0 0 100px; width: 100px; height: 100px;
+  overflow: hidden; border-radius: 10px;
+  border: 1px solid var(--campus-border);
+  order: -2;
+}
+body#modernbb .campus-role-post .campus-post-profile-icon img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+body#modernbb .campus-role-post .post-head .topic-title {
+  flex: 1 1 220px; min-width: 0;
+  color: var(--campus-post-group-color) !important;
+}
+body#modernbb .campus-role-post .post-head .topic-title a {
+  color: var(--campus-post-group-color) !important;
+}
+body#modernbb .campus-role-post .post-head .topic-date {
+  order: 2; flex-basis: 100%;
+}
+body#modernbb .campus-role-post .campus-post-actions {
+  order: 1; display: flex; flex-direction: column;
+  align-items: flex-end; gap: 8px; margin-left: auto;
+}
+body#modernbb .campus-role-post .campus-post-actions .menu-wrap {
+  margin: 0;
+}
+body#modernbb .campus-role-post .campus-post-contact {
+  display: flex; gap: 8px; justify-content: flex-end;
+  width: auto; margin: 0; padding: 0; border: 0; background: transparent;
+}
+body#modernbb .campus-role-post .campus-post-contact a,
+body#modernbb .campus-role-post .campus-post-actions .profile-icons a {
+  color: var(--campus-post-group-color);
+}
+body#modernbb .campus-role-post .campus-avatar-wrap {
+  position: relative; width: 300px; max-width: 100%; height: 450px;
+  overflow: hidden; border-radius: 10px;
+}
+body#modernbb .campus-role-post .campus-avatar-wrap .postprofile-avatar {
+  width: 100%; height: 100%; margin: 0;
+}
+body#modernbb .campus-role-post .campus-avatar-wrap .postprofile-avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+body#modernbb .campus-role-post .campus-avatar-overlay {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 14px; box-sizing: border-box;
+  background: linear-gradient(0deg, var(--campus-avatar-overlay-start), var(--campus-avatar-overlay-mid) 65%, var(--campus-avatar-overlay-end));
+  opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s;
+  overflow-y: auto;
+}
+body#modernbb .campus-role-post .campus-avatar-wrap:hover .campus-avatar-overlay,
+body#modernbb .campus-role-post .campus-avatar-wrap:focus-within .campus-avatar-overlay {
+  opacity: 1; visibility: visible;
+}
+body#modernbb .campus-role-post .campus-avatar-overlay .postprofile-info {
+  display: block; position: static; margin: 0; padding: 0;
+  width: 100%; background: transparent; border: 0;
+}
+body#modernbb .campus-role-post .campus-profile-summary {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;
+  margin-bottom: 8px;
+}
+body#modernbb .campus-role-post .campus-profile-other {
+  display: grid; gap: 8px;
+}
+body#modernbb .campus-role-post .campus-profile-data-item {
+  padding: 9px 10px; border-radius: var(--campus-profile-data-radius, 8px);
+  background: color-mix(in srgb, var(--campus-post-group-color) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--campus-post-group-color) 45%, transparent);
+  color: var(--campus-avatar-overlay-text) !important;
+  text-align: center; overflow-wrap: anywhere;
+}
+body#modernbb .campus-role-post .profile-icons li.btn-quote-multi {
+  display: none !important;
+}
 
