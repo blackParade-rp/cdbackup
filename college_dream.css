@@ -6345,3 +6345,78 @@ body#modernbb .campus-role-post
       var(--campus-surface)
     ) !important;
 }
+/* =====================================================
+   COLLEGE DREAMS · CABECERA PRINCIPAL DEL TEMA
+   ===================================================== */
+
+/* Contenedor del título y botones superiores */
+body#modernbb:has(.campus-role-post) .sub-header {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  background: var(--campus-surface) !important;
+  color: var(--campus-text) !important;
+
+  border: 1px solid var(--campus-border) !important;
+  border-right: 4px solid var(--season-primary) !important;
+  border-radius: 14px !important;
+
+  padding: 22px 26px !important;
+  margin-bottom: 20px !important;
+
+  box-sizing: border-box;
+}
+
+/* Título principal */
+body#modernbb:has(.campus-role-post)
+.sub-header .page-title {
+  color: var(--season-primary) !important;
+  background: transparent !important;
+  font-family: var(--campus-title-font) !important;
+  margin: 0 0 8px !important;
+}
+
+/* Ruta de navegación */
+body#modernbb:has(.campus-role-post)
+.sub-header .breadcrumbs,
+
+body#modernbb:has(.campus-role-post)
+.sub-header .breadcrumbs a {
+  color: var(--campus-muted) !important;
+  background: transparent !important;
+}
+
+/* Botones de nuevo tema y responder */
+body#modernbb:has(.campus-role-post)
+.sub-header .buttons a,
+
+body#modernbb:has(.campus-role-post)
+.sub-header a.button1,
+
+body#modernbb:has(.campus-role-post)
+.sub-header a.button2 {
+  background: var(--season-primary) !important;
+  color: var(--campus-contrast) !important;
+  border: 1px solid var(--season-primary) !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  text-decoration: none !important;
+}
+
+/* Adaptación al modo oscuro */
+html[data-campus-theme="dark"]
+body#modernbb:has(.campus-role-post)
+.sub-header .buttons a,
+
+html[data-campus-theme="dark"]
+body#modernbb:has(.campus-role-post)
+.sub-header a.button1,
+
+html[data-campus-theme="dark"]
+body#modernbb:has(.campus-role-post)
+.sub-header a.button2 {
+  color: var(--campus-contrast-dark) !important;
+}
