@@ -6071,3 +6071,42 @@ html[data-campus-theme="dark"] body#modernbb
     transparent
   ) !important;
 }
+
+
+/* ==================================================
+   COLLEGE DREAMS · HOVER DEL AVATAR · MODO OSCURO
+   ================================================== */
+
+html[data-campus-theme="dark"] body#modernbb
+.campus-role-post .campus-avatar-overlay
+.campus-profile-data-item {
+
+  /* Color del grupo mezclado con una base oscura */
+  background: color-mix(
+    in srgb,
+    var(--campus-post-group-color, var(--season-primary)) 38%,
+    var(--campus-avatar-overlay-start) 62%
+  ) !important;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--campus-post-group-color, var(--season-primary)) 65%,
+    transparent
+  ) !important;
+
+  color: var(--campus-avatar-overlay-text) !important;
+}
+
+/* El contenedor general sigue sin fondo negro */
+html[data-campus-theme="dark"] body#modernbb
+.campus-role-post .campus-avatar-overlay
+.campus-profile-data,
+html[data-campus-theme="dark"] body#modernbb
+.campus-role-post .campus-avatar-overlay
+.campus-profile-summary,
+html[data-campus-theme="dark"] body#modernbb
+.campus-role-post .campus-avatar-overlay
+.campus-profile-other {
+  background: transparent !important;
+}
+
