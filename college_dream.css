@@ -3865,12 +3865,8 @@ body#modernbb
   object-fit: contain;
   object-position: center top;
 }
-
 /* ============================================================
-   COLLEGE DREAMS · MENSAJES Y CABECERA DE TEMAS · CSS CONSOLIDADO
-   ModernBB | Sustituye el bloque antiguo completo por este.
-   Requiere el JS que crea campus-role-post, campus-avatar-wrap,
-   campus-avatar-overlay, campus-post-actions y campus-post-profile-icon.
+   COLLEGE DREAMS · MENSAJES Y CABECERA DE TEMAS 
    ============================================================ */
 
 /* 01 · VARIABLES LOCALES (las globales se conservan) */
@@ -4358,7 +4354,7 @@ body#modernbb .campus-role-post .signature_div {
 }
 
 /* 08 · CABECERA PRINCIPAL DEL TEMA */
-body#modernbb:has(.campus-role-post) .sub-header.campus-topic-main-header {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -4374,14 +4370,14 @@ body#modernbb:has(.campus-role-post) .sub-header.campus-topic-main-header {
   border-radius: 14px;
   color: var(--campus-text);
 }
-body#modernbb .campus-topic-main-header .sub-header-info {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .sub-header-info {
   float: none !important;
   width: 100% !important;
   min-width: 0;
   margin: 0 !important;
   padding: 0 !important;
 }
-body#modernbb .campus-topic-main-header .page-title {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .page-title {
   display: block !important;
   margin: 0 0 8px !important;
   padding: 0 !important;
@@ -4395,14 +4391,14 @@ body#modernbb .campus-topic-main-header .page-title {
   line-height: 1.3 !important;
   text-transform: none !important;
 }
-body#modernbb .campus-topic-main-header .page-title :is(a, span) {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .page-title :is(a, span) {
   background: transparent !important;
   color: inherit !important;
   font: inherit;
   text-decoration: none !important;
 }
-body#modernbb .campus-topic-main-header :is(.sub-header-path, .breadcrumbs),
-body#modernbb .campus-topic-main-header :is(.sub-header-path, .breadcrumbs) a {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) :is(.sub-header-path, .breadcrumbs),
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) :is(.sub-header-path, .breadcrumbs) a {
   margin: 0 !important;
   padding: 0 !important;
   background: transparent !important;
@@ -4412,7 +4408,7 @@ body#modernbb .campus-topic-main-header :is(.sub-header-path, .breadcrumbs) a {
   line-height: 1.7;
   text-decoration: none !important;
 }
-body#modernbb .campus-topic-main-header .sub-header-buttons {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .sub-header-buttons {
   display: flex !important;
   flex-wrap: wrap;
   align-items: center;
@@ -4423,7 +4419,7 @@ body#modernbb .campus-topic-main-header .sub-header-buttons {
   margin: 0 !important;
   padding: 0 !important;
 }
-body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .button2, .login-for) {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .sub-header-buttons :is(.button1, .button2, .login-for) {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -4441,17 +4437,17 @@ body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .butto
   white-space: nowrap;
   transition: background .2s ease, transform .2s ease;
 }
-body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .button2, .login-for):hover {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .sub-header-buttons :is(.button1, .button2, .login-for):hover {
   background: var(--campus-topic-main-button-hover, var(--season-secondary)) !important;
   transform: translateY(-1px);
 }
 /* Solo barra superior: conserva la barra de acciones inferior. */
-body#modernbb:has(.campus-role-post) #page-body .topic-actions:not(.bottom) {
+body#modernbb:has(.campus-role-post) .topic-actions:not(.bottom) {
   display: none !important;
 }
-body#modernbb .campus-topic-main-header a[title*="push" i],
-body#modernbb .campus-topic-main-header a[title*="notificación" i],
-body#modernbb .campus-topic-main-header [data-tooltip*="push" i] {
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) a[title*="push" i],
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) a[title*="notificación" i],
+body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) [data-tooltip*="push" i] {
   display: none !important;
 }
 
@@ -4463,11 +4459,11 @@ html[data-campus-theme="dark"] body#modernbb .campus-role-post .postbody .conten
 html[data-campus-theme="dark"] body#modernbb .campus-role-post .postbody .content a {
   color: var(--season-primary);
 }
-html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .page-title,
-html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .page-title a {
+html[data-campus-theme="dark"] body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .page-title,
+html[data-campus-theme="dark"] body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .page-title a {
   color: color-mix(in srgb, var(--season-primary) 65%, var(--campus-contrast) 35%) !important;
 }
-html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .button2, .login-for) {
+html[data-campus-theme="dark"] body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .sub-header-buttons :is(.button1, .button2, .login-for) {
   color: var(--campus-contrast-dark) !important;
 }
 
@@ -4481,12 +4477,12 @@ html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .sub-head
   }
 }
 @media (max-width: 750px) {
-  body#modernbb .campus-topic-main-header {
+  body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 16px;
     padding: 20px 18px !important;
   }
-  body#modernbb .campus-topic-main-header .sub-header-buttons { justify-content: flex-start; }
+  body#modernbb:has(.campus-role-post) .sub-header:is(.campus-topic-main-header, :has(.page-title)) .sub-header-buttons { justify-content: flex-start; }
 }
 @media (max-width: 700px) {
   body#modernbb .campus-role-post {
