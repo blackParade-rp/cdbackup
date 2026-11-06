@@ -5528,8 +5528,16 @@ body#modernbb .campus-role-post
   min-height: 30px;
   padding: 7px 8px !important;
 
-  background: var(--campus-profile-data-bg) !important;
-  border: 1px solid var(--campus-profile-data-border) !important;
+  background: color-mix(
+  in srgb,
+  var(--campus-post-group-color, var(--season-primary)) 25%,
+  transparent
+  ) !important;
+  border: 1px solid color-mix(
+  in srgb,
+  var(--campus-post-group-color, var(--season-primary)) 45%,
+  transparent
+) !important;
   border-radius: var(--campus-profile-data-radius);
 
   color: var(--campus-profile-data-text) !important;
