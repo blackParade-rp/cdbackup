@@ -6133,3 +6133,108 @@ body#modernbb .campus-role-post
   height: 100% !important;
   object-fit: cover !important;
 }
+/* =====================================================
+   COLLEGE DREAMS · CABECERA SUPERIOR DE TEMAS
+   ModernBB · Solo páginas viewtopic
+   ===================================================== */
+
+/* Contenedor del título y la ruta */
+body#modernbb:has(.campus-role-post)
+.sub-header.campus-topic-main-header {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 16px !important;
+  padding: 22px 26px !important;
+
+  background: var(--campus-topic-main-bg) !important;
+  border: 1px solid var(--campus-topic-main-border) !important;
+  border-radius: 14px !important;
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .06) !important;
+  margin-bottom: 18px !important;
+}
+
+/* Título del tema */
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .page-title {
+  display: block !important;
+  width: auto !important;
+
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  color: var(--season-primary) !important;
+
+  font-family: var(--campus-title-font) !important;
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Enlaces y elementos dentro del título */
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .page-title a,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .page-title span {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Ruta de navegación */
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .breadcrumbs,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .breadcrumbs a,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .breadcrumbs span {
+  background: transparent !important;
+  color: var(--campus-topic-main-muted) !important;
+  font-family: var(--campus-body-font) !important;
+  font-size: 11px !important;
+  text-decoration: none !important;
+}
+
+/* Botones superiores de nuevo tema y respuesta */
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .buttons a,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .btn,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header a.button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: 38px !important;
+  padding: 9px 16px !important;
+
+  background: var(--campus-topic-main-button-bg) !important;
+  color: var(--campus-topic-main-button-text) !important;
+
+  border: 0 !important;
+  border-radius: 8px !important;
+
+  font-family: var(--campus-body-font) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+
+  transition: background .2s ease !important;
+}
+
+/* Hover de botones */
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .buttons a:hover,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header .btn:hover,
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header a.button:hover {
+  background: var(--campus-topic-main-button-hover) !important;
+}
