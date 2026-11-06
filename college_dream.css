@@ -4643,3 +4643,71 @@ body#modernbb form:has(#quick_reply) input[type="submit"]:disabled {
   }
 }
 
+
+/* ==========================================
+   COLLEGE DREAMS · RESPUESTA RÁPIDA
+   FONDO SÓLIDO Y EDITOR LEGIBLE
+   ========================================== */
+
+/* Tarjeta completa del editor */
+body#modernbb form:has(.sceditor-container) {
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-right: 4px solid var(--season-primary) !important;
+  border-radius: 16px !important;
+  padding: 22px !important;
+  box-sizing: border-box;
+}
+
+/* Caja del editor */
+body#modernbb form:has(.sceditor-container) .sceditor-container {
+  display: block !important;
+  width: 100% !important;
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Barra superior de herramientas */
+body#modernbb form:has(.sceditor-container) .sceditor-toolbar {
+  background: var(--campus-soft-bg) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--campus-border) !important;
+  padding: 10px !important;
+}
+
+/* Superficie del editor */
+body#modernbb form:has(.sceditor-container) .sceditor-group,
+body#modernbb form:has(.sceditor-container) .sceditor-wysiwyg,
+body#modernbb form:has(.sceditor-container) .sceditor-source {
+  background-color: var(--campus-surface) !important;
+}
+
+/* Área de escritura y marco */
+body#modernbb form:has(.sceditor-container) .sceditor-container iframe,
+body#modernbb form:has(.sceditor-container) .sceditor-container textarea {
+  background: var(--campus-surface) !important;
+  color: var(--campus-text) !important;
+  border: 0 !important;
+}
+
+/* Texto visible al escribir en modo código */
+body#modernbb form:has(.sceditor-container) .sceditor-container textarea {
+  padding: 15px !important;
+  line-height: 1.7 !important;
+  font-family: var(--campus-body-font) !important;
+}
+
+/* Espacio entre editor y botones */
+body#modernbb form:has(.sceditor-container) .submit-buttons {
+  margin-top: 20px !important;
+}
+
+/* Adaptación móvil */
+@media (max-width: 700px) {
+  body#modernbb form:has(.sceditor-container) {
+    padding: 14px !important;
+  }
+}
