@@ -6415,3 +6415,26 @@ body#modernbb:has(.campus-role-post) .topic-actions:not(.bottom) {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+/* =====================================================
+   COLLEGE DREAMS · ELIMINAR BARRA SUPERIOR DE TEMAS
+   ===================================================== */
+
+/* Ocultar la barra superior de acciones del tema */
+body#modernbb:has(.campus-role-post)
+#page-body .topic-actions:not(.bottom) {
+  display: none !important;
+}
+
+/* Acercar la cabecera al primer mensaje */
+body#modernbb:has(.campus-role-post)
+.campus-topic-main-header {
+  margin-bottom: 12px !important;
+}
+
+/* Eliminar márgenes adicionales del bloque de mensajes */
+body#modernbb:has(.campus-role-post)
+.topic-actions:not(.bottom) + .post,
+body#modernbb:has(.campus-role-post)
+.topic-actions:not(.bottom) + .campus-role-post {
+  margin-top: 0 !important;
+}
