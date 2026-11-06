@@ -5888,3 +5888,38 @@ body#modernbb .campus-role-post .post-head .topic-title {
     var(--season-primary)
   );
 }
+/* COLLEGE DREAMS · TARJETAS SEGÚN GRUPO */
+
+body#modernbb .campus-role-post
+.campus-avatar-overlay .campus-profile-data-item {
+  background: color-mix(
+    in srgb,
+    var(--campus-post-group-color, var(--season-primary)) 25%,
+    transparent
+  ) !important;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--campus-post-group-color, var(--season-primary)) 48%,
+    transparent
+  ) !important;
+
+  color: var(--campus-profile-data-text) !important;
+  border-radius: var(--campus-profile-data-radius) !important;
+}
+
+html[data-campus-theme="dark"] body#modernbb
+.campus-role-post .campus-avatar-overlay
+.campus-profile-data-item {
+  background: color-mix(
+    in srgb,
+    var(--campus-post-group-color, var(--season-primary)) 18%,
+    transparent
+  ) !important;
+
+  border-color: color-mix(
+    in srgb,
+    var(--campus-post-group-color, var(--season-primary)) 38%,
+    transparent
+  ) !important;
+}
