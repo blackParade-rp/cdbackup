@@ -4512,49 +4512,6 @@ body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
 }
 
 /* ==========================================
-   COLLEGE DREAMS · BARRA DE ACCIONES DEL TEMA
-========================================== */
-
-/* Barra situada entre la cabecera y los mensajes */
-body#modernbb .campus-topic-main-header + .topic-actions {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
-
-  min-height: 54px;
-  margin: 0 0 16px !important;
-  padding: 12px 22px !important;
-
-  background: var(--campus-contrast) !important;
-  border: 1px solid var(--campus-soft-border-light);
-  border-right: 4px solid var(--campus-brand-deep);
-  border-radius: 12px;
-
-  box-sizing: border-box;
-}
-
-/* Controles de la barra */
-body#modernbb .campus-topic-main-header + .topic-actions a,
-body#modernbb .campus-topic-main-header + .topic-actions .topic-actions-buttons {
-  color: var(--campus-brand-deep);
-}
-
-/* Modo oscuro */
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header + .topic-actions {
-  background: var(--campus-surface-dark) !important;
-  border-color: var(--campus-soft-ink-light);
-  border-right-color: var(--campus-brand-vivid);
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header + .topic-actions a {
-  color: var(--campus-brand-vivid);
-}
-
-/* ==========================================
    COLLEGE DREAMS · ALTURA NATURAL DEL MENSAJE
 ========================================== */
 
@@ -6420,15 +6377,15 @@ body#modernbb:has(.campus-role-post)
 .sub-header a.button2 {
   color: var(--campus-contrast-dark) !important;
 }
-
 /* =====================================================
-   COLLEGE DREAMS · AJUSTES FINALES DE VIEWTOPIC
+   COLLEGE DREAMS · CABECERA COMPACTA DEL TEMA
    ===================================================== */
 
-/* 1. Título principal más legible en modo oscuro */
+/* Título más claro en modo oscuro */
 html[data-campus-theme="dark"]
-body#modernbb:has(.campus-role-post)
-.sub-header .page-title {
+body#modernbb .campus-topic-main-header .page-title,
+html[data-campus-theme="dark"]
+body#modernbb .campus-topic-main-header .page-title a {
   color: color-mix(
     in srgb,
     var(--season-primary) 65%,
@@ -6436,49 +6393,25 @@ body#modernbb:has(.campus-role-post)
   ) !important;
 }
 
-/* Ruta de navegación más visible */
-html[data-campus-theme="dark"]
-body#modernbb:has(.campus-role-post)
-.sub-header .breadcrumbs,
-
-html[data-campus-theme="dark"]
-body#modernbb:has(.campus-role-post)
-.sub-header .breadcrumbs a {
-  color: var(--campus-muted) !important;
-}
-
-/* 2. Ocultar navegación anterior/siguiente */
-body#modernbb:has(.campus-role-post)
-.topic-actions .pagination {
-  display: none !important;
-}
-
-/* Ocultar controles de compartir y más */
-body#modernbb:has(.campus-role-post)
-.topic-actions .social_btn,
-
-body#modernbb:has(.campus-role-post)
-.topic-actions .more {
-  display: none !important;
-}
-
-/* 3. Reducir la separación bajo la cabecera */
-body#modernbb:has(.campus-role-post)
-.sub-header {
+/* Cabecera más próxima a los mensajes */
+body#modernbb .campus-topic-main-header {
   margin-bottom: 8px !important;
 }
 
-/* Compactar la zona de acciones del tema */
-body#modernbb:has(.campus-role-post)
-.topic-actions {
-  margin-top: 0 !important;
-  margin-bottom: 8px !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+/* Ocultar la barra de acciones superior completa.
+   No afecta a los botones de la cabecera ni a
+   las acciones individuales de cada mensaje. */
+body#modernbb .campus-topic-main-header + .topic-actions {
+  display: none !important;
 }
 
-/* Reducir espacio antes del primer mensaje */
-body#modernbb:has(.campus-role-post)
-.campus-role-post:first-of-type {
+/* Si existe una barra inferior, conservarla */
+body#modernbb .topic-actions.bottom {
+  display: revert;
+}
+
+/* Eliminar separación innecesaria */
+body#modernbb:has(.campus-role-post) .topic-actions:not(.bottom) {
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
