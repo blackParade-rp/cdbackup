@@ -1548,86 +1548,76 @@ body#modernbb .campus-forum-category
   font-size:10px;
 }
 
+/* ==========================================================
+   11 · FRANJAS DE TÍTULOS DE SUBFOROS
+   COLLEGE DREAMS · CLARO Y OSCURO
+   ========================================================== */
 
-
-/* ====================================================================
-   11 · FRANJAS DE TÍTULOS Y MODOS DE COLOR
-   ==================================================================== */
-/* COLLEGE DREAMS · Cabeceras de subforos */
-
-.campus-forum-category .campus-forum-item-inner {
-  padding-top: 0;
+body#modernbb .campus-forum-category .campus-forum-item-inner {
+  padding-top: 0 !important;
 }
 
-.campus-forum-category .campus-forum-item-heading {
+/* Franja completa del título */
+body#modernbb .campus-forum-category .campus-forum-item-heading {
+  grid-area: heading;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: calc(100% + 36px);
-  margin: 0 -18px 0 !important;
-  padding: 15px 12px 13px !important;
+  min-height: 48px;
+  margin: 0 -18px !important;
+  padding: 13px 12px !important;
+
+  background: var(--campus-forum-heading-bg) !important;
+  border-bottom: 1px solid var(--campus-forum-heading-border) !important;
+  border-radius: 0 !important;
+
   text-align: center;
-  background: var(--campus-palette-11);
-  border-bottom: 1px solid var(--campus-palette-12);
+  box-sizing: border-box;
 }
 
-.campus-forum-category .campus-forum-item-title {
-  color: var(--campus-palette-13) !important;
+/* Texto del título */
+body#modernbb .campus-forum-category .campus-forum-item-title {
+  color: var(--campus-forum-heading-text) !important;
+  font-family: var(--campus-body-font);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: .05em;
+  text-transform: uppercase;
+  text-decoration: none !important;
   padding-bottom: 8px;
 }
 
-.campus-forum-category .campus-forum-item-title::after {
+/* Subrayado decorativo */
+body#modernbb .campus-forum-category
+.campus-forum-item-title::after {
   background: var(--season-primary) !important;
   height: 3px;
 }
 
-/* Modo noche */
-html[data-campus-theme="dark"]
-.campus-forum-category .campus-forum-item-heading {
-  background: var(--campus-palette-14);
-  border-bottom-color: var(--campus-palette-15);
-}
-
-html[data-campus-theme="dark"]
-.campus-forum-category .campus-forum-item-title {
-  color: var(--campus-contrast) !important;
-}
-
-/* Información tiene un padding distinto */
-.campus-forum-category--information
+/* Tarjetas especiales de Información */
+body#modernbb .campus-forum-category--information
 .campus-forum-item-heading {
   width: calc(100% + 30px);
-  margin: 0 -15px 0 !important;
+  margin: 0 -15px !important;
 }
 
-/* Ajuste para móvil */
+/* Adaptación móvil */
 @media (max-width: 650px) {
-  .campus-forum-category:not(.campus-forum-category--information)
+
+  body#modernbb .campus-forum-category:not(.campus-forum-category--information)
   .campus-forum-item-heading {
     width: calc(100% + 26px);
-    margin: 0 -13px 0 !important;
+    margin: 0 -13px !important;
   }
 
-  .campus-forum-category--information
+  body#modernbb .campus-forum-category--information
   .campus-forum-item-heading {
     width: calc(100% + 24px);
-    margin: 0 -12px 0 !important;
+    margin: 0 -12px !important;
   }
 }
-
-/* COLLEGE DREAMS · Eliminar hueco sobre títulos normales */
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-forum-item-inner {
-  padding-top: 0 !important;
-}
-
-.campus-forum-category:not(.campus-forum-category--information)
-.campus-forum-item-heading {
-  align-self: start;
-  margin-top: 0 !important;
-}
-
-
 
 /* ====================================================================
    12 · AJUSTES DE AVATAR Y ESTADÍSTICAS
