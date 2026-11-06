@@ -5634,13 +5634,28 @@ body#modernbb .campus-role-post
 body#modernbb .campus-role-post {
   --campus-post-group-color: var(--season-primary);
 }
-body#modernbb .campus-role-post .post-head {
-  display: flex !important;
-  align-items: center !important;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  min-height: 116px;
+.post-head > .topic-title {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
 }
+
+body#modernbb .campus-role-post
+.post-head > .topic-date {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  flex-basis: auto;
+}
+
+body#modernbb .campus-role-post
+.post-head > .campus-post-actions {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  order: initial;
+  margin-left: 0;
+}
+
 body#modernbb .campus-role-post .campus-post-profile-icon {
   display: block; flex: 0 0 100px; width: 100px; height: 100px;
   overflow: hidden; border-radius: 10px;
