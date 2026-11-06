@@ -4521,3 +4521,125 @@ html[data-campus-theme="dark"] body#modernbb:has(.campus-role-post) .sub-header:
     border-radius: 10px;
   }
 }
+
+
+/* ============================================
+   COLLEGE DREAMS · RESPUESTA RÁPIDA
+   ModernBB · Modo claro y oscuro
+   ============================================ */
+
+/* Contenedor principal */
+body#modernbb #quick_reply,
+body#modernbb #quick_reply + form,
+body#modernbb form:has(#quick_reply) {
+  background: var(--campus-quick-bg);
+  border: 1px solid var(--campus-quick-border);
+  border-right: 4px solid var(--season-primary);
+  border-radius: var(--campus-quick-radius);
+  padding: 22px;
+  box-sizing: border-box;
+}
+
+/* Evitar duplicar la tarjeta si el ID está
+   dentro del propio formulario */
+body#modernbb form:has(#quick_reply) #quick_reply {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Título de la respuesta rápida */
+body#modernbb #quick_reply h2,
+body#modernbb #quick_reply .h3,
+body#modernbb #quick_reply .quick-reply-title,
+body#modernbb form:has(#quick_reply) > h2 {
+  font-family: var(--campus-title-font);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--season-primary);
+  margin: 0 0 18px;
+}
+
+/* Editor y zona de herramientas */
+body#modernbb #quick_reply .sceditor-container,
+body#modernbb form:has(#quick_reply) .sceditor-container {
+  background: var(--campus-quick-input) !important;
+  border: 1px solid var(--campus-quick-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Barra de herramientas */
+body#modernbb #quick_reply .sceditor-toolbar,
+body#modernbb form:has(#quick_reply) .sceditor-toolbar {
+  background: var(--campus-quick-toolbar) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--campus-quick-border) !important;
+  padding: 10px !important;
+}
+
+/* Área de escritura */
+body#modernbb #quick_reply textarea,
+body#modernbb form:has(#quick_reply) textarea,
+body#modernbb #quick_reply .sceditor-container iframe,
+body#modernbb form:has(#quick_reply) .sceditor-container iframe {
+  background: var(--campus-quick-input) !important;
+  color: var(--campus-quick-text) !important;
+  border: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Espaciado de los botones */
+body#modernbb #quick_reply .submit-buttons,
+body#modernbb form:has(#quick_reply) .submit-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Botones de enviar y previsualizar */
+body#modernbb #quick_reply input[type="submit"],
+body#modernbb form:has(#quick_reply) input[type="submit"] {
+  background: var(--season-primary) !important;
+  color: var(--campus-contrast) !important;
+  border: 1px solid var(--season-primary) !important;
+  border-radius: 8px !important;
+  padding: 11px 20px !important;
+  font-family: var(--campus-body-font);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+body#modernbb #quick_reply input[type="submit"]:hover,
+body#modernbb form:has(#quick_reply) input[type="submit"]:hover {
+  background: var(--season-secondary) !important;
+  transform: translateY(-2px);
+}
+
+body#modernbb #quick_reply input[type="submit"]:disabled,
+body#modernbb form:has(#quick_reply) input[type="submit"]:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Adaptación móvil */
+@media (max-width: 700px) {
+  body#modernbb #quick_reply,
+  body#modernbb form:has(#quick_reply) {
+    padding: 14px;
+  }
+
+  body#modernbb #quick_reply .sceditor-toolbar,
+  body#modernbb form:has(#quick_reply) .sceditor-toolbar {
+    padding: 6px !important;
+  }
+}
+
