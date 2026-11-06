@@ -6420,3 +6420,65 @@ body#modernbb:has(.campus-role-post)
 .sub-header a.button2 {
   color: var(--campus-contrast-dark) !important;
 }
+
+/* =====================================================
+   COLLEGE DREAMS · AJUSTES FINALES DE VIEWTOPIC
+   ===================================================== */
+
+/* 1. Título principal más legible en modo oscuro */
+html[data-campus-theme="dark"]
+body#modernbb:has(.campus-role-post)
+.sub-header .page-title {
+  color: color-mix(
+    in srgb,
+    var(--season-primary) 65%,
+    var(--campus-contrast) 35%
+  ) !important;
+}
+
+/* Ruta de navegación más visible */
+html[data-campus-theme="dark"]
+body#modernbb:has(.campus-role-post)
+.sub-header .breadcrumbs,
+
+html[data-campus-theme="dark"]
+body#modernbb:has(.campus-role-post)
+.sub-header .breadcrumbs a {
+  color: var(--campus-muted) !important;
+}
+
+/* 2. Ocultar navegación anterior/siguiente */
+body#modernbb:has(.campus-role-post)
+.topic-actions .pagination {
+  display: none !important;
+}
+
+/* Ocultar controles de compartir y más */
+body#modernbb:has(.campus-role-post)
+.topic-actions .social_btn,
+
+body#modernbb:has(.campus-role-post)
+.topic-actions .more {
+  display: none !important;
+}
+
+/* 3. Reducir la separación bajo la cabecera */
+body#modernbb:has(.campus-role-post)
+.sub-header {
+  margin-bottom: 8px !important;
+}
+
+/* Compactar la zona de acciones del tema */
+body#modernbb:has(.campus-role-post)
+.topic-actions {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Reducir espacio antes del primer mensaje */
+body#modernbb:has(.campus-role-post)
+.campus-role-post:first-of-type {
+  margin-top: 0 !important;
+}
