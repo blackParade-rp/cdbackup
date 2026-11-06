@@ -5755,7 +5755,7 @@ body#modernbb .campus-role-post > .postprofile {
 /* Avatar, nombre y rango siguen el scroll */
 body#modernbb .campus-role-post > .postprofile > dl {
   position: sticky !important;
-  top: 16px !important;
+  top: calc(var(--campus-nav-small) + 16px) !important;
   align-self: flex-start;
   height: max-content !important;
   overflow: visible !important;
