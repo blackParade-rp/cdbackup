@@ -3866,507 +3866,514 @@ body#modernbb
   object-position: center top;
 }
 
-/* ==========================================
-   COLLEGE DREAMS · ESTRUCTURA DE PUBLICACIONES
-   A ESTRUCTURA
-========================================== */
+/* ============================================================
+   COLLEGE DREAMS · MENSAJES Y CABECERA DE TEMAS · CSS CONSOLIDADO
+   ModernBB | Sustituye el bloque antiguo completo por este.
+   Requiere el JS que crea campus-role-post, campus-avatar-wrap,
+   campus-avatar-overlay, campus-post-actions y campus-post-profile-icon.
+   ============================================================ */
 
+/* 01 · VARIABLES LOCALES (las globales se conservan) */
 body#modernbb .campus-role-post {
-    display: grid !important;
-
-    grid-template-columns: minmax(0, 1fr) 300px !important;
-
-    grid-template-areas:
-        "head profile"
-        "body profile"
-        "likes profile" !important;
-
-    grid-template-rows: auto auto 1fr !important;
-
-    column-gap: 22px !important;
-    row-gap: 0 !important;
-
-    align-items: start !important;
-    align-content: start !important;
-
-    position: relative;
-    overflow: hidden;
-
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-
-    padding: 22px !important;
-    margin: 0 0 22px;
-
-    background: var(--campus-surface, var(--campus-contrast)) !important;
-    border: 1px solid var(--campus-border, var(--campus-soft-border-light));
-    border-right: 4px solid var(--season-primary, var(--campus-brand-deep));
-    border-radius: 16px;
-
-    color: var(--campus-text, inherit);
+  --campus-post-accent: var(--campus-post-group-color, var(--season-primary));
+  --campus-post-head-tint: color-mix(in srgb, var(--campus-post-accent) 16%, var(--campus-surface));
+  --campus-post-profile-tint: color-mix(in srgb, var(--campus-post-accent) 10%, var(--campus-surface));
+  --campus-post-outline: color-mix(in srgb, var(--campus-post-accent) 20%, var(--campus-border));
+  --campus-post-icon-bg: color-mix(in srgb, var(--campus-post-accent) 18%, var(--campus-surface));
+  --campus-post-icon-border: color-mix(in srgb, var(--campus-post-accent) 30%, transparent);
+  --campus-post-data-bg: color-mix(in srgb, var(--campus-post-accent) 38%, var(--campus-avatar-overlay-start) 62%);
+  --campus-post-data-border: color-mix(in srgb, var(--campus-post-accent) 65%, transparent);
+  --campus-post-avatar-width: 300px;
+  --campus-post-avatar-height: 450px;
+  --campus-post-icon-size: 100px;
+  --campus-post-gap: 22px;
+  --campus-post-data-spacing: var(--campus-profile-data-gap, 8px);
+  --campus-post-action-dimension: var(--campus-post-action-size, 26px);
+  --campus-post-action-spacing: var(--campus-post-action-gap, 5px);
 }
 
-/* ==========================================
-   CABECERA, MENSAJE Y REACCIONES
-========================================== */
-
-body#modernbb .campus-role-post > .post-head {
-    grid-area: head !important;
-    align-self: start !important;
-
-    margin: 0 !important;
-    min-height: 0 !important;
+/* 02 · TARJETA Y COLUMNAS */
+body#modernbb .campus-role-post {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) var(--campus-post-avatar-width) !important;
+  grid-template-areas: "head profile" "body profile" "likes profile" !important;
+  grid-template-rows: auto auto 1fr !important;
+  column-gap: var(--campus-post-gap) !important;
+  row-gap: 0 !important;
+  align-items: stretch !important;
+  align-content: start !important;
+  position: relative;
+  overflow: visible !important; /* imprescindible para sticky */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 22px !important;
+  margin: 0 0 22px;
+  background: var(--campus-surface) !important;
+  color: var(--campus-text);
+  border: 1px solid var(--campus-border);
+  border-right: 4px solid var(--season-primary);
+  border-radius: 16px;
 }
-
-body#modernbb .campus-role-post > .postbody {
-    grid-area: body !important;
-    align-self: start !important;
-
-    display: block !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin: 0 !important;
-    padding: 22px !important;
-}
-
-body#modernbb .campus-role-post > .postbody .content {
-    display: block !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
+body#modernbb .campus-role-post > .post-head,
+body#modernbb .campus-role-post > .postbody,
+body#modernbb .campus-role-post > .postprofile,
 body#modernbb .campus-role-post > .fa_like_div {
-    grid-area: likes !important;
-    align-self: start !important;
-
-    margin: 15px 0 0 !important;
-    padding: 0 !important;
-}
-
-/* El perfil permanece en la columna derecha */
-body#modernbb .campus-role-post > .postprofile {
-    grid-area: profile !important;
-    align-self: start !important;
-}
-
-/* Anular flotaciones y posiciones del diseño original */
-
-body#modernbb .campus-role-post > .postprofile {
-  grid-area: profile;
   float: none !important;
+  min-width: 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+body#modernbb .campus-role-post > .post-head { grid-area: head !important; }
+body#modernbb .campus-role-post > .postbody { grid-area: body !important; }
+body#modernbb .campus-role-post > .fa_like_div {
+  grid-area: likes !important;
+  align-self: start !important;
+  margin: 15px 0 0 !important;
+  padding: 0 !important;
+}
+body#modernbb .campus-role-post > .postprofile {
+  grid-area: profile !important;
   position: relative !important;
   inset: auto !important;
-
-  width: 300px !important;
-  min-width: 0 !important;
+  align-self: stretch !important;
+  width: var(--campus-post-avatar-width) !important;
   max-width: 100% !important;
   height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  padding: 14px !important;
+  background: var(--campus-post-profile-tint) !important;
+  border: 1px solid var(--campus-post-outline) !important;
+  border-radius: 12px;
+}
 
+/* 03 · PERFIL STICKY, AVATAR Y NOMBRE */
+body#modernbb .campus-role-post > .postprofile > dl {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  position: sticky !important;
+  top: calc(var(--campus-nav-small, 58px) + 16px) !important;
+  width: 100% !important;
+  height: max-content !important;
   margin: 0 !important;
   padding: 0 !important;
-  box-sizing: border-box;
+  overflow: visible !important;
 }
-
-body#modernbb .campus-role-post > .post-head {
-  grid-area: head;
+body#modernbb .campus-role-post .postprofile > dl > dt {
   float: none !important;
-  position: relative !important;
-  inset: auto !important;
-
+  display: block !important;
   width: 100% !important;
-  min-width: 0;
   margin: 0 !important;
-  box-sizing: border-box;
+  padding: 0 !important;
+  text-align: center;
 }
-
-body#modernbb .campus-role-post > .postbody {
-  grid-area: body;
-  float: none !important;
+body#modernbb .campus-role-post .campus-avatar-wrap {
   position: relative !important;
-  inset: auto !important;
-
+  display: block !important;
   width: 100% !important;
-  min-width: 0;
-  max-width: 100% !important;
-  margin: 0 !important;
+  height: var(--campus-post-avatar-height) !important;
+  min-height: 0 !important;
+  max-height: var(--campus-post-avatar-height) !important;
+  overflow: hidden !important;
+  border-radius: 10px;
+  isolation: isolate;
   box-sizing: border-box;
+  background: var(--campus-bg);
 }
-
-body#modernbb .campus-role-post > .fa_like_div {
-  grid-area: likes;
-  min-width: 0;
-  margin-top: 15px;
-}
-
-/* ==========================================
-   B. AVATAR 300 × 450
-========================================== */
-
-body#modernbb .campus-role-post .postprofile-avatar {
+body#modernbb .campus-role-post .campus-avatar-wrap > .postprofile-avatar {
   display: block !important;
   float: none !important;
-  position: relative !important;
-
-  width: 300px !important;
-  max-width: 100% !important;
-  height: 450px !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
   min-height: 0 !important;
-
-  margin: 0 auto 16px !important;
+  margin: 0 !important;
   padding: 0 !important;
-
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid var(--campus-border, var(--campus-soft-border-light));
-
-  background: var(--campus-bg, var(--campus-soft-bg-light));
-  box-sizing: border-box;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
 }
-
-body#modernbb .campus-role-post .postprofile-avatar a {
+body#modernbb .campus-role-post .campus-avatar-wrap .postprofile-avatar a {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
 }
-
-body#modernbb .campus-role-post .postprofile-avatar img {
+body#modernbb .campus-role-post .campus-avatar-wrap .postprofile-avatar img {
   display: block !important;
-  float: none !important;
   position: static !important;
-
+  float: none !important;
   width: 100% !important;
   max-width: none !important;
   height: 100% !important;
   max-height: none !important;
-
   margin: 0 !important;
   padding: 0 !important;
-
-  object-fit: contain !important;
-  object-position: center top !important;
-
+  object-fit: cover !important;
+  object-position: center !important;
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   transform: none !important;
 }
-
-/* ==========================================
-   C. FICHA DEL PERSONAJE
-========================================== */
-
-body#modernbb .campus-role-post .postprofile {
-  background: var(--campus-bg, var(--campus-soft-bg-light));
-  border: 1px solid var(--campus-border, var(--campus-soft-border-light));
-  border-radius: 12px;
-  padding: 14px !important;
-}
-
-body#modernbb .campus-role-post .postprofile > dl {
-  display: flex !important;
+body#modernbb .campus-role-post .campus-profile-identity {
+  display: flex;
   flex-direction: column;
-  align-items: stretch;
-
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-body#modernbb .campus-role-post .postprofile > dl > dt {
-  display: block !important;
-  float: none !important;
-  width: 100% !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 14px 0 4px;
   text-align: center;
+  border: 0 !important;
 }
-
-body#modernbb .campus-role-post .postprofile-name {
+body#modernbb .campus-role-post .campus-profile-identity .postprofile-name {
   display: block;
   width: 100%;
-  margin: 0 0 7px;
-  text-align: center;
-
-  font-family: "Bright Holiday", cursive;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--campus-accent-font, "Bright Holiday", cursive);
   font-size: 31px;
   font-weight: 400;
   line-height: 1.2;
+  text-align: center;
   overflow-wrap: anywhere;
 }
-
-/* Conservar el color del grupo en el nombre */
-
-body#modernbb .campus-role-post .postprofile-name a,
-body#modernbb .campus-role-post .postprofile-name span {
+body#modernbb .campus-role-post .campus-profile-identity .postprofile-name a,
+body#modernbb .campus-role-post .campus-profile-identity .postprofile-name span {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
-
-body#modernbb .campus-role-post .postprofile-rank {
+body#modernbb .campus-role-post .campus-profile-identity .postprofile-rank {
   display: block;
   width: 100%;
-  margin: 0 0 16px;
-  padding: 0 0 14px;
-
-  border-bottom: 1px solid var(--campus-border, var(--campus-soft-border-light));
-
-  font-family: monospace;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--campus-mono-font, monospace);
   font-size: 11px;
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
-  color: var(--season-primary, var(--campus-brand-deep));
+  color: var(--campus-post-accent);
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body#modernbb .campus-role-post .campus-profile-identity::after,
+body#modernbb .campus-role-post .campus-profile-identity .postprofile-rank::after {
+  content: none !important;
 }
 
-/* Datos de perfil */
-
-body#modernbb .campus-role-post .postprofile-info {
+/* 04 · HOVER DEL AVATAR */
+body#modernbb .campus-role-post .campus-avatar-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 14px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  overflow-y: auto !important;
+  background: transparent !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .25s ease, visibility .25s ease, transform .25s ease, background .25s ease;
+  color: var(--campus-avatar-overlay-text);
+}
+body#modernbb .campus-role-post .campus-avatar-wrap:hover .campus-avatar-overlay,
+body#modernbb .campus-role-post .campus-avatar-wrap:focus-within .campus-avatar-overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  background: color-mix(in srgb, var(--campus-post-accent) 12%, transparent) !important;
+}
+body#modernbb .campus-role-post .campus-avatar-overlay .postprofile-info {
   display: block !important;
   float: none !important;
-
+  position: static !important;
   width: 100% !important;
   min-width: 0;
+  height: auto !important;
   margin: 0 !important;
-  padding: 12px !important;
-
-  background: var(--campus-surface, var(--campus-contrast));
-  border: 1px solid var(--campus-border, var(--campus-soft-border-light));
-  border-radius: 9px;
-
-  font-family: Verdana, sans-serif;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: var(--campus-mono-font, monospace);
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.5;
+  color: var(--campus-avatar-overlay-text);
+}
+body#modernbb .campus-role-post .campus-profile-data,
+body#modernbb .campus-role-post .campus-profile-other {
+  display: flex;
+  flex-direction: column;
+  gap: var(--campus-post-data-spacing);
+  width: 100%;
+  background: transparent !important;
+}
+body#modernbb .campus-role-post .campus-profile-summary {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: var(--campus-post-data-spacing);
+  width: 100%;
+  background: transparent !important;
+}
+body#modernbb .campus-role-post .campus-profile-data-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 30px;
+  padding: 8px 6px !important;
+  box-sizing: border-box;
+  background: var(--campus-post-data-bg) !important;
+  border: 1px solid var(--campus-post-data-border) !important;
+  border-radius: var(--campus-profile-data-radius, 8px) !important;
+  color: var(--campus-avatar-overlay-text) !important;
+  font-family: var(--campus-mono-font, monospace);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
   overflow-wrap: anywhere;
 }
+body#modernbb .campus-role-post .campus-profile-data-item * { color: inherit !important; }
+body#modernbb .campus-role-post .campus-profile-data-item :is(br, .label) { display: none !important; }
+body#modernbb .campus-role-post .campus-avatar-overlay img[alt="Icono de personaje"] { display: none !important; }
+html[data-campus-theme="dark"] body#modernbb .campus-role-post .campus-avatar-wrap:hover .campus-avatar-overlay,
+html[data-campus-theme="dark"] body#modernbb .campus-role-post .campus-avatar-wrap:focus-within .campus-avatar-overlay {
+  background: color-mix(in srgb, var(--campus-post-accent) 10%, transparent) !important;
+}
 
-/* Contactos */
-
-body#modernbb .campus-role-post .postprofile-contact {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
+/* 05 · CABECERA INTERIOR DEL MENSAJE */
+body#modernbb .campus-role-post > .post-head {
+  display: grid !important;
+  grid-template-columns: var(--campus-post-icon-size) minmax(0, 1fr) auto !important;
+  grid-template-rows: auto auto;
   align-items: center;
-  gap: 8px;
-
+  align-content: center !important;
+  column-gap: 14px;
+  row-gap: 3px;
+  position: relative !important;
+  inset: auto !important;
   width: 100% !important;
-  margin: 14px 0 0 !important;
-  padding: 0 !important;
-}
-
-body#modernbb .campus-role-post .postprofile-contact a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ==========================================
-   D. CABECERA Y CONTENIDO
-========================================== */
-
-body#modernbb .campus-role-post .post-head {
-  align-self: start;
-
-  padding: 17px 20px !important;
-
-  background: var(--campus-bg, var(--campus-soft-bg-light));
-  border: 1px solid var(--campus-border, var(--campus-soft-border-light));
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: var(--campus-post-head-padding-y, 17px) var(--campus-post-head-padding-x, 20px) !important;
+  background: var(--campus-post-head-tint) !important;
+  border: 1px solid var(--campus-post-outline) !important;
   border-radius: 10px 10px 0 0;
 }
-
-body#modernbb .campus-role-post .post-head .topic-title {
-  margin: 0 0 7px !important;
+body#modernbb .campus-role-post .post-head > .campus-post-profile-icon {
+  display: block !important;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+  width: var(--campus-post-icon-size) !important;
+  height: var(--campus-post-icon-size) !important;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--campus-profile-bg, var(--campus-surface)) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 10px;
+}
+body#modernbb .campus-role-post .post-head > .campus-post-profile-icon img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+body#modernbb .campus-role-post .post-head > .topic-title {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  min-width: 0;
+  margin: 0 !important;
   padding: 0 !important;
-
-  font-family: "Bright Holiday", cursive;
+  color: var(--campus-post-accent) !important;
+  font-family: var(--campus-accent-font, "Bright Holiday", cursive);
   font-size: clamp(23px, 2.4vw, 34px);
   font-weight: 400;
   line-height: 1.25;
 }
-
-body#modernbb .campus-role-post .post-head .topic-title a {
-  color: var(--season-primary, var(--campus-brand-deep));
+body#modernbb .campus-role-post .post-head > .topic-title a {
+  color: inherit !important;
   font: inherit;
+  text-decoration: none;
 }
-
-body#modernbb .campus-role-post .topic-date {
-  font-family: monospace;
+body#modernbb .campus-role-post .post-head > .topic-date {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  margin: 0 !important;
+  color: var(--campus-muted);
+  font-family: var(--campus-mono-font, monospace);
   font-size: 11px;
   line-height: 1.6;
-  color: var(--campus-muted, var(--campus-soft-muted-light));
 }
 
-body#modernbb .campus-role-post .postbody {
-  padding: 22px !important;
-
-  background: var(--campus-surface, var(--campus-contrast));
-  border: 1px solid var(--campus-border, var(--campus-soft-border-light));
-  border-top: 0;
-  border-radius: 0 0 10px 10px;
-}
-
-body#modernbb .campus-role-post .postbody .content {
-  width: 100% !important;
+/* 06 · ACCIONES Y CONTACTOS: DOS FILAS */
+body#modernbb .campus-role-post .post-head > .campus-post-actions {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center;
+  gap: 5px;
+  width: auto !important;
   max-width: 100%;
   margin: 0 !important;
   padding: 0 !important;
+}
+body#modernbb .campus-role-post .campus-post-actions .menu-wrap {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body#modernbb .campus-role-post .campus-post-actions .profile-icons,
+body#modernbb .campus-role-post .campus-post-actions .campus-post-contact {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--campus-post-action-spacing) !important;
+  position: static !important;
+  width: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body#modernbb .campus-role-post .campus-post-actions .profile-icons > li {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+body#modernbb .campus-role-post .campus-post-actions .post-menu,
+body#modernbb .campus-role-post .profile-icons li.btn-quote-multi { display: none !important; }
+body#modernbb .campus-role-post .campus-post-actions :is(.profile-icons, .campus-post-contact) a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: var(--campus-post-action-dimension) !important;
+  height: var(--campus-post-action-dimension) !important;
+  min-width: var(--campus-post-action-dimension);
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  background: var(--campus-post-icon-bg) !important;
+  border: 1px solid var(--campus-post-icon-border) !important;
+  border-radius: 6px;
+  color: var(--campus-post-accent) !important;
+  text-decoration: none !important;
+  line-height: 1;
+}
+body#modernbb .campus-role-post .campus-post-actions :is(.profile-icons, .campus-post-contact) a i {
+  color: inherit !important;
+}
+body#modernbb .campus-role-post .campus-post-actions a:hover {
+  background: color-mix(in srgb, var(--campus-post-accent) 32%, var(--campus-surface)) !important;
+  border-color: var(--campus-post-accent) !important;
+}
+/* Compatibilidad con la variante JS que marca enlaces ya sustituidos */
+body#modernbb .campus-role-post .campus-post-actions a.campus-icon-ready { font-size: 0 !important; }
+body#modernbb .campus-role-post .campus-post-actions a.campus-icon-ready > :not(.campus-fa-action) { display: none !important; }
+body#modernbb .campus-role-post .campus-post-actions a.campus-icon-ready::before,
+body#modernbb .campus-role-post .campus-post-actions a.campus-icon-ready::after,
+body#modernbb .campus-role-post .campus-post-actions .profile-icons li.campus-icon-item-ready::before,
+body#modernbb .campus-role-post .campus-post-actions .profile-icons li.campus-icon-item-ready::after {
+  content: none !important;
+  display: none !important;
+}
+body#modernbb .campus-role-post .campus-post-actions a.campus-icon-ready > .campus-fa-action {
+  display: inline-block !important;
+  font-family: "Font Awesome 6 Free", FontAwesome !important;
+  font-style: normal !important;
+  font-weight: 900 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  color: inherit !important;
+}
 
-  font-family: Verdana, sans-serif;
+/* 07 · CUERPO DEL MENSAJE Y REACCIONES */
+body#modernbb .campus-role-post > .postbody {
+  display: block !important;
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 22px !important;
+  background: var(--campus-surface) !important;
+  color: var(--campus-text) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-top: 0 !important;
+  border-radius: 0 0 10px 10px;
+}
+body#modernbb .campus-role-post .postbody .content {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--campus-body-font, Verdana, sans-serif);
   font-size: 13px;
   line-height: 1.85;
   overflow-wrap: anywhere;
 }
-
-body#modernbb .campus-role-post .postbody .content img {
-  max-width: 100%;
-  height: auto;
-}
-
+body#modernbb .campus-role-post .postbody .content > :first-child { margin-top: 0 !important; }
+body#modernbb .campus-role-post .postbody .content p { margin: 0 0 12px; line-height: 1.75; }
+body#modernbb .campus-role-post .postbody .content img { max-width: 100%; height: auto; }
+body#modernbb .campus-role-post .postbody .content a { color: var(--season-primary); }
 body#modernbb .campus-role-post .signature_div {
   margin-top: 28px;
   padding-top: 18px;
-  border-top: 1px solid var(--campus-border, var(--campus-soft-border-light));
+  border-top: 1px solid var(--campus-border);
 }
 
-/* ==========================================
-   E. MODO OSCURO
-========================================== */
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post {
-  background: var(--campus-surface-dark) !important;
-  border-color: var(--campus-soft-ink-light);
-  border-right-color: var(--season-primary, var(--campus-brand-vivid));
-  color: var(--campus-palette-23);
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postprofile {
-  background: var(--campus-palette-24);
-  border-color: var(--campus-soft-border-dark);
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postprofile-avatar {
-  background: var(--campus-palette-25);
-  border-color: var(--campus-soft-border-dark);
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postprofile-info,
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody {
-  background: var(--campus-palette-26);
-  border-color: var(--campus-soft-ink-light);
-  color: var(--campus-palette-23);
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .post-head {
-  background: var(--campus-palette-27);
-  border-color: var(--campus-soft-border-dark);
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .post-head .topic-title a,
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postprofile-rank {
-  color: var(--season-primary, var(--campus-brand-vivid));
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postprofile-rank,
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .signature_div {
-  border-color: var(--campus-soft-border-dark);
-}
-
-/* ==========================================
-   F. RESPONSIVE
-========================================== */
-
-@media (max-width: 950px) {
-  body#modernbb .campus-role-post {
-    grid-template-columns: minmax(0, 1fr) 240px;
-    column-gap: 14px;
-    padding: 14px !important;
-  }
-
-  body#modernbb .campus-role-post > .postprofile {
-    width: 240px !important;
-  }
-
-  body#modernbb .campus-role-post .postprofile-avatar {
-    width: 210px !important;
-    height: 315px !important;
-  }
-}
-
-@media (max-width: 700px) {
-  body#modernbb .campus-role-post {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "profile"
-      "head"
-      "body"
-      "likes";
-    gap: 12px;
-  }
-
-  body#modernbb .campus-role-post > .postprofile {
-    width: 100% !important;
-  }
-
-  body#modernbb .campus-role-post .postprofile-avatar {
-    width: min(300px, 100%) !important;
-    height: auto !important;
-    aspect-ratio: 2 / 3;
-  }
-
-  body#modernbb .campus-role-post .post-head,
-  body#modernbb .campus-role-post .postbody {
-    border: 1px solid var(--campus-border, var(--campus-soft-border-light));
-    border-radius: 10px;
-  }
-}
-
-/* ==========================================
-   COLLEGE DREAMS · CABECERA INTERIOR DEL TEMA
-========================================== */
-
-body#modernbb .campus-topic-main-header {
+/* 08 · CABECERA PRINCIPAL DEL TEMA */
+body#modernbb:has(.campus-role-post) .sub-header.campus-topic-main-header {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 25px;
-
+  gap: 20px;
   width: 100%;
-  min-height: 145px;
+  min-height: 0;
   box-sizing: border-box;
-
-  margin: 18px 0 16px !important;
-  padding: 25px 30px !important;
-
-  background: var(--campus-contrast) !important;
-  border: 1px solid var(--campus-soft-border-light);
-  border-right: 4px solid var(--campus-brand-deep);
-  border-radius: 15px;
-
-  box-shadow: 0 3px 12px var(--campus-palette-28);
+  margin: 18px 0 12px !important;
+  padding: 22px 26px !important;
+  background: var(--campus-topic-main-bg, var(--campus-surface)) !important;
+  border: 1px solid var(--campus-topic-main-border, var(--campus-border)) !important;
+  border-right: 4px solid var(--season-primary) !important;
+  border-radius: 14px;
+  color: var(--campus-text);
 }
-
-/* Título y navegación */
-
 body#modernbb .campus-topic-main-header .sub-header-info {
   float: none !important;
   width: 100% !important;
@@ -4374,2067 +4381,147 @@ body#modernbb .campus-topic-main-header .sub-header-info {
   margin: 0 !important;
   padding: 0 !important;
 }
-
 body#modernbb .campus-topic-main-header .page-title {
-  margin: 0 0 12px !important;
+  display: block !important;
+  margin: 0 0 8px !important;
   padding: 0 !important;
-
-  font-family: "Bright Holiday", cursive !important;
-  font-size: clamp(38px, 4vw, 58px) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: var(--campus-text) !important;
+  font-family: var(--campus-title-font, cursive) !important;
+  font-size: 32px !important;
   font-weight: 400 !important;
-  line-height: 1.15 !important;
+  line-height: 1.3 !important;
   text-transform: none !important;
 }
-
-body#modernbb .campus-topic-main-header .page-title a {
-  color: var(--campus-brand-deep) !important;
-  font: inherit !important;
+body#modernbb .campus-topic-main-header .page-title :is(a, span) {
+  background: transparent !important;
+  color: inherit !important;
+  font: inherit;
   text-decoration: none !important;
 }
-
-body#modernbb .campus-topic-main-header .sub-header-path {
+body#modernbb .campus-topic-main-header :is(.sub-header-path, .breadcrumbs),
+body#modernbb .campus-topic-main-header :is(.sub-header-path, .breadcrumbs) a {
   margin: 0 !important;
   padding: 0 !important;
-
-  font-family: Verdana, sans-serif;
+  background: transparent !important;
+  color: var(--campus-topic-main-muted, var(--campus-muted)) !important;
+  font-family: var(--campus-body-font, Verdana, sans-serif);
   font-size: 11px;
   line-height: 1.7;
-  color: var(--campus-soft-muted-light);
+  text-decoration: none !important;
 }
-
-body#modernbb .campus-topic-main-header .sub-header-path a {
-  color: var(--campus-soft-muted-light);
-  text-decoration: none;
-}
-
-/* Botones a la derecha */
-
 body#modernbb .campus-topic-main-header .sub-header-buttons {
   display: flex !important;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-
   float: none !important;
   width: auto !important;
   margin: 0 !important;
   padding: 0 !important;
 }
-
-body#modernbb .campus-topic-main-header .sub-header-buttons .button1,
-body#modernbb .campus-topic-main-header .sub-header-buttons .login-for {
+body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .button2, .login-for) {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   min-height: 42px;
   padding: 0 17px !important;
-
-  background: var(--campus-brand-deep) !important;
-  border: 1px solid var(--campus-brand-deep) !important;
+  background: var(--campus-topic-main-button-bg, var(--season-primary)) !important;
+  border: 1px solid var(--campus-topic-main-button-bg, var(--season-primary)) !important;
   border-radius: 8px !important;
-
-  color: var(--campus-contrast) !important;
-  font-family: Verdana, sans-serif;
+  color: var(--campus-topic-main-button-text, var(--campus-contrast)) !important;
+  font-family: var(--campus-body-font, Verdana, sans-serif);
   font-size: 11px;
   font-weight: 700;
   text-decoration: none !important;
-
   white-space: nowrap;
-  box-shadow: 0 2px 5px var(--campus-palette-29);
   transition: background .2s ease, transform .2s ease;
 }
-
-body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
-  background: var(--campus-palette-30) !important;
+body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .button2, .login-for):hover {
+  background: var(--campus-topic-main-button-hover, var(--season-secondary)) !important;
   transform: translateY(-1px);
 }
-
-/* ==========================================
-   CABECERA DEL TEMA · MODO OSCURO
-========================================== */
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header {
-  background: var(--campus-surface-dark) !important;
-  border-color: var(--campus-soft-ink-light);
-  border-right-color: var(--campus-brand-vivid);
-  box-shadow: 0 3px 12px var(--campus-palette-31);
+/* Solo barra superior: conserva la barra de acciones inferior. */
+body#modernbb:has(.campus-role-post) #page-body .topic-actions:not(.bottom) {
+  display: none !important;
+}
+body#modernbb .campus-topic-main-header a[title*="push" i],
+body#modernbb .campus-topic-main-header a[title*="notificación" i],
+body#modernbb .campus-topic-main-header [data-tooltip*="push" i] {
+  display: none !important;
 }
 
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .page-title a {
-  color: var(--campus-brand-vivid) !important;
+/* 09 · MODO OSCURO: usar variables globales ya adaptadas */
+html[data-campus-theme="dark"] body#modernbb .campus-role-post .postbody .content,
+html[data-campus-theme="dark"] body#modernbb .campus-role-post .postbody .content :is(p, li, span) {
+  color: var(--campus-text);
+}
+html[data-campus-theme="dark"] body#modernbb .campus-role-post .postbody .content a {
+  color: var(--season-primary);
+}
+html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .page-title,
+html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .page-title a {
+  color: color-mix(in srgb, var(--season-primary) 65%, var(--campus-contrast) 35%) !important;
+}
+html[data-campus-theme="dark"] body#modernbb .campus-topic-main-header .sub-header-buttons :is(.button1, .button2, .login-for) {
+  color: var(--campus-contrast-dark) !important;
 }
 
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .sub-header-path,
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .sub-header-path a {
-  color: var(--campus-palette-32);
+/* 10 · RESPONSIVE */
+@media (max-width: 950px) and (min-width: 701px) {
+  body#modernbb .campus-role-post {
+    --campus-post-avatar-width: 240px;
+    --campus-post-avatar-height: 360px;
+    --campus-post-gap: 14px;
+    padding: 14px !important;
+  }
 }
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .sub-header-buttons .button1,
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .sub-header-buttons .login-for {
-  background: var(--campus-brand-vivid) !important;
-  border-color: var(--campus-brand-vivid) !important;
-  color: var(--campus-palette-33) !important;
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .sub-header-buttons .button1:hover {
-  background: var(--campus-palette-34) !important;
-}
-
-/* ==========================================
-   CABECERA DEL TEMA · RESPONSIVE
-========================================== */
-
 @media (max-width: 750px) {
   body#modernbb .campus-topic-main-header {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
-    min-height: 0;
-    padding: 22px 18px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px;
+    padding: 20px 18px !important;
   }
-
-  body#modernbb .campus-topic-main-header .page-title {
-    font-size: clamp(32px, 8vw, 44px) !important;
-  }
-
-  body#modernbb .campus-topic-main-header .sub-header-buttons {
-    justify-content: flex-start;
-  }
+  body#modernbb .campus-topic-main-header .sub-header-buttons { justify-content: flex-start; }
 }
-
-/* ==========================================
-   COLLEGE DREAMS · ALTURA NATURAL DEL MENSAJE
-========================================== */
-
-body#modernbb .post .postbody {
-  min-height: 0 !important;
-  height: auto !important;
-}
-
-body#modernbb .post .content {
-  min-height: 0 !important;
-  height: auto !important;
-
-  margin-top: 0 !important;
-  padding-top: 18px !important;
-
-  display: block !important;
-  align-content: normal !important;
-}
-
-/* Evita márgenes excesivos al inicio del mensaje */
-body#modernbb .post .content > :first-child {
-  margin-top: 0 !important;
-}
-
-/* Mantiene una separación normal entre párrafos */
-body#modernbb .post .content p {
-  margin: 0 0 12px;
-  line-height: 1.75;
-}
-
-/* ==========================================
-   COLLEGE DREAMS · AVATAR DEL PERFIL
-   PROPORCIÓN ORIGINAL 300 × 450
-========================================== */
-
-/* Contenedor de la imagen */
-body#modernbb .post .postprofile .postprofile-avatar {
-  display: block !important;
-  width: 100% !important;
-  max-width: 300px !important;
-
-  height: auto !important;
-  min-height: 0 !important;
-
-  margin: 0 auto 12px !important;
-  padding: 0 !important;
-
-  line-height: 0 !important;
-  overflow: hidden;
-
-  border-radius: 10px;
-}
-
-/* Imagen sin recortes */
-body#modernbb .post .postprofile .postprofile-avatar img {
-  display: block !important;
-
-  width: 100% !important;
-  max-width: 300px !important;
-
-  height: auto !important;
-  max-height: none !important;
-
-  aspect-ratio: 2 / 3;
-  object-fit: contain !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  border-radius: 10px;
-}
-
-/* Perfil lateral */
-body#modernbb .post .postprofile {
-  height: auto !important;
-  min-height: 0 !important;
-}
-
-/* Evita separación artificial debajo del avatar */
-body#modernbb .post .postprofile .postprofile-avatar + * {
-  margin-top: 0 !important;
-}
-
-/* ==========================================
-   RESPONSIVE · MENSAJES
-========================================== */
-
-@media (max-width: 750px) {
-
-  body#modernbb .campus-topic-main-header + .topic-actions {
-    justify-content: center;
-    padding: 12px 15px !important;
-  }
-
-  body#modernbb .post .postprofile .postprofile-avatar {
-    max-width: 220px !important;
-  }
-
-  body#modernbb .post .postprofile .postprofile-avatar img {
-    max-width: 220px !important;
-  }
-
-}
-
-/* ==========================================
-   COLLEGE DREAMS · LEGIBILIDAD DE LOS MENSAJES
-   MODO OSCURO
-========================================== */
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post > .postbody {
-    color: var(--campus-palette-35) !important;
-}
-
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content,
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content p,
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content span,
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content li {
-    color: var(--campus-palette-35);
-}
-
-/* Enlaces dentro de los mensajes */
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content a {
-    color: var(--season-primary, var(--campus-brand-vivid));
-}
-
-/* Texto secundario de los mensajes */
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content blockquote {
-    color: var(--campus-palette-36);
-}
-
-/* Selección de texto */
-html[data-campus-theme="dark"]
-body#modernbb .campus-role-post .postbody .content::selection {
-    background: var(--campus-brand-vivid);
-    color: var(--campus-palette-33);
-}
-
-/* ==========================================
-   COLLEGE DREAMS · PERFIL INTERACTIVO
-========================================== */
-
-/* Contenedor del avatar */
-body#modernbb .campus-role-post .campus-avatar-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    border-radius: 10px;
-    isolation: isolate;
-}
-
-/* Imagen completa, sin deformaciones */
-body#modernbb .campus-role-post .campus-avatar-wrap img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Capa de datos sobre el avatar */
-body#modernbb .campus-role-post .campus-avatar-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 8px;
-
-    padding: 18px;
-    box-sizing: border-box;
-
-    background: linear-gradient(
-        to top,
-        var(--campus-palette-37),
-        var(--campus-palette-38) 55%,
-        var(--campus-palette-39)
-    );
-
-    color: var(--campus-palette-40);
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease,
-        visibility .25s ease;
-
-    overflow-y: auto;
-}
-
-/* Mostrar datos al pasar el ratón */
-body#modernbb .campus-role-post
-.campus-avatar-wrap:hover .campus-avatar-overlay,
-body#modernbb .campus-role-post
-.campus-avatar-wrap:focus-within .campus-avatar-overlay {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Datos */
-body#modernbb .campus-avatar-overlay .profile-field {
-    font-family: monospace;
-    font-size: 11px;
-    line-height: 1.6;
-    color: var(--campus-palette-41);
-}
-
-body#modernbb .campus-avatar-overlay strong,
-body#modernbb .campus-avatar-overlay b {
-    color: var(--campus-palette-42);
-}
-
-/* Nombre y rango siempre visibles bajo el avatar */
-body#modernbb .campus-role-post
-.campus-profile-identity {
-    text-align: center;
-    padding: 12px 4px;
-}
-
-/* Contactos en la cabecera del mensaje */
-body#modernbb .campus-role-post
-.campus-post-contact {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-body#modernbb .campus-role-post
-.campus-post-contact a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 26px;
-    height: 26px;
-
-    border-radius: 6px;
-    color: var(--season-primary);
-    text-decoration: none;
-
-    transition: background .2s ease, transform .2s ease;
-}
-
-body#modernbb .campus-role-post
-.campus-post-contact a:hover {
-    background: var(--campus-palette-43);
-    transform: translateY(-2px);
-}
-
-/* Accesibilidad: permitir ver los datos en pantallas táctiles */
-@media (hover: none) {
-    body#modernbb .campus-role-post
-    .campus-avatar-overlay {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        background: linear-gradient(
-            to top,
-            var(--campus-palette-44),
-            transparent 65%
-        );
-    }
-}
-
-/* =========================================
-   COLLEGE DREAMS · AVATAR Y PERFIL
-========================================= */
-
-/* Avatar vertical */
-body#modernbb .campus-role-post .campus-avatar-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    border-radius: 10px;
-    isolation: isolate;
-}
-
-/* Conservar proporción 300x450 */
-body#modernbb .campus-role-post
-.campus-avatar-wrap .postprofile-avatar {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    overflow: hidden;
-}
-
-body#modernbb .campus-role-post
-.campus-avatar-wrap .postprofile-avatar img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0;
-}
-
-/* Datos ocultos dentro del avatar */
-body#modernbb .campus-role-post .campus-avatar-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    padding: 16px;
-    box-sizing: border-box;
-
-    background: linear-gradient(
-        to top,
-        var(--campus-palette-45),
-        var(--campus-palette-46) 50%,
-        var(--campus-palette-47)
-    );
-
-    color: var(--campus-avatar-overlay-text);
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-
-    transition:
-        opacity .25s ease,
-        visibility .25s ease,
-        transform .25s ease;
-
-    overflow-y: auto;
-}
-
-/* Mostrar información al pasar el ratón */
-body#modernbb .campus-role-post
-.campus-avatar-wrap:hover .campus-avatar-overlay,
-body#modernbb .campus-role-post
-.campus-avatar-wrap:focus-within .campus-avatar-overlay {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Neutralizar el estilo antiguo de los datos */
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info {
-    display: block;
-    position: static;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-    color: var(--campus-avatar-overlay-text);
-    font-family: monospace;
-    font-size: 11px;
-    line-height: 1.8;
-    overflow-wrap: anywhere;
-}
-
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info * {
-    color: inherit;
-}
-
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info strong,
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info b {
-    color: var(--campus-palette-48);
-}
-
-/* Nombre y rango bajo el avatar */
-body#modernbb .campus-role-post
-.campus-profile-identity {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    width: 100%;
-    padding: 14px 0 4px;
-    text-align: center;
-}
-
-body#modernbb .campus-role-post
-.campus-profile-identity .postprofile-name {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-body#modernbb .campus-role-post
-.campus-profile-identity .postprofile-rank {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-/* =========================================
-   CONTACTOS EN LA CABECERA DEL MENSAJE
-========================================= */
-
-body#modernbb .campus-role-post
-.campus-post-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-
-    margin-left: auto;
-    width: max-content;
-    max-width: 100%;
-}
-
-/* Conservar los botones originales */
-body#modernbb .campus-role-post
-.campus-post-actions .menu-wrap {
-    margin: 0;
-}
-
-/* Segunda fila: iconos de contacto */
-body#modernbb .campus-role-post
-.campus-post-contact {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 8px;
-
-    width: auto;
-    min-height: 26px;
-    margin: 0;
-    padding: 0;
-
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-body#modernbb .campus-role-post
-.campus-post-contact a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 26px;
-    height: 26px;
-
-    border-radius: 6px;
-    color: var(--season-primary);
-    text-decoration: none;
-    transition: background .2s, transform .2s;
-}
-
-body#modernbb .campus-role-post
-.campus-post-contact a:hover {
-    background: var(--campus-palette-49);
-    transform: translateY(-2px);
-}
-
-/* Evitar que los iconos se desborden */
-body#modernbb .campus-role-post
-.campus-post-contact img {
-    max-width: 20px;
-    max-height: 20px;
-    object-fit: contain;
-}
-
-/* Acceso a datos en dispositivos táctiles */
-@media (hover: none) {
-    body#modernbb .campus-role-post
-    .campus-avatar-wrap:focus-within
-    .campus-avatar-overlay {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
-}
-
-
-/* ==========================================
-   COLLEGE DREAMS · CABECERA COMPACTA
-   Solo mensajes individuales
-========================================== */
-
-body#modernbb .campus-role-post > .post-head {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: auto auto;
-  align-content: center !important;
-  align-items: center;
-  column-gap: 16px;
-  row-gap: 3px;
-
-  min-height: 0 !important;
-  height: auto !important;
-  padding:
-    var(--campus-post-head-padding-y)
-    var(--campus-post-head-padding-x) !important;
-}
-
-/* Título: columna izquierda */
-body#modernbb .campus-role-post .post-head > .topic-title {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: end;
-  margin: 0 !important;
-  min-width: 0;
-}
-
-/* Fecha: debajo del título */
-body#modernbb .campus-role-post .post-head > .topic-date {
-  grid-column: 1;
-  grid-row: 2;
-  align-self: start;
-  margin: 0 !important;
-  font-family: var(--campus-mono-font);
-  color: var(--campus-muted);
-}
-
-/* Acciones: dos filas a la derecha */
-body#modernbb .campus-role-post .campus-post-actions {
-  grid-column: 2;
-  grid-row: 1 / 3;
-
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-end !important;
-  justify-content: center !important;
-  gap: 5px !important;
-
-  width: auto !important;
-  min-width: 0;
-  max-width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Primera fila */
-body#modernbb .campus-role-post
-.campus-post-actions .menu-wrap {
-  display: flex !important;
-  justify-content: flex-end;
-  align-items: center;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-body#modernbb .campus-role-post
-.campus-post-actions .profile-icons {
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--campus-post-action-gap);
-  position: static !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-body#modernbb .campus-role-post
-.campus-post-actions .profile-icons > li {
-  position: relative;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none;
-}
-
-/* Segunda fila */
-body#modernbb .campus-role-post
-.campus-post-actions .campus-post-contact {
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--campus-post-action-gap) !important;
-
-  width: auto !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}
-
-/* Botones Font Awesome de ambas filas */
-body#modernbb .campus-role-post
-.campus-post-actions :is(.profile-icons, .campus-post-contact) a {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-
-  width: var(--campus-post-action-size) !important;
-  height: var(--campus-post-action-size) !important;
-  min-width: var(--campus-post-action-size);
-  margin: 0 !important;
-  padding: 0 !important;
-
-  color: var(--campus-post-action-fg) !important;
-  background: var(--campus-post-action-bg) !important;
-  border: 1px solid var(--campus-border);
-  border-radius: 6px;
-  text-decoration: none !important;
-  line-height: 1;
-}
-
-body#modernbb .campus-role-post
-.campus-post-actions a:hover {
-  color: var(--campus-post-action-hover) !important;
-  border-color: var(--season-primary);
-}
-
-/* Iconos insertados mediante JS */
-body#modernbb .campus-role-post
-.campus-post-actions .campus-fa-action {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-  font-size: 12px !important;
-  line-height: 1 !important;
-  color: inherit !important;
-}
-
-/* Ocultar solo imágenes sustituidas */
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready > img {
-  display: none !important;
-}
-
-/* Ocultar el botón + cuando las acciones
-   están visibles en la primera fila */
-body#modernbb .campus-role-post
-.campus-post-actions .post-menu {
-  display: none !important;
-}
-
-/* ==========================================
-   FLECHAS DE NAVEGACIÓN
-========================================== */
-
-body#modernbb .topic-actions
-:is(.pagination, .pagination a) {
-  color: var(--campus-topic-arrow-fg);
-}
-
-body#modernbb .topic-actions .pagination a,
-body#modernbb .topic-actions a.campus-nav-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 28px;
-  min-height: 28px;
-  padding: 5px 8px;
-  background: var(--campus-topic-arrow-bg) !important;
-  color: var(--campus-topic-arrow-fg) !important;
-  border: 1px solid var(--campus-topic-arrow-border);
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-/* Responsive */
 @media (max-width: 700px) {
-  body#modernbb .campus-role-post > .post-head {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
-    gap: 7px;
+  body#modernbb .campus-role-post {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas: "profile" "head" "body" "likes" !important;
+    grid-template-rows: auto auto auto auto !important;
+    gap: 12px !important;
+    padding: 14px !important;
   }
-
-  body#modernbb .campus-role-post
-  .campus-post-actions {
-    grid-column: 1;
+  body#modernbb .campus-role-post > .postprofile { width: 100% !important; }
+  body#modernbb .campus-role-post > .postprofile > dl { position: static !important; }
+  body#modernbb .campus-role-post .campus-avatar-wrap {
+    width: min(300px, 100%) !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 2 / 3;
+    margin: 0 auto;
+  }
+  body#modernbb .campus-role-post > .post-head {
+    --campus-post-icon-size: 70px;
+    grid-template-columns: var(--campus-post-icon-size) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto;
+    row-gap: 7px;
+    border-radius: 10px;
+  }
+  body#modernbb .campus-role-post .post-head > .campus-post-actions {
+    grid-column: 1 / -1;
     grid-row: 3;
     align-items: flex-start !important;
   }
-
-  body#modernbb .campus-role-post
-  .campus-post-actions :is(.profile-icons, .campus-post-contact) {
+  body#modernbb .campus-role-post .campus-post-actions :is(.profile-icons, .campus-post-contact) {
     justify-content: flex-start;
   }
-}
-
-/* ==========================================
-   COLLEGE DREAMS · ICONOS SIN DUPLICADOS
-   ========================================== */
-
-/* Ocultar cualquier contenido original del enlace,
-   sin eliminarlo del DOM ni alterar su funcionamiento */
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready
-> :not(.campus-fa-action) {
-  display: none !important;
-}
-
-/* Ocultar también texto original suelto del enlace */
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready {
-  font-size: 0 !important;
-}
-
-/* Ocultar pseudoelementos originales del enlace */
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready::before,
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Algunos iconos de Foroactivo se dibujan
-   sobre el LI, no sobre el enlace */
-body#modernbb .campus-role-post
-.campus-post-actions
-.profile-icons li.campus-icon-item-ready::before,
-body#modernbb .campus-role-post
-.campus-post-actions
-.profile-icons li.campus-icon-item-ready::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Único icono visible */
-body#modernbb .campus-role-post
-.campus-post-actions
-a.campus-icon-ready > .campus-fa-action {
-  display: inline-block !important;
-  position: static !important;
-
-  font-family: "Font Awesome 6 Free" !important;
-  font-style: normal !important;
-  font-weight: 900 !important;
-  font-size: 12px !important;
-  line-height: 1 !important;
-
-  color: inherit !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Mantener la apariencia existente de los botones */
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready {
-  color: var(--campus-post-action-fg) !important;
-  background: var(--campus-post-action-bg) !important;
-  border-color: var(--campus-border) !important;
-}
-
-body#modernbb .campus-role-post
-.campus-post-actions a.campus-icon-ready:hover {
-  color: var(--campus-post-action-hover) !important;
-  border-color: var(--season-primary) !important;
-}
-/* COLLEGE DREAMS · Ocultar cita múltiple (Quote+) */
-body#modernbb .campus-role-post .profile-icons li.btn-quote-multi {
-  display: none !important;
-}
-
-
-/* ==========================================
-   COLLEGE DREAMS · ICONO DE PERFIL EN POSTS
-   ========================================== */
-
-body#modernbb .campus-role-post > .post-head:has(
-  .campus-post-profile-icon
-) {
-  grid-template-columns: 100px minmax(0, 1fr) auto;
-  column-gap: 14px;
-}
-
-/* Icono de 100 × 100 */
-body#modernbb .campus-role-post
-.campus-post-profile-icon {
-  grid-column: 1;
-  grid-row: 1 / 3;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid var(--campus-border);
-  background: var(--campus-surface);
-  align-self: center;
-}
-
-body#modernbb .campus-role-post
-.campus-post-profile-icon img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Título y fecha en la columna central */
-body#modernbb .campus-role-post
-.post-head:has(.campus-post-profile-icon)
-> .topic-title,
-body#modernbb .campus-role-post
-.post-head:has(.campus-post-profile-icon)
-> .topic-date {
-  grid-column: 2;
-}
-
-/* Acciones a la derecha */
-body#modernbb .campus-role-post
-.post-head:has(.campus-post-profile-icon)
-> .campus-post-actions {
-  grid-column: 3;
-  grid-row: 1 / 3;
-}
-
-/* Adaptación a móviles */
-@media (max-width: 700px) {
-  body#modernbb .campus-role-post
-  > .post-head:has(.campus-post-profile-icon) {
-    grid-template-columns: 70px minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
-    column-gap: 10px;
+  body#modernbb .campus-role-post > .postbody {
+    border-top: 1px solid var(--campus-border) !important;
+    border-radius: 10px;
   }
-
-  body#modernbb .campus-role-post
-  .campus-post-profile-icon {
-    width: 70px;
-    height: 70px;
-  }
-
-  body#modernbb .campus-role-post
-  .post-head:has(.campus-post-profile-icon)
-  > .campus-post-actions {
-    grid-column: 1 / -1;
-    grid-row: 3;
-  }
-}
-
-
-/* ==========================================
-   COLLEGE DREAMS · DATOS DEL AVATAR
-   ========================================== */
-
-/* Quitar la línea debajo del rango */
-body#modernbb .campus-role-post
-.campus-profile-identity {
-  border-bottom: 0 !important;
-}
-
-body#modernbb .campus-role-post
-.campus-profile-identity .postprofile-rank {
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-}
-
-body#modernbb .campus-role-post
-.campus-profile-identity::after,
-body#modernbb .campus-role-post
-.campus-profile-identity .postprofile-rank::after {
-  content: none !important;
-}
-
-/* Distribución de datos dentro del avatar */
-body#modernbb .campus-role-post
-.campus-avatar-overlay {
-  justify-content: center !important;
-  padding: 14px !important;
-}
-
-/* Contenedor de los campos */
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info {
-  display: flex !important;
-  flex-direction: column;
-  gap: var(--campus-profile-data-gap);
-  width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Cada dato ocupa una tarjeta independiente */
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-data-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 30px;
-  padding: 6px 9px;
-
-  color: var(--campus-profile-data-text) !important;
-  background: var(--campus-profile-data-bg);
-  border: 1px solid var(--campus-profile-data-border);
-  border-radius: var(--campus-profile-data-radius);
-
-  font-family: var(--campus-mono-font);
-  font-size: 11px;
-  line-height: 1.4;
-  text-align: center;
-  overflow-wrap: anywhere;
-  box-sizing: border-box;
-}
-
-/* Los valores heredan el color del dato */
-body#modernbb .campus-role-post
-.campus-profile-data-item * {
-  color: inherit !important;
-}
-
-/* Evitar separadores innecesarios */
-body#modernbb .campus-role-post
-.campus-profile-data-item br {
-  display: none !important;
-}
-
-
-/* ==========================================
-   COLLEGE DREAMS · DATOS DEL HOVER
-   ========================================== */
-
-/* Contenedor de datos */
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: var(--campus-profile-data-gap);
-  width: 100%;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Primera fila: Mensajes | USD */
-body#modernbb .campus-role-post
-.campus-profile-summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--campus-profile-data-gap);
-  width: 100%;
-}
-
-/* Todas las tarjetas */
-body#modernbb .campus-role-post
-.campus-profile-data-item {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 0;
-  min-height: 30px;
-  padding: 7px 8px !important;
-
-  background: color-mix(
-  in srgb,
-  var(--campus-post-group-color, var(--season-primary)) 25%,
-  transparent
-  ) !important;
-  border: 1px solid color-mix(
-  in srgb,
-  var(--campus-post-group-color, var(--season-primary)) 45%,
-  transparent
-) !important;
-  border-radius: var(--campus-profile-data-radius);
-
-  color: var(--campus-profile-data-text) !important;
-  font-family: var(--campus-mono-font);
-  font-size: 11px;
-  line-height: 1.4;
-  text-align: center;
-  overflow-wrap: anywhere;
-  box-sizing: border-box;
-}
-
-/* Los valores heredan el color de la tarjeta */
-body#modernbb .campus-role-post
-.campus-profile-data-item * {
-  color: inherit !important;
-}
-
-/* Eliminar etiquetas residuales */
-body#modernbb .campus-role-post
-.campus-profile-data-item .label {
-  display: none !important;
-}
-
-/* Evitar saltos de línea internos */
-body#modernbb .campus-role-post
-.campus-profile-data-item br {
-  display: none !important;
-}
-
-/* Ocultar el icono de perfil original en el hover.
-   El icono clonado de la cabecera no se ve afectado. */
-body#modernbb .campus-role-post
-.campus-avatar-overlay
-.postprofile-info img[alt="Icono de personaje"] {
-  display: none !important;
-}
-
-/* Quitar línea inferior del rango */
-body#modernbb .campus-role-post
-.campus-profile-identity,
-body#modernbb .campus-role-post
-.campus-profile-identity .postprofile-rank {
-  border-bottom: none !important;
-}
-
-body#modernbb .campus-role-post
-.campus-profile-identity::after,
-body#modernbb .campus-role-post
-.campus-profile-identity .postprofile-rank::after {
-  content: none !important;
-}
-
-/* ==========================================
-   COLLEGE DREAMS · PERFIL STICKY EN POSTS
-   ========================================== */
-
-/* Permitir que el perfil siga al desplazamiento */
-body#modernbb .campus-role-post {
-  align-items: stretch;
-}
-
-/* Columna lateral del perfil */
-body#modernbb .campus-role-post > .postprofile {
-  align-self: stretch !important;
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: visible !important;
-}
-
-/* Mantener el avatar visible durante el scroll */
-body#modernbb .campus-role-post > .postprofile > dl {
-  position: sticky !important;
-  top: 16px;
-  height: max-content !important;
-  max-height: calc(100vh - 32px);
-  margin: 0 !important;
-  overflow: visible !important;
-}
-
-/* Evitar que el avatar se deforme */
-body#modernbb .campus-role-post
-.campus-avatar-wrap {
-  flex-shrink: 0;
-}
-
-/* En pantallas pequeñas, volver al flujo normal */
-@media (max-width: 700px) {
-  body#modernbb .campus-role-post > .postprofile > dl {
-    position: static !important;
-    max-height: none !important;
-  }
-}
-/* College Dreams · complemento visual de recuperación de publicaciones */
-body#modernbb .campus-role-post {
-  --campus-post-group-color: var(--season-primary);
-}
-.post-head > .topic-title {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: end;
-}
-
-body#modernbb .campus-role-post
-.post-head > .topic-date {
-  grid-column: 2;
-  grid-row: 2;
-  align-self: start;
-  flex-basis: auto;
-}
-
-body#modernbb .campus-role-post
-.post-head > .campus-post-actions {
-  grid-column: 3;
-  grid-row: 1 / 3;
-  order: initial;
-  margin-left: 0;
-}
-
-body#modernbb .campus-role-post .campus-post-profile-icon {
-  display: block; flex: 0 0 100px; width: 100px; height: 100px;
-  overflow: hidden; border-radius: 10px;
-  border: 1px solid var(--campus-border);
-  order: -2;
-}
-body#modernbb .campus-role-post .campus-post-profile-icon img {
-  display: block; width: 100%; height: 100%; object-fit: cover;
-}
-body#modernbb .campus-role-post .post-head .topic-title {
-  flex: 1 1 220px; min-width: 0;
-  color: var(--campus-post-group-color) !important;
-}
-body#modernbb .campus-role-post .post-head .topic-title a {
-  color: var(--campus-post-group-color) !important;
-}
-body#modernbb .campus-role-post .post-head .topic-date {
-  order: 2; flex-basis: 100%;
-}
-body#modernbb .campus-role-post .campus-post-actions {
-  order: 1; display: flex; flex-direction: column;
-  align-items: flex-end; gap: 8px; margin-left: auto;
-}
-body#modernbb .campus-role-post .campus-post-actions .menu-wrap {
-  margin: 0;
-}
-body#modernbb .campus-role-post .campus-post-contact {
-  display: flex; gap: 8px; justify-content: flex-end;
-  width: auto; margin: 0; padding: 0; border: 0; background: transparent;
-}
-body#modernbb .campus-role-post .campus-post-contact a,
-body#modernbb .campus-role-post .campus-post-actions .profile-icons a {
-  color: var(--campus-post-group-color);
-}
-body#modernbb .campus-role-post .campus-avatar-wrap {
-  position: relative; width: 300px; max-width: 100%; height: 450px;
-  overflow: hidden; border-radius: 10px;
-}
-body#modernbb .campus-role-post .campus-avatar-wrap .postprofile-avatar {
-  width: 100%; height: 100%; margin: 0;
-}
-body#modernbb .campus-role-post .campus-avatar-wrap .postprofile-avatar img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-body#modernbb .campus-role-post .campus-avatar-overlay {
-  position: absolute; inset: 0; z-index: 3;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 14px; box-sizing: border-box;
-  background: linear-gradient(0deg, var(--campus-avatar-overlay-start), var(--campus-avatar-overlay-mid) 65%, var(--campus-avatar-overlay-end));
-  opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s;
-  overflow-y: auto;
-}
-body#modernbb .campus-role-post .campus-avatar-wrap:hover .campus-avatar-overlay,
-body#modernbb .campus-role-post .campus-avatar-wrap:focus-within .campus-avatar-overlay {
-  opacity: 1; visibility: visible;
-}
-body#modernbb .campus-role-post .campus-avatar-overlay .postprofile-info {
-  display: block; position: static; margin: 0; padding: 0;
-  width: 100%; background: transparent; border: 0;
-}
-body#modernbb .campus-role-post .campus-profile-summary {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;
-  margin-bottom: 8px;
-}
-body#modernbb .campus-role-post .campus-profile-other {
-  display: grid; gap: 8px;
-}
-body#modernbb .campus-role-post .campus-profile-data-item {
-  padding: 9px 10px; border-radius: var(--campus-profile-data-radius, 8px);
-  background: color-mix(in srgb, var(--campus-post-group-color) 25%, transparent);
-  border: 1px solid color-mix(in srgb, var(--campus-post-group-color) 45%, transparent);
-  color: var(--campus-avatar-overlay-text) !important;
-  text-align: center; overflow-wrap: anywhere;
-}
-body#modernbb .campus-role-post .profile-icons li.btn-quote-multi {
-  display: none !important;
-}
-
-/* ==========================================
-   COLLEGE DREAMS · CORRECCIÓN PERFIL STICKY
-   ========================================== */
-
-/* El post no debe recortar el desplazamiento
-   del perfil lateral */
-body#modernbb .campus-role-post {
-  overflow: visible !important;
-}
-
-/* La columna del perfil ocupa toda la altura
-   disponible del mensaje */
-body#modernbb .campus-role-post > .postprofile {
-  align-self: stretch !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-
-/* Avatar, nombre y rango siguen el scroll */
-body#modernbb .campus-role-post > .postprofile > dl {
-  position: sticky !important;
-  top: calc(var(--campus-nav-small) + 16px) !important;
-  align-self: flex-start;
-  height: max-content !important;
-  overflow: visible !important;
-}
-
-/* Mantener el comportamiento normal en móviles */
-@media (max-width: 700px) {
-  body#modernbb .campus-role-post > .postprofile > dl {
-    position: static !important;
-  }
-}
-
-
-/* ==========================================
-   COLLEGE DREAMS · PERFIL DE MENSAJES
-   ========================================== */
-
-/* Avatar: dimensiones exactas */
-
-body#modernbb .campus-role-post .campus-avatar-wrap {
-  position: relative;
-  width: 300px;
-  height: 450px;
-  min-height: 450px;
-  max-height: 450px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-body#modernbb .campus-role-post .campus-avatar-wrap
-.postprofile-avatar {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-body#modernbb .campus-role-post .campus-avatar-wrap
-.postprofile-avatar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Hover sobre la imagen */
-
-body#modernbb .campus-role-post .campus-avatar-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
-/* Datos de perfil */
-
-body#modernbb .campus-role-post .campus-profile-data {
-  display: flex;
-  flex-direction: column;
-  gap: var(--campus-profile-data-gap);
-  width: 100%;
-}
-
-/* Primera fila: mensajes y USD */
-
-body#modernbb .campus-role-post .campus-profile-summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--campus-profile-data-gap);
-}
-
-/* Resto de campos */
-
-body#modernbb .campus-role-post .campus-profile-other {
-  display: flex;
-  flex-direction: column;
-  gap: var(--campus-profile-data-gap);
-}
-
-/* Tarjetas con color del grupo */
-
-body#modernbb .campus-role-post .campus-profile-data-item {
-  box-sizing: border-box;
-  min-width: 0;
-  padding: 8px 10px;
-  border-radius: var(--campus-profile-data-radius);
-
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 25%,
-    transparent
-  );
-
-  border: 1px solid color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 45%,
-    transparent
-  );
-
-  color: var(--campus-profile-data-text);
-  text-align: center;
-  font-size: 11px;
-}
-
-/* Icono del personaje en cabecera */
-
-body#modernbb .campus-role-post .campus-post-profile-icon {
-  display: block;
-  flex: 0 0 100px;
-  width: 100px;
-  height: 100px;
-}
-
-body#modernbb .campus-role-post .campus-post-profile-icon img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Título del mensaje según el grupo */
-
-body#modernbb .campus-role-post .post-head .topic-title {
-  color: var(
-    --campus-post-group-color,
-    var(--season-primary)
-  );
-}
-/* COLLEGE DREAMS · TARJETAS SEGÚN GRUPO */
-
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-data-item {
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 25%,
-    transparent
-  ) !important;
-
-  border: 1px solid color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 48%,
-    transparent
-  ) !important;
-
-  color: var(--campus-profile-data-text) !important;
-  border-radius: var(--campus-profile-data-radius) !important;
-}
-
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-overlay
-.campus-profile-data-item {
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 18%,
-    transparent
-  ) !important;
-
-  border-color: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 38%,
-    transparent
-  ) !important;
-}
-
-/* ==================================================
-   COLLEGE DREAMS · AVATAR Y HOVER · CORRECCIÓN
-   ================================================== */
-
-/* Contenedor del avatar: altura exacta */
-body#modernbb .campus-role-post .campus-avatar-wrap {
-  position: relative !important;
-  display: block !important;
-  width: 300px !important;
-  height: 450px !important;
-  min-height: 450px !important;
-  max-height: 450px !important;
-  overflow: hidden !important;
-  border-radius: 10px !important;
-  box-sizing: border-box !important;
-}
-
-/* Imagen principal: ocupa todo el contenedor */
-body#modernbb .campus-role-post
-.campus-avatar-wrap .postprofile-avatar {
-  display: block !important;
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
-
-body#modernbb .campus-role-post
-.campus-avatar-wrap .postprofile-avatar img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  margin: 0 !important;
-}
-
-/* Overlay: sobre la imagen, nunca debajo */
-body#modernbb .campus-role-post .campus-avatar-overlay {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 0 !important;
-  max-height: 100% !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 14px !important;
-  overflow: hidden !important;
-
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-
-  background: transparent !important;
-}
-
-/* Fondo suave únicamente al pasar el cursor */
-body#modernbb .campus-role-post
-.campus-avatar-wrap:hover .campus-avatar-overlay {
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 12%,
-    transparent
-  ) !important;
-}
-
-/* Evitar fondos adicionales en los contenedores */
-body#modernbb .campus-role-post
-.campus-avatar-overlay .postprofile-info,
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-data,
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-summary,
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-other {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* TARJETAS DEL HOVER · COLOR DEL GRUPO */
-
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-data-item {
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 38%,
-    var(--campus-avatar-overlay-start) 62%
-  ) !important;
-
-  border: 1px solid color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 65%,
-    transparent
-  ) !important;
-
-  color: var(--campus-avatar-overlay-text) !important;
-
-  border-radius: var(--campus-profile-data-radius) !important;
-  padding: 8px 6px !important;
-  box-sizing: border-box !important;
-  text-align: center !important;
-}
-
-/* MENSAJES Y USD EN LA MISMA FILA */
-
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-summary {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: var(--campus-profile-data-gap) !important;
-  width: 100% !important;
-}
-
-/* RESTO DE DATOS UNO DEBAJO DE OTRO */
-
-body#modernbb .campus-role-post
-.campus-avatar-overlay .campus-profile-other {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: var(--campus-profile-data-gap) !important;
-  width: 100% !important;
-  margin-top: var(--campus-profile-data-gap) !important;
-}
-
-/* Modo oscuro */
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-overlay {
-  background: transparent !important;
-}
-
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-wrap:hover
-.campus-avatar-overlay {
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 10%,
-    transparent
-  ) !important;
-}
-
-
-/* ==================================================
-   COLLEGE DREAMS · HOVER DEL AVATAR · MODO OSCURO
-   ================================================== */
-
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-overlay
-.campus-profile-data-item {
-
-  /* Color del grupo mezclado con una base oscura */
-  background: color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 38%,
-    var(--campus-avatar-overlay-start) 62%
-  ) !important;
-
-  border: 1px solid color-mix(
-    in srgb,
-    var(--campus-post-group-color, var(--season-primary)) 65%,
-    transparent
-  ) !important;
-
-  color: var(--campus-avatar-overlay-text) !important;
-}
-
-/* El contenedor general sigue sin fondo negro */
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-overlay
-.campus-profile-data,
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-overlay
-.campus-profile-summary,
-html[data-campus-theme="dark"] body#modernbb
-.campus-role-post .campus-avatar-overlay
-.campus-profile-other {
-  background: transparent !important;
-}
-/* ICONO DEL PERSONAJE · 100 × 100 EN TODOS LOS MENSAJES */
-
-body#modernbb .campus-role-post
-.post-head .campus-post-profile-icon {
-  display: block !important;
-  flex: 0 0 100px !important;
-  width: 100px !important;
-  height: 100px !important;
-  min-width: 100px !important;
-  min-height: 100px !important;
-  overflow: hidden !important;
-  border-radius: 10px !important;
-  background: var(--campus-profile-bg) !important;
-  border: 1px solid var(--campus-border) !important;
-  box-sizing: border-box !important;
-}
-
-body#modernbb .campus-role-post
-.post-head .campus-post-profile-icon img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
-
-/* =====================================================
-   COLLEGE DREAMS · COLORES DE GRUPO EN LOS MENSAJES
-   ===================================================== */
-
-/* Variables locales de cada mensaje */
-body#modernbb .campus-role-post {
-  --campus-post-accent:
-    var(--campus-post-group-color, var(--season-primary));
-
-  --campus-post-head-tint:
-    color-mix(
-      in srgb,
-      var(--campus-post-accent) 16%,
-      var(--campus-surface)
-    );
-
-  --campus-post-profile-tint:
-    color-mix(
-      in srgb,
-      var(--campus-post-accent) 10%,
-      var(--campus-surface)
-    );
-}
-
-/* 1. Fondo de la cabecera del mensaje */
-body#modernbb .campus-role-post .post-head {
-  background: var(--campus-post-head-tint) !important;
-  border-color:
-    color-mix(
-      in srgb,
-      var(--campus-post-accent) 20%,
-      var(--campus-border)
-    ) !important;
-}
-
-/* 2. Fondo de la columna del perfil */
-body#modernbb .campus-role-post .postprofile {
-  background: var(--campus-post-profile-tint) !important;
-
-  border-color:
-    color-mix(
-      in srgb,
-      var(--campus-post-accent) 20%,
-      var(--campus-border)
-    ) !important;
-}
-
-/* 3. Mantener el título con el color del grupo */
-body#modernbb .campus-role-post .post-head .topic-title {
-  color: var(--campus-post-accent) !important;
-}
-
-/* =====================================================
-   COLLEGE DREAMS · CABECERA SUPERIOR DE TEMAS
-   ModernBB · Solo páginas viewtopic
-   ===================================================== */
-
-/* Contenedor del título y la ruta */
-body#modernbb:has(.campus-role-post)
-.sub-header.campus-topic-main-header {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-
-  gap: 16px !important;
-  padding: 22px 26px !important;
-
-  background: var(--campus-topic-main-bg) !important;
-  border: 1px solid var(--campus-topic-main-border) !important;
-  border-radius: 14px !important;
-
-  box-shadow: 0 4px 18px rgba(0, 0, 0, .06) !important;
-  margin-bottom: 18px !important;
-}
-
-/* Título del tema */
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .page-title {
-  display: block !important;
-  width: auto !important;
-
-  margin: 0 0 8px !important;
-  padding: 0 !important;
-
-  background: transparent !important;
-  color: var(--season-primary) !important;
-
-  font-family: var(--campus-title-font) !important;
-  font-size: 32px !important;
-  font-weight: 400 !important;
-  line-height: 1.3 !important;
-
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Enlaces y elementos dentro del título */
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .page-title a,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .page-title span {
-  background: transparent !important;
-  color: inherit !important;
-}
-
-/* Ruta de navegación */
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .breadcrumbs,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .breadcrumbs a,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .breadcrumbs span {
-  background: transparent !important;
-  color: var(--campus-topic-main-muted) !important;
-  font-family: var(--campus-body-font) !important;
-  font-size: 11px !important;
-  text-decoration: none !important;
-}
-
-/* Botones superiores de nuevo tema y respuesta */
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .buttons a,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .btn,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header a.button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  min-height: 38px !important;
-  padding: 9px 16px !important;
-
-  background: var(--campus-topic-main-button-bg) !important;
-  color: var(--campus-topic-main-button-text) !important;
-
-  border: 0 !important;
-  border-radius: 8px !important;
-
-  font-family: var(--campus-body-font) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-
-  transition: background .2s ease !important;
-}
-
-/* Hover de botones */
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .buttons a:hover,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header .btn:hover,
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header a.button:hover {
-  background: var(--campus-topic-main-button-hover) !important;
-}
-
-/* =====================================================
-   COLLEGE DREAMS · ICONOS SEGÚN COLOR DEL GRUPO
-   ===================================================== */
-
-body#modernbb .campus-role-post {
-  --campus-post-icon-color:
-    var(--campus-post-group-color, var(--season-primary));
-
-  --campus-post-icon-bg:
-    color-mix(
-      in srgb,
-      var(--campus-post-icon-color) 18%,
-      var(--campus-surface)
-    );
-
-  --campus-post-icon-border:
-    color-mix(
-      in srgb,
-      var(--campus-post-icon-color) 30%,
-      transparent
-    );
-}
-
-/* Iconos de acciones y contactos */
-body#modernbb .campus-role-post
-.campus-post-actions .profile-icons a,
-
-body#modernbb .campus-role-post
-.campus-post-actions .campus-post-contact a {
-  background: var(--campus-post-icon-bg) !important;
-  color: var(--campus-post-icon-color) !important;
-  border-color: var(--campus-post-icon-border) !important;
-}
-
-/* Iconos Font Awesome */
-body#modernbb .campus-role-post
-.campus-post-actions .profile-icons a i,
-
-body#modernbb .campus-role-post
-.campus-post-actions .campus-post-contact a i {
-  color: var(--campus-post-icon-color) !important;
-}
-
-/* Hover */
-body#modernbb .campus-role-post
-.campus-post-actions a:hover {
-  background:
-    color-mix(
-      in srgb,
-      var(--campus-post-icon-color) 32%,
-      var(--campus-surface)
-    ) !important;
-}
-/* =====================================================
-   COLLEGE DREAMS · CABECERA PRINCIPAL DEL TEMA
-   ===================================================== */
-
-/* Contenedor del título y botones superiores */
-body#modernbb:has(.campus-role-post) .sub-header {
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-
-  background: var(--campus-surface) !important;
-  color: var(--campus-text) !important;
-
-  border: 1px solid var(--campus-border) !important;
-  border-right: 4px solid var(--season-primary) !important;
-  border-radius: 14px !important;
-
-  padding: 22px 26px !important;
-  margin-bottom: 20px !important;
-
-  box-sizing: border-box;
-}
-
-/* Título principal */
-body#modernbb:has(.campus-role-post)
-.sub-header .page-title {
-  color: var(--season-primary) !important;
-  background: transparent !important;
-  font-family: var(--campus-title-font) !important;
-  margin: 0 0 8px !important;
-}
-
-/* Ruta de navegación */
-body#modernbb:has(.campus-role-post)
-.sub-header .breadcrumbs,
-
-body#modernbb:has(.campus-role-post)
-.sub-header .breadcrumbs a {
-  color: var(--campus-muted) !important;
-  background: transparent !important;
-}
-
-/* Botones de nuevo tema y responder */
-body#modernbb:has(.campus-role-post)
-.sub-header .buttons a,
-
-body#modernbb:has(.campus-role-post)
-.sub-header a.button1,
-
-body#modernbb:has(.campus-role-post)
-.sub-header a.button2 {
-  background: var(--season-primary) !important;
-  color: var(--campus-contrast) !important;
-  border: 1px solid var(--season-primary) !important;
-  border-radius: 8px !important;
-  padding: 10px 14px !important;
-  text-decoration: none !important;
-}
-
-/* Adaptación al modo oscuro */
-html[data-campus-theme="dark"]
-body#modernbb:has(.campus-role-post)
-.sub-header .buttons a,
-
-html[data-campus-theme="dark"]
-body#modernbb:has(.campus-role-post)
-.sub-header a.button1,
-
-html[data-campus-theme="dark"]
-body#modernbb:has(.campus-role-post)
-.sub-header a.button2 {
-  color: var(--campus-contrast-dark) !important;
-}
-/* =====================================================
-   COLLEGE DREAMS · CABECERA COMPACTA DEL TEMA
-   ===================================================== */
-
-/* Título más claro en modo oscuro */
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .page-title,
-html[data-campus-theme="dark"]
-body#modernbb .campus-topic-main-header .page-title a {
-  color: color-mix(
-    in srgb,
-    var(--season-primary) 65%,
-    var(--campus-contrast) 35%
-  ) !important;
-}
-
-/* Cabecera más próxima a los mensajes */
-body#modernbb .campus-topic-main-header {
-  margin-bottom: 8px !important;
-}
-
-/* Ocultar la barra de acciones superior completa.
-   No afecta a los botones de la cabecera ni a
-   las acciones individuales de cada mensaje. */
-body#modernbb .campus-topic-main-header + .topic-actions {
-  display: none !important;
-}
-
-/* Si existe una barra inferior, conservarla */
-body#modernbb .topic-actions.bottom {
-  display: revert;
-}
-
-/* Eliminar separación innecesaria */
-body#modernbb:has(.campus-role-post) .topic-actions:not(.bottom) {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-/* =====================================================
-   COLLEGE DREAMS · ELIMINAR BARRA SUPERIOR DE TEMAS
-   ===================================================== */
-
-/* Ocultar la barra superior de acciones del tema */
-body#modernbb:has(.campus-role-post)
-#page-body .topic-actions:not(.bottom) {
-  display: none !important;
-}
-
-/* Acercar la cabecera al primer mensaje */
-body#modernbb:has(.campus-role-post)
-.campus-topic-main-header {
-  margin-bottom: 12px !important;
-}
-
-/* Eliminar márgenes adicionales del bloque de mensajes */
-body#modernbb:has(.campus-role-post)
-.topic-actions:not(.bottom) + .post,
-body#modernbb:has(.campus-role-post)
-.topic-actions:not(.bottom) + .campus-role-post {
-  margin-top: 0 !important;
 }
