@@ -6291,3 +6291,57 @@ body#modernbb:has(.campus-role-post)
 .campus-topic-main-header a.button:hover {
   background: var(--campus-topic-main-button-hover) !important;
 }
+
+/* =====================================================
+   COLLEGE DREAMS · ICONOS SEGÚN COLOR DEL GRUPO
+   ===================================================== */
+
+body#modernbb .campus-role-post {
+  --campus-post-icon-color:
+    var(--campus-post-group-color, var(--season-primary));
+
+  --campus-post-icon-bg:
+    color-mix(
+      in srgb,
+      var(--campus-post-icon-color) 18%,
+      var(--campus-surface)
+    );
+
+  --campus-post-icon-border:
+    color-mix(
+      in srgb,
+      var(--campus-post-icon-color) 30%,
+      transparent
+    );
+}
+
+/* Iconos de acciones y contactos */
+body#modernbb .campus-role-post
+.campus-post-actions .profile-icons a,
+
+body#modernbb .campus-role-post
+.campus-post-actions .campus-post-contact a {
+  background: var(--campus-post-icon-bg) !important;
+  color: var(--campus-post-icon-color) !important;
+  border-color: var(--campus-post-icon-border) !important;
+}
+
+/* Iconos Font Awesome */
+body#modernbb .campus-role-post
+.campus-post-actions .profile-icons a i,
+
+body#modernbb .campus-role-post
+.campus-post-actions .campus-post-contact a i {
+  color: var(--campus-post-icon-color) !important;
+}
+
+/* Hover */
+body#modernbb .campus-role-post
+.campus-post-actions a:hover {
+  background:
+    color-mix(
+      in srgb,
+      var(--campus-post-icon-color) 32%,
+      var(--campus-surface)
+    ) !important;
+}
