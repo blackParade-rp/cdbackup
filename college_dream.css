@@ -6133,6 +6133,59 @@ body#modernbb .campus-role-post
   height: 100% !important;
   object-fit: cover !important;
 }
+
+/* =====================================================
+   COLLEGE DREAMS · COLORES DE GRUPO EN LOS MENSAJES
+   ===================================================== */
+
+/* Variables locales de cada mensaje */
+body#modernbb .campus-role-post {
+  --campus-post-accent:
+    var(--campus-post-group-color, var(--season-primary));
+
+  --campus-post-head-tint:
+    color-mix(
+      in srgb,
+      var(--campus-post-accent) 16%,
+      var(--campus-surface)
+    );
+
+  --campus-post-profile-tint:
+    color-mix(
+      in srgb,
+      var(--campus-post-accent) 10%,
+      var(--campus-surface)
+    );
+}
+
+/* 1. Fondo de la cabecera del mensaje */
+body#modernbb .campus-role-post .post-head {
+  background: var(--campus-post-head-tint) !important;
+  border-color:
+    color-mix(
+      in srgb,
+      var(--campus-post-accent) 20%,
+      var(--campus-border)
+    ) !important;
+}
+
+/* 2. Fondo de la columna del perfil */
+body#modernbb .campus-role-post .postprofile {
+  background: var(--campus-post-profile-tint) !important;
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--campus-post-accent) 20%,
+      var(--campus-border)
+    ) !important;
+}
+
+/* 3. Mantener el título con el color del grupo */
+body#modernbb .campus-role-post .post-head .topic-title {
+  color: var(--campus-post-accent) !important;
+}
+
 /* =====================================================
    COLLEGE DREAMS · CABECERA SUPERIOR DE TEMAS
    ModernBB · Solo páginas viewtopic
