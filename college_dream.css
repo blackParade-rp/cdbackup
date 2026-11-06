@@ -6109,4 +6109,27 @@ html[data-campus-theme="dark"] body#modernbb
 .campus-profile-other {
   background: transparent !important;
 }
+/* ICONO DEL PERSONAJE · 100 × 100 EN TODOS LOS MENSAJES */
 
+body#modernbb .campus-role-post
+.post-head .campus-post-profile-icon {
+  display: block !important;
+  flex: 0 0 100px !important;
+  width: 100px !important;
+  height: 100px !important;
+  min-width: 100px !important;
+  min-height: 100px !important;
+  overflow: hidden !important;
+  border-radius: 10px !important;
+  background: var(--campus-profile-bg) !important;
+  border: 1px solid var(--campus-border) !important;
+  box-sizing: border-box !important;
+}
+
+body#modernbb .campus-role-post
+.post-head .campus-post-profile-icon img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
