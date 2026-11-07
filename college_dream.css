@@ -4981,45 +4981,8 @@ body#modernbb #preview .postbody .content {
 
 
 /* ==========================================
-   COLLEGE DREAMS · TÍTULO RESPUESTA RÁPIDA
-   ========================================== */
-
-body#modernbb #quick_reply > h2,
-body#modernbb #quick_reply .h3,
-body#modernbb .quickreply > h2,
-body#modernbb .quickreply .h3,
-body#modernbb #quick_reply + h2 {
-  display: block !important;
-  width: 100% !important;
-
-  background: transparent !important;
-  color: var(--campus-text) !important;
-
-  font-family: var(--campus-title-font) !important;
-  font-size: 30px !important;
-  font-weight: 400 !important;
-  line-height: 1.5 !important;
-
-  text-transform: none !important;
-  letter-spacing: 0 !important;
-
-  border: 0 !important;
-  box-shadow: none !important;
-
-  margin: 0 0 14px !important;
-  padding: 0 !important;
-}
-
-/* Elimina fondos heredados de los enlaces o spans */
-
-body#modernbb #quick_reply > h2 *,
-body#modernbb .quickreply > h2 * {
-  background: transparent !important;
-  color: inherit !important;
-}
-
-/* ==========================================
-   COLLEGE DREAMS · TÍTULO RESPUESTA RÁPIDA
+   COLLEGE DREAMS · RESPUESTA RÁPIDA
+   TÍTULO
    ========================================== */
 
 body#modernbb .campus-quick-title {
