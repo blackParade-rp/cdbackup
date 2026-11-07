@@ -4932,3 +4932,18 @@ body#modernbb .quickreply h2 {
     max-width: 100% !important;
   }
 }
+
+/* ==========================================
+   COLLEGE DREAMS · TÍTULO DE PUBLICACIÓN
+   ========================================== */
+
+body#modernbb form#post h1.page-title,
+body#modernbb h1.page-title {
+  font-family: var(--campus-title-font) !important;
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--campus-text) !important;
+}
