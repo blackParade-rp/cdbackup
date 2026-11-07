@@ -4948,27 +4948,32 @@ body#modernbb h1.page-title {
   color: var(--campus-text) !important;
 }
 
-/* ================================================
-   COLLEGE DREAMS · CABECERA DE PREVISUALIZACIÓN
-   ================================================ */
-/* COLLEGE DREAMS · PREVISUALIZACIÓN A ANCHO COMPLETO */
+/* ==========================================
+   COLLEGE DREAMS · PREVISUALIZACIÓN
+   CABECERA A TODO EL ANCHO
+   ========================================== */
 
-body#modernbb .postbody > div.h3 {
+body#modernbb #preview h2,
+body#modernbb #preview h3,
+body#modernbb #preview .postbody > h3 {
   position: relative !important;
   display: block !important;
+
+  width: 100% !important;
+  max-width: none !important;
   box-sizing: border-box !important;
 
-  width: auto !important;
-  margin: 0 -18px 18px !important;
-  padding: 18px 12px 25px !important;
+  margin: 0 0 18px !important;
+  padding: 18px 16px 26px !important;
 
   background: color-mix(
     in srgb,
-    var(--season-primary) 14%,
+    var(--season-primary) 12%,
     var(--campus-surface)
   ) !important;
 
   color: var(--campus-text) !important;
+
   font-family: var(--campus-body-font) !important;
   font-size: 13px !important;
   font-weight: 700 !important;
@@ -4977,31 +4982,28 @@ body#modernbb .postbody > div.h3 {
   text-align: center !important;
 
   border: 0 !important;
-  border-bottom: 1px solid var(--campus-border) !important;
-  border-radius: 12px 12px 0 0 !important;
+  border-radius: 0 !important;
 }
 
-/* Subrayado decorativo tipo Staedtler */
+/* Subrayado decorativo */
 
-body#modernbb .postbody > div.h3::after {
+body#modernbb #preview h2::after,
+body#modernbb #preview h3::after,
+body#modernbb #preview .postbody > h3::after {
   content: "";
   position: absolute;
+
+  bottom: 12px;
   left: 50%;
-  bottom: 11px;
   transform: translateX(-50%);
 
   width: 78px;
   height: 3px;
-  border-radius: 100%;
 
+  border-radius: 100%;
   background: var(--season-primary);
-  box-shadow: 0 1px 0
-    color-mix(
-      in srgb,
-      var(--season-primary) 35%,
-      transparent
-    );
 }
+
 
 /* ==========================================
    COLLEGE DREAMS · TÍTULO RESPUESTA RÁPIDA
