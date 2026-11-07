@@ -5018,4 +5018,33 @@ body#modernbb .quickreply > h2 * {
   color: inherit !important;
 }
 
+/* ==========================================
+   COLLEGE DREAMS · TÍTULO RESPUESTA RÁPIDA
+   ========================================== */
 
+body#modernbb .campus-quick-title {
+  display: block !important;
+  width: fit-content !important;
+
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  color: var(--campus-text) !important;
+
+  font-family: var(--campus-title-font) !important;
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body#modernbb .campus-quick-title * {
+  background: transparent !important;
+  color: inherit !important;
+}
