@@ -4948,19 +4948,19 @@ body#modernbb h1.page-title {
   color: var(--campus-text) !important;
 }
 
-
 /* ================================================
    COLLEGE DREAMS · CABECERA DE PREVISUALIZACIÓN
    ================================================ */
+/* COLLEGE DREAMS · PREVISUALIZACIÓN A ANCHO COMPLETO */
 
 body#modernbb .postbody > div.h3 {
   position: relative !important;
   display: block !important;
   box-sizing: border-box !important;
 
-  width: 100% !important;
-  margin: 0 0 18px !important;
-  padding: 16px 12px 24px !important;
+  width: auto !important;
+  margin: 0 -18px 18px !important;
+  padding: 18px 12px 25px !important;
 
   background: color-mix(
     in srgb,
@@ -4969,7 +4969,6 @@ body#modernbb .postbody > div.h3 {
   ) !important;
 
   color: var(--campus-text) !important;
-
   font-family: var(--campus-body-font) !important;
   font-size: 13px !important;
   font-weight: 700 !important;
@@ -4979,7 +4978,7 @@ body#modernbb .postbody > div.h3 {
 
   border: 0 !important;
   border-bottom: 1px solid var(--campus-border) !important;
-  border-radius: 8px 8px 0 0 !important;
+  border-radius: 12px 12px 0 0 !important;
 }
 
 /* Subrayado decorativo tipo Staedtler */
