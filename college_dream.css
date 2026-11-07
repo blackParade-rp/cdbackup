@@ -4728,3 +4728,148 @@ body#modernbb .sceditor-container .sceditor-source {
 body#modernbb .sceditor-container iframe {
   background-color: var(--campus-surface) !important;
 }
+
+
+/* ================================================
+   COLLEGE DREAMS · PREVISUALIZACIÓN Y RESPUESTAS
+   ================================================ */
+
+/* 1. CONTENEDOR DEL FORMULARIO DE RESPUESTA */
+
+body#modernbb #postingbox,
+body#modernbb #postingbox.panel,
+body#modernbb form#post .panel,
+body#modernbb form[name="post"] .panel {
+  background: var(--campus-surface) !important;
+  color: var(--campus-text) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+}
+
+/* 2. PREVISUALIZACIÓN DEL MENSAJE */
+
+body#modernbb #preview,
+body#modernbb #preview.panel,
+body#modernbb .post-preview,
+body#modernbb .preview {
+  background: var(--campus-surface) !important;
+  color: var(--campus-text) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 14px !important;
+  padding: 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* Encabezados de las secciones */
+
+body#modernbb #postingbox h2,
+body#modernbb #postingbox h3,
+body#modernbb #preview h2,
+body#modernbb #preview h3,
+body#modernbb form#post .panel h2,
+body#modernbb form#post .panel h3 {
+  color: var(--season-primary) !important;
+  font-family: var(--campus-title-font) !important;
+  border-bottom: 1px solid var(--campus-border) !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+/* Texto del mensaje previsualizado */
+
+body#modernbb #preview .content,
+body#modernbb #preview .postbody,
+body#modernbb #preview .inner,
+body#modernbb .post-preview .content {
+  color: var(--campus-text) !important;
+  background: transparent !important;
+  line-height: 1.8 !important;
+}
+
+/* 3. FILAS Y ETIQUETAS DEL FORMULARIO */
+
+body#modernbb #postingbox dl,
+body#modernbb form#post .panel dl {
+  background: transparent !important;
+  border-color: var(--campus-border) !important;
+}
+
+body#modernbb #postingbox dt,
+body#modernbb #postingbox label,
+body#modernbb form#post .panel dt,
+body#modernbb form#post .panel label {
+  color: var(--campus-text) !important;
+}
+
+/* Campo del título del mensaje */
+
+body#modernbb #postingbox input[type="text"],
+body#modernbb form#post input[name="subject"] {
+  background: var(--campus-bg) !important;
+  color: var(--campus-text) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 7px !important;
+  padding: 10px 12px !important;
+  box-sizing: border-box;
+}
+
+body#modernbb #postingbox input[type="text"]:focus,
+body#modernbb form#post input[name="subject"]:focus {
+  outline: none !important;
+  border-color: var(--season-primary) !important;
+}
+
+/* 4. PANEL DE SMILEYS */
+
+body#modernbb #smiley-box,
+body#modernbb #smiley-box .panel {
+  background: var(--campus-soft-bg) !important;
+  color: var(--campus-text) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 10px !important;
+}
+
+body#modernbb #smiley-box select,
+body#modernbb #smiley-box a {
+  color: var(--campus-text) !important;
+}
+
+/* 5. EDITOR EN LA PÁGINA DE PREVISUALIZACIÓN */
+
+body#modernbb #postingbox .sceditor-container,
+body#modernbb form#post .sceditor-container {
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+body#modernbb #postingbox .sceditor-toolbar,
+body#modernbb form#post .sceditor-toolbar {
+  background: var(--campus-soft-bg) !important;
+  border-bottom: 1px solid var(--campus-border) !important;
+}
+
+/* 6. EVITAR FONDOS BLANCOS NATIVOS EN LOS PANELES */
+
+body#modernbb form#post .panel .inner,
+body#modernbb #postingbox .inner,
+body#modernbb #preview .inner {
+  background-color: transparent !important;
+}
+
+/* 7. ESPACIADO Y ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+
+@media (max-width: 700px) {
+  body#modernbb #preview,
+  body#modernbb #postingbox,
+  body#modernbb form#post .panel {
+    padding: 14px !important;
+  }
+
+  body#modernbb #postingbox input[type="text"],
+  body#modernbb form#post input[name="subject"] {
+    max-width: 100% !important;
+  }
+}
