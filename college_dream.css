@@ -4958,3 +4958,14 @@ body#modernbb #preview .postbody {
   color: var(--campus-text) !important;
   padding: 0 18px 18px !important;
 }
+/* COLLEGE DREAMS · TÍTULO RESPUESTA RÁPIDA */
+
+body#modernbb #quick_reply h2,
+body#modernbb .quickreply h2,
+body#modernbb #quick_reply + h2 {
+  font-family: var(--campus-title-font) !important;
+  color: var(--season-primary) !important;
+  font-size: 28px !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+}
