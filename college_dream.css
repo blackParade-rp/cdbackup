@@ -4890,3 +4890,71 @@ body#modernbb #postingbox h2 {
   text-transform: none !important;
   letter-spacing: 0 !important;
 }
+
+/* ==========================================
+   COLLEGE DREAMS · CABECERA PREVISUALIZACIÓN
+   ========================================== */
+
+/* Contenedor de la previsualización */
+body#modernbb #preview,
+body#modernbb #preview.panel {
+  background: var(--campus-surface) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+/* Título PREVISUALIZACIÓN */
+body#modernbb #preview h2,
+body#modernbb #preview h3 {
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-family: var(--campus-body-font) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-align: center !important;
+
+  color: var(--campus-text) !important;
+  background: color-mix(
+    in srgb,
+    var(--season-primary) 12%,
+    var(--campus-surface)
+  ) !important;
+
+  border: 0 !important;
+  border-bottom: 1px solid var(--campus-border) !important;
+
+  padding: 16px 12px 22px !important;
+  margin: 0 0 18px !important;
+}
+
+/* Subrayado verde tipo Staedtler */
+body#modernbb #preview h2::after,
+body#modernbb #preview h3::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 78px;
+  height: 3px;
+  border-radius: 100%;
+
+  background: var(--season-primary);
+  box-shadow: 0 1px 0
+    color-mix(in srgb, var(--season-primary) 35%, transparent);
+}
+
+/* Texto previsualizado */
+body#modernbb #preview .content,
+body#modernbb #preview .postbody {
+  background: transparent !important;
+  color: var(--campus-text) !important;
+  padding: 0 18px 18px !important;
+}
