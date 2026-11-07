@@ -4711,3 +4711,20 @@ body#modernbb form:has(.sceditor-container) .submit-buttons {
     padding: 14px !important;
   }
 }
+
+/* ==========================================
+   COLLEGE DREAMS · TEXTO DEL EDITOR
+   ========================================== */
+
+/* Modo código */
+body#modernbb .sceditor-container textarea,
+body#modernbb .sceditor-container .sceditor-source {
+  color: var(--campus-text) !important;
+  background-color: var(--campus-surface) !important;
+  caret-color: var(--season-primary) !important;
+}
+
+/* Mantener el marco del editor */
+body#modernbb .sceditor-container iframe {
+  background-color: var(--campus-surface) !important;
+}
