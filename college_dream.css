@@ -4969,3 +4969,23 @@ body#modernbb #quick_reply + h2 {
   font-weight: 400 !important;
   text-transform: none !important;
 }
+
+
+/* ==========================================
+   COLLEGE DREAMS · RESPUESTA RÁPIDA
+   COLOR DEL TEXTO EN MODO OSCURO
+   ========================================== */
+
+/* Editor visual SCEditor */
+html[data-campus-theme="dark"] body#modernbb
+.sceditor-container iframe {
+  color-scheme: dark;
+}
+
+/* Editor en modo código / BBCode */
+html[data-campus-theme="dark"] body#modernbb
+.sceditor-container textarea {
+  color: var(--campus-text) !important;
+  caret-color: var(--campus-text) !important;
+}
+
